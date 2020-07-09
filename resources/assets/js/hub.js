@@ -186,6 +186,7 @@ Vue.component('candy-order-export', require('./components/order-processing/order
 
 Vue.component('candy-color-picker', require('./components/elements/forms/inputs/ColorPicker.vue'));
 Vue.component('candy-code-mirror', require('./components/elements/forms/inputs/CodeMirror.vue'));
+Vue.component('candy-clipboard-copy', require('./components/elements/ClipboardCopy.vue'));
 
 import VueI18n from 'vue-i18n';
 
@@ -243,6 +244,12 @@ String.prototype.camel_case = function(str) {
   return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(letter, index) {
     return index == 0 ? letter.toLowerCase() : letter.toUpperCase();
   }).replace(/\s+/g, '');
+}
+
+Number.prototype.number_format = function () {
+  var parts = this.toString().split(".");
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return parts.join(".");
 }
 
 String.prototype.money = function (c,t,d) {

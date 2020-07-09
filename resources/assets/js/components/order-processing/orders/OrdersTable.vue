@@ -34,7 +34,7 @@
                     page: 1,
                     includes: 'user.details,user.firstOrder,shipping,lines',
                     from: null,
-                    to: null
+                    to: null,
                 },
                 pagination: {},
                 getters: {
@@ -66,7 +66,8 @@
                     },
                     account_no(order) {
                         const fields = _.get(order, 'user.data.details.data.fields');
-                        return fields ? fields.account_number : '-';
+                        const accountNo = fields ? fields.account_number : null;
+                        return accountNo && accountNo != '0' ? accountNo : '-';
                     },
                     contact_email(order) {
                         return order.contact_details.email;
@@ -76,7 +77,7 @@
                         if (!date) {
                            date = order.created_at;
                         }
-                        return moment(date.date).format('D/MM/YYYY');
+                        return moment(date).format('D/MM/YYYY HH:mm');
                     }
                 }
             }
@@ -224,6 +225,7 @@
                         this.params.total_pages = response.meta.last_page;
                         this.params.current_page = response.meta.current_page;
 
+                        this.pagination = response.meta;
                         apiRequest.send('GET', 'currencies').then(response => {
                             this.currencies = response.data;
                             this.loaded = true;
@@ -337,6 +339,16 @@
                     <candy-order-export :statuses="statuses" :ids="selected" type="order"></candy-order-export>
                     <hr>
                 </div>
+                <template v-if="pagination.total">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Viewing {{ pagination.from.number_format() }} to {{ pagination.to.number_format() }} of {{ pagination.total.number_format() }}
+                        </div>
+                        <div class="col-md-6 text-right">
+                            {{ pagination.last_page.number_format() }} pages.
+                        </div>
+                    </div>
+                </template>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="table-responsive">

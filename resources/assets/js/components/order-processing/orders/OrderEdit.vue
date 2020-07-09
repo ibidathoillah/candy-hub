@@ -220,7 +220,7 @@
             <div class="row">
                 <div class="col-md-12 text-right">
                     <a :href="customerLink(order.user.data)" class="btn   btn-primary" v-if="order.user.data">View Customer Account</a>
-                    <a :href="'/'+ hubPrefix +'/order-processing/orders/'+ order.id +'/invoice'" target="_blank" class="btn  btn-primary">Download Invoice</a>
+                    <a :href="'/'+ hubPrefix +'/order-processing/orders/'+ order.id +'/invoice'" target="_blank" class="btn  btn-primary">Print Order</a>
                     <!-- <button @click="showStatusModal = true" class="btn  btn-primary">Update Status</button> -->
                     <update-order-status :order-id="order.id" :saving="showStatusModal" :show-modal="showStatusModal" :statuses="statuses" v-model="order.status" @save="updateStatus"></update-order-status>
                     <order-note :id="order.id"></order-note>
@@ -239,16 +239,20 @@
                                     {{ order.display_id }}</span>
                                 </div>
                                 <div class="col-md-2">
-                                    <strong>Order Reference <span v-if="order.customer_reference">/ Customer Reference</span></strong> <br>
-                                    {{ order.reference }} <span v-if="order.customer_reference">/ {{ order.customer_reference }}</span>
+                                    <strong>Order Reference</strong><br>
+                                    <span>{{ order.reference }}</span> <candy-clipboard-copy :text="order.reference" />
+                                </div>
+                                <div class="col-md-2">
+                                    <strong>Customer Reference</strong> <br>
+                                    <span ref="customerRef">{{ order.customer_reference ? order.customer_reference : '-' }}</span> <candy-clipboard-copy :text="order.customer_reference" v-if="order.customer_reference"/>
                                 </div>
                                 <div class="col-md-2">
                                     <strong>Date Created</strong><br>
-                                    {{ order.created_at.date|formatDate }}
+                                    {{ order.created_at|formatDate }}
                                 </div>
                                 <div class="col-md-2" v-if="order.placed_at">
                                     <strong>Payment Date</strong><br>
-                                    {{ order.placed_at.date|formatDate }}
+                                    {{ order.placed_at|formatDate }}
                                 </div>
                                 <div class="col-md-2" v-if="order.placed_at">
                                     <strong>Status</strong><br>
@@ -282,8 +286,8 @@
                                     {{ order.shipping_details.state }}<br v-if="order.shipping_details.state">
                                     {{ order.shipping_details.country }}<br>
                                     {{ order.shipping_details.zip }} <br>
-                                    {{ order.shipping_details.phone }} <br>
-                                    {{ order.shipping_details.email }}
+                                    {{ order.billing_details.phone }} <br>
+                                    {{ order.billing_details.email }}
                                 </div>
                                 <div class="col-md-4">
                                     <p>
@@ -343,6 +347,7 @@
                                             <th>Variant</th>
                                             <th>QTY</th>
                                             <th>Unit Price</th>
+                                            <th>Shipping Total</th>
                                             <th>Discount</th>
                                             <th>Tax Rate</th>
                                             <th>Tax Amount</th>
@@ -365,8 +370,10 @@
                                                     {{ line.variant_name }}
                                                 </td>
                                                 <td>-</td>
-                                                <td>{{ line.unit_cost }}</td>
-                                                <td>{{ line.discount_total }}</td>
+                                                <td v-html="currencySymbol(line.unit_cost)" v-if="line.unit_cost"></td>
+                                                <td v-else>1</td>
+                                                <td>-</td>
+                                                <td v-html="currencySymbol(line.discount_total ? line.discount_total : 0)"></td>
                                                 <td><span v-if="line.tax_total">VAT @ {{ line.tax_rate }}%</span><span v-else>-</span></td>
                                                 <td v-html="currencySymbol(line.tax_total)"></td>
                                                 <td v-html="currencySymbol(line.line_total)"></td>
@@ -374,7 +381,7 @@
                                         </template>
                                         <template v-else>
                                             <tr>
-                                                <td colspan="6"></td>
+                                                <td colspan="7"></td>
                                                 <td colspan="2" align="right"><strong>Delivery Total (Excl Tax)</strong></td>
                                                 <td v-html="currencySymbol(order.delivery_total)"></td>
                                             </tr>
@@ -400,63 +407,59 @@
                                             <td v-html="currencySymbol(order.delivery_total)"></td>
                                         </tr> -->
                                         <tr>
-                                            <td colspan="6"></td>
+                                            <td colspan="7"></td>
                                             <td colspan="2" align="right"><strong>VAT</strong></td>
                                             <td v-html="currencySymbol(order.tax_total)"></td>
                                         </tr>
                                         <tr>
-                                            <td colspan="6"></td>
+                                            <td colspan="7"></td>
                                             <td colspan="2" align="right"><strong>Total</strong></td>
                                             <td v-html="currencySymbol(order.order_total)"></td>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <template v-for="line in productLines" >
-                                            <tr :key="line.id">
-                                                <td>
-                                                    <template v-if="line.sku">
-                                                    <a :href="productLink(line.sku)" target="_blank" :title="'View' + line.product">
-                                                        {{ line.sku }}
-                                                    </a>
-                                                    </template>
-                                                    <template v-else>
-                                                        -
-                                                    </template>
-                                                </td>
-                                                <td>
-                                                    <template v-if="line.sku">
-                                                        <a :href="productLink(line.sku)" target="_blank" :title="'View' + line.description">
-                                                            {{ line.description }}
-                                                        </a>
-                                                    </template>
-                                                    <template v-else>
+                                        <tr v-for="line in productLines" :key="line.id">
+                                            <td>
+                                                <template v-if="line.sku">
+                                                <a :href="productLink(line.sku)" target="_blank" :title="'View' + line.product">
+                                                {{ line.sku }}
+                                                </a>
+                                                </template>
+                                                <template v-else>
+                                                    -
+                                                </template>
+                                            </td>
+                                            <td>
+                                                <template v-if="line.sku">
+                                                    <a :href="productLink(line.sku)" target="_blank" :title="'View' + line.description">
                                                         {{ line.description }}
-                                                    </template>
+                                                    </a>
+                                                </template>
+                                                <template v-else>
+                                                    {{ line.description }}
+                                                </template>
 
-                                                </td>
-                                                <td>{{ line.option ? line.option : '-' }}</td>
-                                                <td>{{ line.quantity }}</td>
-                                                <td v-html="currencySymbol(line.unit_price)"></td>
-                                                <td>
-                                                    <template v-if="line.discount_total">
-                                                        <span class="text-danger" v-html="currencySymbol(-line.discount_total)"></span>
-                                                    </template>
-                                                    <template v-else>
-                                                        -
-                                                    </template>
-                                                </td>
-                                                <td><span v-if="line.tax_total">VAT @ {{ line.tax_rate }}%</span><span v-else>-</span></td>
-                                                    <td v-html="currencySymbol(line.tax_total)"></td>
-                                                    <td v-html="currencySymbol(line.line_total - line.discount_total)"></td>
-                                            </tr>
-                                            <tr :key="`${line.id}_meta`" class="line-meta" v-if="line.meta">
-                                                <td colspan="1"></td>
-                                                <td colspan="8">
-                                                    <div class="arrow"></div>
-                                                    <span v-for="(value, key) in line.meta" :key="key"><strong>{{ key }}:</strong> {{ value }}</span>
-                                                </td>
-                                            </tr>
-                                        </template>
+                                            </td>
+                                            <td>{{ line.variant_name ? line.variant_name : '-' }}</td>
+                                            <td>{{ line.quantity }}</td>
+                                            <td v-html="currencySymbol(line.unit_price)"></td>
+
+                                            <td v-html="currencySymbol(line.delivery_total)" v-if="line.delivery_total"></td>
+                                            <td v-else>-</td>
+
+                                            <td>
+                                                <template v-if="line.discount_total">
+                                                    <span class="text-danger" v-html="currencySymbol(-line.discount_total)"></span>
+                                                </template>
+                                                <template v-else>
+                                                    -
+                                                </template>
+                                            </td>
+
+                                            <td><span v-if="line.tax_total">VAT @ {{ line.tax_rate }}%</span><span v-else>-</span></td>
+                                                <td v-html="currencySymbol(line.tax_total)"></td>
+                                                <td v-html="currencySymbol(line.line_total - line.discount_total)"></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                                 </div>
@@ -518,7 +521,7 @@
                                     </div>
                                     <div class="col-md-2">
                                         <strong>Date</strong><br>
-                                        {{ t.created_at.date|formatDate }}
+                                        {{ t.created_at|formatDate }}
                                     </div>
                                     <div class="col-md-2">
                                         <strong>Merchant</strong><br>
