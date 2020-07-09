@@ -12,6 +12,7 @@ require('laravel-mix-purgecss');
  |
  */
 
+mix.setPublicPath('./');
 mix.js('resources/assets/js/hub.js', 'resources/build/js')
     .js('resources/assets/js/setup.js', 'resources/build/js')
     .js('resources/assets/js/candyhub.js', 'resources/build/js')
