@@ -63,7 +63,7 @@
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active">
                 <a href="#shipping-methods" aria-controls="shipping-methods" role="tab" data-toggle="tab">
-                    Shipping Methods
+                    Metode Pengiriman
                 </a>
             </li>
         </ul>
