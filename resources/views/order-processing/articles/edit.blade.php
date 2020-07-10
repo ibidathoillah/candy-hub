@@ -5,7 +5,7 @@
 @endsection
 
 @section('header_title')
-    <small>lala</small>
+    <small>Articles</small>
     <h1>@verbatim<template v-if="title">{{ title }}</template>@endverbatim</h1>
 @endsection
 
@@ -16,5 +16,5 @@
 
 
 @section('content')
-    <candy-shipping-zone-edit id="{{ $id }}"></candy-shipping-zone-edit>
+    <candy-article-edit id="{{ $id }}"></candy-article-edit>
 @endsection

@@ -5,14 +5,14 @@
 @endsection
 
 @section('header_title')
-    <small>lala</small>
-    <h1>lala</h1>
+    <small>Articles</small>
+    <h1>List Articles</h1>
 @endsection
 
 @section('header_actions')
-    <candy-shipping-zone-create style="display: inline-block;"></candy-shipping-create>
+    <candy-article-create style="display: inline-block;"></candy-article-create>
 @endsection
 
 @section('content')
-    <candy-shipping-zones-table></candy-shipping-zones-table>
+    <candy-articles-table></candy-articles-table>
 @endsection

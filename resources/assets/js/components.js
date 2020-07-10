@@ -257,6 +257,14 @@ var includes = [
       'shipping-prices': 'ShippingPrices',
       'shipping-method-zones': 'ShippingZones',
     }
+  },
+  {
+    path: 'order-processing.articles',
+    components: {
+      'articles-table': 'ArticleTable',
+      'article-edit': 'ArticleEdit',
+      'article-create': 'ArticleCreate'
+    }
   }
 ]
 
