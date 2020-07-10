@@ -153,6 +153,15 @@ Route::group([
                 'uses' => 'ShippingController@getZone',
             ]);
 
+            $router->get('articles', [
+                'as'   => 'hub.articles.index',
+                'uses' => 'ArticleController@getArticles',
+            ]);
+            $router->get('articles/{id}', [
+                'as'   => 'hub.articles.edit',
+                'uses' => 'ShippingController@getArticle',
+            ]);
+
             // Customer routes
             $router->get('customers', [
                 'as'   => 'hub.customers.index',

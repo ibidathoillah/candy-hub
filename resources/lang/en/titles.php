@@ -16,4 +16,5 @@ return [
     'sales-report'     => 'Sales Report',
     'product-attributes-report'     => 'Product Attributes',
     'shipping-report'     => 'Shipping Report',
+    'articles'   => 'Articles',
 ];

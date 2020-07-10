@@ -29,4 +29,5 @@ class ShippingController extends Controller
             'id' => $id,
         ]);
     }
+
 }
