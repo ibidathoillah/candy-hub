@@ -62,7 +62,7 @@
                 <table class="table table-striped collection-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>Title</th>
                             <th>Regions</th>
                             <th>Countries</th>
                         </tr>
