@@ -114,7 +114,7 @@
                                     label: function(tooltipItem, data) {
                                         var label = tooltipItem.yLabel;
                                         if (tooltipItem.datasetIndex == 1) {
-                                            label = '£' + tooltipItem.yLabel.money();
+                                            label = 'IDR' + tooltipItem.yLabel.money();
                                         }
                                         return data.datasets[tooltipItem.datasetIndex].label + ': ' + label;
                                     }
@@ -150,7 +150,7 @@
                                         ticks: {
                                             beginAtZero: true,
                                             callback: function(value, index, values) {
-                                                return '£' + value.money();
+                                                return 'IDR' + value.money();
                                             }
                                         },
                                         scaleLabel: {

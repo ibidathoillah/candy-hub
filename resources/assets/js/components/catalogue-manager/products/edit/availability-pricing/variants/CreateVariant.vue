@@ -80,7 +80,7 @@
                     <div class="col-md-4">
                         <label for="sku">Price</label>
                         <div class="input-group input-group-full">
-                            <span class="input-group-addon">&pound;</span>
+                            <span class="input-group-addon">IDR</span>
                             <input type="number" class="form-control" v-model="variant.price">
                         </div>
                     </div>

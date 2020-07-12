@@ -437,7 +437,7 @@
                         </td>
                         <td width="20%">
                             <div class="input-group input-group-full">
-                                <span class="input-group-addon">&pound;</span>
+                                <span class="input-group-addon">IDR</span>
                                 <input type="text" class="form-control" v-model="variant.price">
                             </div>
                         </td>

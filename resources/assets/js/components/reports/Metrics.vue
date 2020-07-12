@@ -16,9 +16,9 @@
                             </template>
                             <!-- <section style="margin-top:10px;font-size:.75em">
                                 @if($sales_this_week - $sales_last_week >= 0)
-                                    <span class="text-success"><sup><fa icon="caret-up"></fa></sup>&pound;{{ number_format($sales_this_week - $sales_last_week, 0) }}</span>
+                                    <span class="text-success"><sup><fa icon="caret-up"></fa></sup>IDR{{ number_format($sales_this_week - $sales_last_week, 0) }}</span>
                                 @else
-                                    <span class="text-danger"><sup><fa icon="caret-down"></fa></sup>&pound;{{ number_format($sales_this_week - $sales_last_week, 0) }}</span>
+                                    <span class="text-danger"><sup><fa icon="caret-down"></fa></sup>IDR{{ number_format($sales_this_week - $sales_last_week, 0) }}</span>
                                 @endif
                             </section> -->
                         </div>
@@ -40,9 +40,9 @@
                             </template>
                             <!-- <section style="margin-top:10px;font-size:.75em">
                                 @if($sales_this_week - $sales_last_week >= 0)
-                                    <span class="text-success"><sup><fa icon="caret-up"></fa></sup>&pound;{{ number_format($sales_this_week - $sales_last_week, 0) }}</span>
+                                    <span class="text-success"><sup><fa icon="caret-up"></fa></sup>IDR{{ number_format($sales_this_week - $sales_last_week, 0) }}</span>
                                 @else
-                                    <span class="text-danger"><sup><fa icon="caret-down"></fa></sup>&pound;{{ number_format($sales_this_week - $sales_last_week, 0) }}</span>
+                                    <span class="text-danger"><sup><fa icon="caret-down"></fa></sup>IDR{{ number_format($sales_this_week - $sales_last_week, 0) }}</span>
                                 @endif
                             </section> -->
                         </div>
@@ -63,12 +63,12 @@
                             <template v-else>
                                 <i class="fa fa-sync fa-spin"></i>
                             </template>
-                            <!-- &pound;{{ number_format($sales_this_month, 0) }} <br>
+                            <!-- IDR{{ number_format($sales_this_month, 0) }} <br>
                             <section style="margin-top:10px;font-size:.75em">
                                 @if($sales_this_month - $sales_last_month >= 0)
-                                    <span class="text-success"><sup><fa icon="caret-up"></fa></sup>&pound;{{ number_format($sales_this_month - $sales_last_month, 0) }}</span>
+                                    <span class="text-success"><sup><fa icon="caret-up"></fa></sup>IDR{{ number_format($sales_this_month - $sales_last_month, 0) }}</span>
                                 @else
-                                    <span class="text-danger"><sup><fa icon="caret-down"></fa></sup>&pound;{{ number_format($sales_this_month - $sales_last_month, 0) }}</span>
+                                    <span class="text-danger"><sup><fa icon="caret-down"></fa></sup>IDR{{ number_format($sales_this_month - $sales_last_month, 0) }}</span>
                                 @endif
                             </section> -->
                         </div>

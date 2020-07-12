@@ -124,7 +124,7 @@
                 <div class="form-group">
                   <label>Price</label>
                   <div class="input-group input-group-full">
-                    <span class="input-group-addon">&pound;</span>
+                    <span class="input-group-addon">IDR</span>
                     <input type="number" class="form-control" v-model="current.price">
                   </div>
                 </div>
@@ -133,7 +133,7 @@
                 <div class="form-group">
                   <label>Compare at Price</label>
                   <div class="input-group input-group-full">
-                    <span class="input-group-addon">&pound;</span>
+                    <span class="input-group-addon">IDR</span>
                     <input type="number" class="form-control">
                   </div>
                 </div>
