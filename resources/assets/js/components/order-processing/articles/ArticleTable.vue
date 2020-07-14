@@ -20,7 +20,7 @@
         },
         methods: {
             load() {
-                apiRequest.send('get', '/shipping/zones', {}, this.params)
+                apiRequest.send('get', '/articles', {}, this.params)
                     .then(response => {
                         this.rows = response.data;
                         this.pagination = response.meta.pagination;
