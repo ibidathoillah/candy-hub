@@ -48,7 +48,7 @@
                     <thead>
                         <tr>
                             <th style="width: 400px;">Title</th>
-                            <th style="width: 100px;">>Slug</th>
+                            <th style="width: 200px;">Slug</th>
                             <th>Content</th>
                         </tr>
                     </thead>

@@ -157,8 +157,8 @@ Route::group([
                 'as'   => 'hub.articles.index',
                 'uses' => 'ArticleController@getArticles',
             ]);
-            $router->get('articles/{id}', [
-                'as'   => 'hub.articles.edit',
+            $router->get('article/{id}', [
+                'as'   => 'hub.article.edit',
                 'uses' => 'ShippingController@getArticle',
             ]);
 
