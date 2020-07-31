@@ -69,7 +69,13 @@
                     <tbody v-if="loaded">
                         <tr class="clickable" v-for="row in rows">
                             <td @click="goTo(row.id)">
-                                {{ row.name }}
+                                {{ row.title }}
+                            </td>
+                            <td>
+                                {{ row.title }}
+                            </td>
+                            <td>
+                                {{ row.body }}
                             </td>
                             <!-- <td>
                                 <span v-for="(region, index) in getRegions(row)">{{ region }}<span v-if="index < getRegions(row).length - 1">, </span></span>
