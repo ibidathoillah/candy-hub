@@ -7,14 +7,13 @@
                 params: {
                     per_page: 50,
                     current_page: 1,
-                    includes: 'countries'
                 },
                 pagination: {}
             }
         },
         mounted() {
             this.load();
-            CandyEvent.$on('shipping-zone-added', product => {
+            CandyEvent.$on('article-added', product => {
                 this.load();
             });
         },
@@ -33,7 +32,7 @@
                 this.load();
             },
             goTo: function (id) {
-                location.href = route('hub.shipping_zones.edit', id);
+                location.href = route('hub.article.edit', id);
             },
             getRegions(zone) {
                 var regions = [];
@@ -69,11 +68,10 @@
                     </thead>
                     <tbody v-if="loaded">
                         <tr class="clickable" v-for="row in rows">
-                            {{JSON.stringify(row)}}
-                            <!-- <td @click="goTo(row.id)">
+                            <td @click="goTo(row.id)">
                                 {{ row.name }}
                             </td>
-                            <td>
+                            <!-- <td>
                                 <span v-for="(region, index) in getRegions(row)">{{ region }}<span v-if="index < getRegions(row).length - 1">, </span></span>
                             </td>
                             <td>
