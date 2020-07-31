@@ -112,12 +112,8 @@
             load(id) {
                 apiRequest.send('get', '/articles/' + id, {})
                 .then(response => {
-                    this.article = response.data;
+                    this.article = response;
                     this.loaded = true;
-
-                    this.selected = _.map(this.article.countries.data, item => {
-                        return item.id;
-                    });
 
                     CandyEvent.$emit('title-changed', {
                         title: this.article.title
