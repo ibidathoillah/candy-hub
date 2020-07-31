@@ -34,20 +34,6 @@
             goTo: function (id) {
                 location.href = route('hub.article.edit', id);
             },
-            getRegions(zone) {
-                var regions = [];
-
-                _.each(zone.countries.data, country => {
-                    if (!regions.includes(country.region)) {
-                        if (!country.name) {
-                            country.name = 'Rest of world';
-                        }
-                        regions.push(country.region);
-                    }
-                });
-
-                return regions;
-            }
         }
     }
 </script>
@@ -57,7 +43,7 @@
 
         <!-- Tab panes -->
         <div class="tab-content section block">
-            <div role="tabpanel" class="tab-pane active" id="all-zones">
+            <div role="tabpanel" class="tab-pane active" id="all-article">
                 <table class="table table-striped collection-table">
                     <thead>
                         <tr>
@@ -68,10 +54,7 @@
                     </thead>
                     <tbody v-if="loaded">
                         <tr class="clickable" v-for="row in rows">
-                            <td @click="goTo(row.id)">
-                                {{ row.id }}
-                            </td>
-                            <td>
+                            <td @click="goTo(row.slug)">
                                 {{ row.title }}
                             </td>
                             <td>
