@@ -7,7 +7,7 @@
 @endsection
 
 @section('header_title')
-    <small>GetCandy</small>
+    <small>TREASURY</small>
     <h1>Dashboard</h1>
 @endsection
 
