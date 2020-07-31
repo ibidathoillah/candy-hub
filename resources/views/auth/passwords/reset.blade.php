@@ -34,7 +34,7 @@
     <div class="row">
       <div class="col-xs-12 col-md-5">
         <div class="login-form">
-          <img src="{{ url('candy-hub/images/logo/getcandy.png') }}" class="logo" alt="GetCandy">
+          <img src="{{ url('candy-hub/images/logo/treasury.png') }}" class="logo" alt="GetCandy">
 
 
           @if (session('status'))
