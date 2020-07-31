@@ -56,7 +56,7 @@
     .treetable .fancytree-ext-filter span.fancytree-childcounter {
         color: #fff;
         background: rgb(102, 45, 145);
-        border: 1px solid #662d91;
+        border: 1px solid #3e3690;
         position: absolute;
         top: -15px;
         right: -40px;
