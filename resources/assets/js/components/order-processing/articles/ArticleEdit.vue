@@ -141,6 +141,10 @@
                         <label>Title</label>
                         <input type="text" class="form-control" v-model="article.title">
                     </div>
+                    <div class="form-group">
+                        <label>Slug</label>
+                        <input type="text" class="form-control" v-model="article.slug">
+                    </div>
                     <hr>
                 <div class="form-group">
                         <label>Content</label>
