@@ -69,7 +69,8 @@
                     </thead>
                     <tbody v-if="loaded">
                         <tr class="clickable" v-for="row in rows">
-                            <td @click="goTo(row.id)">
+                            {{JSON.stringify(row)}}
+                            <!-- <td @click="goTo(row.id)">
                                 {{ row.name }}
                             </td>
                             <td>
@@ -84,7 +85,7 @@
                                         {{ country.name }}<span v-if="index < row.countries.data.length - 1">, </span>
                                     </span>
                                 </template>
-                            </td>
+                            </td> -->
                         </tr>
 
 
