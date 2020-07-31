@@ -159,7 +159,7 @@ Route::group([
             ]);
             $router->get('article/{id}', [
                 'as'   => 'hub.article.edit',
-                'uses' => 'ShippingController@getArticle',
+                'uses' => 'ArticleController@getArticle',
             ]);
 
             // Customer routes
