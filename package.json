@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "git": "npm run development && git add . && git commit -m update && git push origin master && git log",
+    "git": "npm run development && git add . && git commit -m update && git push origin master && cp -r ./resources/build/ ../intense-oasis-34709/public/candy-hub/ && git log",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch-poll": "npm run watch -- --watch-poll",
