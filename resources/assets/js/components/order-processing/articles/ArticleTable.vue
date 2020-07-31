@@ -47,8 +47,8 @@
                 <table class="table table-striped collection-table">
                     <thead>
                         <tr>
-                            <th>Title</th>
-                            <th>Slug</th>
+                            <th style="width: 400px;">Title</th>
+                            <th style="width: 100px;">>Slug</th>
                             <th>Content</th>
                         </tr>
                     </thead>
@@ -58,7 +58,7 @@
                                 {{ row.title }}
                             </td>
                             <td>
-                                {{ row.slug }}
+                                <a href="#">/{{ row.slug }}</a>
                             </td>
                             <td>
                                 {{ row.body }}
