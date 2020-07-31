@@ -142,17 +142,12 @@
                         <input type="text" class="form-control" v-model="article.title">
                     </div>
                     <hr>
-                    <div class="row">
-                        <div class="form-group col-xs-12 col-md-8">
-                            <div class="input-group input-group-full">
-                                <span class="input-group-addon">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </span>
-                                <label class="sr-only" for="search">Search</label>
-                                <input type="text" class="form-control" id="search" placeholder="Search" @keyup="search" v-model="keywords">
-                            </div>
-                        </div>
-                    </div>
+                <div class="form-group">
+                        <label>Content</label>
+                        <candy-textarea :id="'default-content'"
+                                        v-model="article.body">
+                        </candy-textarea>
+                    </div> 
                 </div>
             </div>
         </template>
