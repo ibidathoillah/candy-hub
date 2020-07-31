@@ -145,6 +145,7 @@
                 <div class="form-group">
                         <label>Content</label>
                         <candy-textarea :id="'default-content'"
+                                        :richtext="true"
                                         v-model="article.body">
                         </candy-textarea>
                     </div> 
