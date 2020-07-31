@@ -54,7 +54,7 @@
                     </thead>
                     <tbody v-if="loaded">
                         <tr class="clickable" v-for="row in rows">
-                            <td @click="goTo(row.slug)">
+                            <td @click="goTo(row.id)">
                                 {{ row.title }}
                             </td>
                             <td>

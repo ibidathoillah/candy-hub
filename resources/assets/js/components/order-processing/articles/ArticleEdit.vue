@@ -10,7 +10,7 @@
                 loaded: false,
                 countries: [],
                 selected: [],
-                zone: {},
+                article: {},
                 keywords: ''
             }
         },
@@ -25,12 +25,12 @@
             this.countryCache = [];
         },
         mounted() {
-            CandyEvent.$on('zone-updated', event => {
+            CandyEvent.$on('article-updated', event => {
                 this.loaded = false;
                 this.load(this.id);
             });
 
-            Dispatcher.add('save-shipping-zone', this);
+            Dispatcher.add('save-articles', this);
 
             this.loadCountries();
         },
@@ -42,8 +42,8 @@
                 });
             },
             save() {
-                this.zone.countries = this.selected;
-                apiRequest.send('PUT', '/shipping/zones/' + this.zone.id, this.zone).then(response => {
+                this.article.countries = this.selected;
+                apiRequest.send('PUT', '/articles/' + this.article.id, this.article).then(response => {
                     CandyEvent.$emit('notification', {
                         level: 'success'
                     });
@@ -110,22 +110,20 @@
              * @param  {String} id
              */
             load(id) {
-                apiRequest.send('get', '/shipping/zones/' + id, {}, {
-                    includes: 'countries'
-                })
+                apiRequest.send('get', '/articles/slug' + id, {})
                 .then(response => {
-                    this.zone = response.data;
+                    this.article = response.data;
                     this.loaded = true;
 
-                    this.selected = _.map(this.zone.countries.data, item => {
+                    this.selected = _.map(this.article.countries.data, item => {
                         return item.id;
                     });
 
                     CandyEvent.$emit('title-changed', {
-                        title: this.zone.name
+                        title: this.article.title
                     });
 
-                    document.title = this.zone.name + ' Shipping Zone - GetCandy';
+                    document.title = this.article.title + ' Articles';
 
                     // apiRequest.send('GET', 'currencies/' + this.order.currency).then(response => {
                     //     this.currency = response.data;
@@ -144,8 +142,8 @@
             <div class="panel">
                 <div class="panel-body">
                     <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control" v-model="zone.name">
+                        <label>Title</label>
+                        <input type="text" class="form-control" v-model="article.title">
                     </div>
                     <hr>
                     <div class="row">
@@ -159,22 +157,6 @@
                             </div>
                         </div>
                     </div>
-                    <template v-for="region in countries">
-                        <div class="region">
-                            <header>
-                                <strong>{{ region.region }} ({{ selectedCount(region) }})</strong> &middot; <a href="#" @click.prevent="selectAll(region)">select all</a> <a href="#" @click.prevent="deselect(region)">deselect all</a>
-                            </header>
-                            <ul>
-                                <li v-for="country in region.countries.data">
-                                    <label :class="{selected: isSelected(country.id)}">
-                                        <input type="checkbox" v-model="selected" :value="country.id">
-                                        <span class="flag-icon" :class="getFlag(country.iso_a_2)"></span>
-                                        {{ country.name.en }}
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-                    </template>
                 </div>
             </div>
         </template>
