@@ -22,7 +22,7 @@
                 apiRequest.send('get', '/articles', {}, this.params)
                     .then(response => {
                         this.rows = response.data;
-                        this.pagination = response.meta.pagination;
+                        this.pagination = response.pagination;
                         this.loaded = true;
                     });
             },
