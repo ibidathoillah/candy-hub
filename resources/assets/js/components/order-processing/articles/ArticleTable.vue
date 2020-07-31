@@ -63,8 +63,8 @@
                     <thead>
                         <tr>
                             <th>Title</th>
-                            <th>Regions</th>
-                            <th>Countries</th>
+                            <th>Slug</th>
+                            <th>Content</th>
                         </tr>
                     </thead>
                     <tbody v-if="loaded">

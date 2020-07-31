@@ -9,6 +9,13 @@
         },
         mounted() {
         },
+        computed: {
+            titleUrl: {
+                get() {
+                    return this.article.title.slugify();
+                }
+            }
+        },
         methods: {
             save() {
                 this.request.send('post', '/articles', this.article)
@@ -41,12 +48,10 @@
         <candy-modal title="Create Article" v-show="create" size="modal-md" @closed="create = false">
             <div slot="body">
                 <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" v-model="article.title" @input="request.clearError('title')">
+                    <label for="title">Enter the title article.</label>
+                    <input type="text" id="title" class="form-control" v-model="article.title">
+                    <span class="text-info" v-if="article.title">Your url will be sanitized to: <code>{{ titleUrl }}</code></span>
                     <span class="text-danger" v-if="request.getError('title')" v-text="request.getError('title')"></span>
-                    <label for="body">Content</label>
-                    <input type="text" class="form-control" id="content" v-model="article.content" @input="request.clearError('content')">
-                    <span class="text-danger" v-if="request.getError('content')" v-text="request.getError('content')"></span>
                 </div>
             </div>
             <template slot="footer">
