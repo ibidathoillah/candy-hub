@@ -110,7 +110,7 @@
              * @param  {String} id
              */
             load(id) {
-                apiRequest.send('get', '/articles/slug' + id, {})
+                apiRequest.send('get', '/articles/' + id, {})
                 .then(response => {
                     this.article = response.data;
                     this.loaded = true;
