@@ -44,7 +44,7 @@
             save() {
                 this.article.countries = this.selected;
                 var tags = [];
-                for(x in this.article.tags){
+                for(let x in this.article.tags){
                     tags.push(this.article.tags[x].name)
                 }
                 this.article.tags = tags;
@@ -120,7 +120,7 @@
                     this.article = response;
                     var tags = this.article.tags.split(",");
                     var tags_data = [];
-                    for(x in tags){
+                    for(let x in tags){
                         tags_data.push({ name : tags[x] })
                     }
                     this.article.tags = tags_data;
