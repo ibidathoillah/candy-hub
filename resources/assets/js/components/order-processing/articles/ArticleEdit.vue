@@ -166,7 +166,7 @@
                     </div> 
                                     <div class="form-group">
                         <label>Tag</label>
-                        <candy-taggable v-model="tags_data">
+                        <candy-taggable v-model="article.tags">
                         </candy-taggable>
                     </div> 
                 </div>
