@@ -43,7 +43,11 @@
             },
             save() {
                 this.article.countries = this.selected;
-                this.article.tags = tags_data;
+                var tags = [];
+                for(x in this.article.tags){
+                    tags.push(this.article.tags[x].name)
+                }
+                this.article.tags = tags;
                 apiRequest.send('PUT', '/articles/' + this.article.id, this.article).then(response => {
                     CandyEvent.$emit('notification', {
                         level: 'success'
@@ -114,11 +118,12 @@
                 apiRequest.send('get', '/articles/' + id, {})
                 .then(response => {
                     this.article = response;
-                    this.tags = this.article.tags.split(",");
-                    this.tags_data = [];
+                    var tags = this.article.tags.split(",");
+                    var tags_data = [];
                     for(x in tags){
-                        this.tags_data.push({ name : this.tags[x] })
+                        tags_data.push({ name : tags[x] })
                     }
+                    this.article.tags = tags_data;
                     this.loaded = true;
 
                     CandyEvent.$emit('title-changed', {
