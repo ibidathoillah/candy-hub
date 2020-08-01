@@ -44,9 +44,11 @@
             save() {
                 this.article.countries = this.selected;
                 var tags = [];
-                for(let x in this.article.tags){
-                    tags.push(this.article.tags[x].name)
+                for(let i=0;i<this.article.tags.length;i++){
+                    if(this.article.tags[i].name!="")
+                    tags.push(this.article.tags[i].name)
                 }
+
                 this.article.tags = tags;
                 apiRequest.send('PUT', '/articles/' + this.article.id, this.article).then(response => {
                     CandyEvent.$emit('notification', {
