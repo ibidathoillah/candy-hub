@@ -49,6 +49,7 @@
                         <tr>
                             <th style="width: 400px;">Title</th>
                             <th style="width: 200px;">Slug</th>
+                            <th style="width: 100px;">Tags</th>
                             <th>Content</th>
                         </tr>
                     </thead>
@@ -57,15 +58,16 @@
                             <td @click="goTo(row.id)">
                                 {{ row.title }}
                             </td>
-                            <td>
+                            <td @click="goTo(row.id)">
                                 <a href="#">/{{ row.slug }}</a>
                             </td>
-                            <td>
-                                {{ row.body.replace(/<[^>]*>?/gm, '').substring(0,200) }}
+                            <td @click="goTo(row.id)">
+                                <a href="#">/{{ row.tags }}</a>
+                            </td>
+                            <td @click="goTo(row.id)">
+                                {{ req.body == "" ? row.body.replace(/<[^>]*>?/gm, '').substring(0,200) + "..."  : ""  }}
                             </td>
                         </tr>
-
-
                     </tbody>
                     <tfoot class="text-center" v-else>
                         <tr>
