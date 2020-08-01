@@ -43,6 +43,7 @@
             },
             save() {
                 this.article.countries = this.selected;
+                console.log(this.tag)
                 apiRequest.send('PUT', '/articles/' + this.article.id, this.article).then(response => {
                     CandyEvent.$emit('notification', {
                         level: 'success'
