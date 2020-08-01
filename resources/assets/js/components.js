@@ -265,6 +265,14 @@ var includes = [
       'article-edit': 'ArticleEdit',
       'article-create': 'ArticleCreate'
     }
+  },
+  {
+    path: 'order-processing.settings',
+    components: {
+      'settings-table': 'SettingTable',
+      'settings-edit': 'SettingEdit',
+      'settings-create': 'SettingCreate'
+    }
   }
 ]
 

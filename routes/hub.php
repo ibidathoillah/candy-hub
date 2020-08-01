@@ -162,6 +162,16 @@ Route::group([
                 'uses' => 'ArticleController@getArticle',
             ]);
 
+            $router->get('settings', [
+                'as'   => 'hub.settings.index',
+                'uses' => 'SettingController@getSettings',
+            ]);
+            $router->get('settings/{id}', [
+                'as'   => 'hub.settings.edit',
+                'uses' => 'SettingController@getSetting',
+            ]);
+
+
             // Customer routes
             $router->get('customers', [
                 'as'   => 'hub.customers.index',
