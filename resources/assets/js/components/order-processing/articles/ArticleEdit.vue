@@ -43,14 +43,14 @@
             },
             save() {
                 var tags = [];
-                var temp = this.article.tags;
-                for(let i=0;i<this.article.tags.length;i++){
-                    if(this.article.tags[i].name!="")
-                    tags.push(this.article.tags[i].name)
+                var temp = this.article;
+                for(let i=0;i<temp.tags.length;i++){
+                    if(temp.tags[i].name!="")
+                    tags.push(temp.tags[i].name)
                 }
 
-                this.article.tags = tags.toString();
-                apiRequest.send('PUT', '/articles/' + this.article.id, this.article).then(response => {
+                temp.tags = tags.toString();
+                apiRequest.send('PUT', '/articles/' + temp.id, temp).then(response => {
                     CandyEvent.$emit('notification', {
                         level: 'success'
                     });
@@ -60,8 +60,6 @@
                         message: response.message
                     });
                 });
-
-                this.article.tags = temp;
             },
             getFlag: function(locale) {
                 if (locale == 'en') {
