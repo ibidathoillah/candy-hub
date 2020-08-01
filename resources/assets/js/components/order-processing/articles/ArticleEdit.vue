@@ -114,7 +114,7 @@
                 apiRequest.send('get', '/articles/' + id, {})
                 .then(response => {
                     this.article = response;
-                    this.tag = ["lala","po"];
+                    this.tag = [{ name : "tes lala"}, {name:"lala po yes"}];
                     this.loaded = true;
 
                     CandyEvent.$emit('title-changed', {
