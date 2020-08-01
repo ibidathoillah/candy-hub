@@ -114,12 +114,13 @@
                 apiRequest.send('get', '/articles/' + id, {})
                 .then(response => {
                     this.article = response;
-                    this.article.tags = this.article.tags.split(",")
                     this.tags = [];
-                    for(x in this.article.tags){
-                        this.tags.push({ name : this.article.tags[x] })
-                    }
-                    this.article.tags = this.tags;
+                    // this.article.tags = this.article.tags.split(",")
+                    // this.tags = [];
+                    // for(x in this.article.tags){
+                    //     this.tags.push({ name : this.article.tags[x] })
+                    // }
+                    // this.article.tags = this.tags;
                     this.loaded = true;
 
                     CandyEvent.$emit('title-changed', {
@@ -129,6 +130,10 @@
                     document.title = this.article.title + ' Articles';
 
                 }).catch(error => {
+                    CandyEvent.$emit('notification', {
+                        level: 'error',
+                        message: error.message
+                    });
                 });
             }
         }
@@ -158,7 +163,7 @@
                     </div> 
                                     <div class="form-group">
                         <label>Tag</label>
-                        <candy-taggable v-model="article.tags">
+                        <candy-taggable v-model="tags">
                         </candy-taggable>
                     </div> 
                 </div>
