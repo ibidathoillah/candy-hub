@@ -113,6 +113,7 @@
                 apiRequest.send('get', '/articles/' + id, {})
                 .then(response => {
                     this.article = response;
+                    this.tag = ["lala","po"];
                     this.loaded = true;
 
                     CandyEvent.$emit('title-changed', {
@@ -146,12 +147,17 @@
                         <input type="text" class="form-control" v-model="article.slug">
                     </div>
                     <hr>
-                <div class="form-group">
+                    <div class="form-group">
                         <label>Content</label>
                         <candy-textarea :id="'default-content'"
                                         :richtext="true"
                                         v-model="article.body">
                         </candy-textarea>
+                    </div> 
+                                    <div class="form-group">
+                        <label>Tag</label>
+                        <candy-taggable v-model="tag">
+                        </candy-taggable>
                     </div> 
                 </div>
             </div>
