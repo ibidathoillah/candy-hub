@@ -43,6 +43,7 @@
             },
             save() {
                 var tags = [];
+                var temp = this.article.tags;
                 for(let i=0;i<this.article.tags.length;i++){
                     if(this.article.tags[i].name!="")
                     tags.push(this.article.tags[i].name)
@@ -59,6 +60,8 @@
                         message: response.message
                     });
                 });
+
+                this.article.tags = temp;
             },
             getFlag: function(locale) {
                 if (locale == 'en') {
