@@ -48,7 +48,7 @@
                     tags.push(this.article.tags[i].name)
                 }
 
-                this.article.tags = tags;
+                this.article.tags = tags.toString();
                 apiRequest.send('PUT', '/articles/' + this.article.id, this.article).then(response => {
                     CandyEvent.$emit('notification', {
                         level: 'success'
