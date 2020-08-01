@@ -42,7 +42,6 @@
                 });
             },
             save() {
-                this.article.countries = this.selected;
                 var tags = [];
                 for(let i=0;i<this.article.tags.length;i++){
                     if(this.article.tags[i].name!="")
@@ -122,9 +121,12 @@
                     this.article = response;
                     var tags = this.article.tags.split(",");
                     var tags_data = [];
-                    for(let x in tags){
+
+                    for(let i=0;i<tags;i++){
+                        if(tags[i]!="")
                         tags_data.push({ name : tags[x] })
                     }
+
                     this.article.tags = tags_data;
                     this.loaded = true;
 
