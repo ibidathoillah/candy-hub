@@ -122,7 +122,7 @@
                     var tags = this.article.tags.split(",");
                     var tags_data = [];
 
-                    for(let i=0;i<tags;i++){
+                    for(let i=0;i<tags.length;i++){
                         if(tags[i]!="")
                         tags_data.push({ name : tags[x] })
                     }
