@@ -1,90 +1,178 @@
+<!--
+  Product Edit
+  This component is responsible for displaying the product edit page.
+ -->
 <script>
     export default {
         data() {
             return {
+                title: '',
                 loaded: false,
-                rows: [],
-                params: {
-                    per_page: 50,
-                    current_page: 1,
-                },
-                pagination: {}
+                countries: [],
+                selected: [],
+                article: {},
+                keywords: ''
             }
         },
+        props: {
+            id: {
+                type: String,
+                required: true
+            }
+        },
+        created() {
+            this.load(this.id);
+            this.countryCache = [];
+        },
         mounted() {
-            this.load();
-            CandyEvent.$on('article-added', product => {
-                this.load();
+            CandyEvent.$on('settings-updated', event => {
+                this.loaded = false;
+                this.load(this.id);
             });
+
+            Dispatcher.add('save-settings', this);
         },
         methods: {
-            load() {
-                apiRequest.send('get', '/articles', {}, this.params)
-                    .then(response => {
-                        this.rows = response.data;
-                        this.pagination = response.pagination;
-                        this.loaded = true;
+            save() {
+                console.log("saved settings")
+            },
+            getFlag: function(locale) {
+                if (locale == 'en') {
+                    locale = 'gb';
+                }
+                return 'flag-icon-' + locale.toLowerCase();
+            },
+            selectAll(region) {
+                _.each(region.countries.data, country => {
+                    if (!_.includes(this.selected, country.id)) {
+                        this.selected.push(country.id);
+                    }
+                });
+            },
+            selectedCount(region) {
+                var count = 0;
+                _.each(region.countries.data, country => {
+                    if (_.includes(this.selected, country.id)) {
+                        count++;
+                    }
+                });
+                return count;
+            },
+            deselect(region) {
+                var indexes = [],
+                    selected = [];
+
+                var ids = _.map(region.countries.data, item => {
+                    return item.id;
+                });
+
+                this.selected = _.filter(this.selected, item => {
+                    return !ids.includes(item);
+                });
+            },
+            isSelected(id) {
+                return this.selected.includes(id);
+            },
+            getCache() {
+                return JSON.parse(JSON.stringify(this.countryCache));
+            },
+            search() {
+                this.countries = this.getCache();
+                if (this.keywords) {
+                    this.countries = this.countries.filter(region => {
+                        region.countries.data = _.filter(region.countries.data, country => {
+                            return !(country.name.en.indexOf(this.keywords) == -1);
+                        });
+                        return region.countries.data.length;
                     });
+                }
             },
-            changePage(page) {
-                this.loaded = false;
-                this.params.current_page = page;
-                this.load();
-            },
-            goTo: function (id) {
-                location.href = route('hub.article.edit', id);
-            },
+            /**
+             * Loads the product by its encoded ID
+             * @param  {String} id
+             */
+            load(id) {
+                apiRequest.send('get', '/articles/', {})
+                .then(response => {
+
+                    this.loaded = true;
+ 
+                }).catch(error => {
+                    CandyEvent.$emit('notification', {
+                        level: 'error',
+                        message: error.message
+                    });
+                });
+            }
         }
     }
 </script>
 
 <template>
     <div>
-
-        <!-- Tab panes -->
-        <div class="tab-content section block">
-            <div role="tabpanel" class="tab-pane active" id="all-article">
-                <table class="table table-striped collection-table">
-                    <thead>
-                        <tr>
-                            <th style="width: 400px;">Title</th>
-                            <th style="width: 200px;">Slug</th>
-                            <th style="width: 100px;">Tags</th>
-                            <th>Content</th>
-                        </tr>
-                    </thead>
-                    <tbody v-if="loaded">
-                        <tr class="clickable" v-for="row in rows">
-                            <td @click="goTo(row.id)">
-                                {{ row.title }}
-                            </td>
-                            <td @click="goTo(row.id)">
-                                <a href="#">/{{ row.slug }}</a>
-                            </td>
-                            <td @click="goTo(row.id)">
-                                <a href="#">/{{ row.tags }}</a>
-                            </td>
-                            <td @click="goTo(row.id)">
-                                {{ req.body == "" ? row.body.replace(/<[^>]*>?/gm, '').substring(0,200) + "..."  : ""  }}
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tfoot class="text-center" v-else>
-                        <tr>
-                            <td colspan="25" style="padding:40px;">
-                                <div class="loading">
-                                    <span><fa icon="spinner" size="3x" spin /></span> <strong>Loading</strong>
-                                </div>
-                            </td>
-                        </tr>
-                    </tfoot>
-                </table>
-
-                <div class="text-center">
-                    <candy-table-paginate :pagination="pagination" @change="changePage"></candy-table-paginate>
+        <template v-if="loaded">
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="form-control" v-model="article.title">
+                    </div>
+                    <div class="form-group">
+                        <label>Slug</label>
+                        <input type="text" class="form-control" v-model="article.slug">
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label>Content</label>
+                        <candy-textarea :id="'default-content'"
+                                        :richtext="true"
+                                        v-model="article.body">
+                        </candy-textarea>
+                    </div> 
+                                    <div class="form-group">
+                        <label>Tag</label>
+                        <candy-taggable v-model="article.tags">
+                        </candy-taggable>
+                    </div> 
                 </div>
             </div>
+        </template>
 
+        <div v-else>
+            <div class="page-loading loading">
+                <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+            </div>
         </div>
+
     </div>
+
 </template>
+
+<style lang="scss" scoped>
+    .region {
+        header {
+            margin:2em 0 1em 0;
+        }
+        ul {
+            -moz-column-count: 4;
+            -moz-column-gap: 20px;
+            -webkit-column-count: 4;
+            -webkit-column-gap: 20px;
+            column-count: 4;
+            column-gap: 20px;
+            list-style:none;
+            padding:0;
+            label {
+                margin-bottom:0;
+                border-bottom:1px solid rgb(224, 224, 224);
+                padding:5px 0;
+                &.selected {
+                    border-color:rgb(104, 174, 255);
+                }
+                input {
+                    margin-right:5px;
+                }
+            }
+        }
+    }
+</style>
