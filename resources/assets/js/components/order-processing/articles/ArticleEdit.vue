@@ -117,7 +117,7 @@
                     this.tags = this.article.tags.split(",");
                     this.tags_data = [];
                     for(x in tags){
-                        this.tags_data.push({ name : tags[x] })
+                        this.tags_data.push({ name : this.tags[x] })
                     }
                     this.loaded = true;
 
