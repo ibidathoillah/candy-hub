@@ -114,7 +114,12 @@
                 apiRequest.send('get', '/articles/' + id, {})
                 .then(response => {
                     this.article = response;
-                    this.tag = [{ name : "tes lala"}, {name:"lala po yes"}];
+                    this.article.tags = this.article.tags.split(",")
+                    this.tags = [];
+                    for(x in this.article.tags){
+                        this.tags.push({ name : this.article.tags[x] })
+                    }
+                    this.article.tags = this.tags;
                     this.loaded = true;
 
                     CandyEvent.$emit('title-changed', {
@@ -123,10 +128,6 @@
 
                     document.title = this.article.title + ' Articles';
 
-                    // apiRequest.send('GET', 'currencies/' + this.order.currency).then(response => {
-                    //     this.currency = response.data;
-                    //     this.loaded = true;
-                    // });
                 }).catch(error => {
                 });
             }

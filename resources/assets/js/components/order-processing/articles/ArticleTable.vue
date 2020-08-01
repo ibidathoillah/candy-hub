@@ -61,21 +61,8 @@
                                 <a href="#">/{{ row.slug }}</a>
                             </td>
                             <td>
-                                {{ row.body }}
+                                {{ row.body.replace(/<[^>]*>?/gm, '').substring(0,200) }}
                             </td>
-                            <!-- <td>
-                                <span v-for="(region, index) in getRegions(row)">{{ region }}<span v-if="index < getRegions(row).length - 1">, </span></span>
-                            </td>
-                            <td>
-                                <template v-if="row.countries.data.length > 5">
-                                    {{ row.countries.data.length }} Countries
-                                </template>
-                                <template v-else>
-                                    <span v-for="(country, index) in row.countries.data">
-                                        {{ country.name }}<span v-if="index < row.countries.data.length - 1">, </span>
-                                    </span>
-                                </template>
-                            </td> -->
                         </tr>
 
 
