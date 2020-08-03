@@ -7,7 +7,7 @@
     <meta name="channel" content="@channel()">
     <meta name="locale" content="{{ $app->getLocale() ?? 'en' }}">
 
-    <title>@if(isset($title)){{ $title }} -@endif GetCandy</title>
+    <title>@if(isset($title)){{ $title }} -@endif Treasury</title>
     @include('hub::partials.head')
     @routes
   </head>

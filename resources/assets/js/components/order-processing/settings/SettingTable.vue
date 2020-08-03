@@ -113,7 +113,8 @@
         <template v-if="loaded">
             <div class="panel">
                 <div class="panel-body">
-                    <div class="form-group">
+                    <h3>// TODO: Input for Setting FAQ, Terms, and any static contents</h3>
+                    <!-- <div class="form-group">
                         <label>Title</label>
                         <input type="text" class="form-control" v-model="article.title">
                     </div>
@@ -133,7 +134,7 @@
                         <label>Tag</label>
                         <candy-taggable v-model="article.tags">
                         </candy-taggable>
-                    </div> 
+                    </div>  -->
                 </div>
             </div>
         </template>

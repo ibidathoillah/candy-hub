@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>GetCandy - Login</title>
+    <title>Treasury -Login</title>
 
     <link rel="shortcut icon" type="image/png" href="{{ url('candy-hub/images/favicon.png') }}">
 
