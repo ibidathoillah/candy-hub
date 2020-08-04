@@ -65,7 +65,7 @@
                                 <a href="#">/{{ row.tags }}</a>
                             </td>
                             <td @click="goTo(row.id)">
-                                {{ req.body == "" ? row.body.replace(/<[^>]*>?/gm, '').substring(0,200) + "..."  : ""  }}
+                                {{ row.body == "" ? row.body.replace(/<[^>]*>?/gm, '').substring(0,200) + "..."  : ""  }}
                             </td>
                         </tr>
                     </tbody>
