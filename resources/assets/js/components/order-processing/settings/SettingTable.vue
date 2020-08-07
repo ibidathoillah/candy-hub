@@ -104,6 +104,29 @@
                 <div class="panel-body">
                     <h3>// TODO: Input for Setting FAQ, Terms, and any static contents</h3>
                     <h4>{{ JSON.stringify(settings) }}</h4>
+                    <div v-for="set in settings">
+                        <div class="form-group" >
+                            <label>Nama</label>
+                            <input type="text" class="form-control" v-model="set.name">
+                        </div>
+                        <div class="form-group" >
+                            <label>Isi</label>
+                            <input type="text" class="form-control" v-model="set.value">
+                        </div>
+                        <div class="form-group" >
+                            <label>Link</label>
+                            <input type="text" class="form-control" v-model="set.url">
+                        </div> 
+                        <div class="form-group" >
+                            <label>URL Gambar</label>
+                            <input type="text" class="form-control" v-model="set.image_url">
+                        </div>
+                        
+                        <div v-if="settings.sub_settings" v-for="set2 in settings.sub_settings">
+                            <label>Isi</label>
+                            <input type="text" class="form-control" v-model="set.value">
+                        </div>
+                    </div>
                     <!-- <div class="form-group">
                         <label>Title</label>
                         <input type="text" class="form-control" v-model="article.title">
