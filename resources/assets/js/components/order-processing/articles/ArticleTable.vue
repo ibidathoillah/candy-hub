@@ -65,7 +65,7 @@
                                 <a href="#">{{ row.tags.toString() }}</a>
                             </td>
                             <td @click="goTo(row.id)">
-                                {{ row.body == "" ? row.body.substring(0,200) + "..."  : ""  }}
+                                {{ row.body != "" ? row.body.substring(0,200) + "..."  : ""  }}
                             </td>
                         </tr>
                     </tbody>
