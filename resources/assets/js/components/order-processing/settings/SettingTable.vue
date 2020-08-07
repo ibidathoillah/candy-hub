@@ -8,9 +8,8 @@
             return {
                 title: '',
                 loaded: false,
-                countries: [],
                 selected: [],
-                article: {},
+                settings: {},
                 keywords: ''
             }
         },
@@ -76,25 +75,15 @@
             getCache() {
                 return JSON.parse(JSON.stringify(this.countryCache));
             },
-            search() {
-                this.countries = this.getCache();
-                if (this.keywords) {
-                    this.countries = this.countries.filter(region => {
-                        region.countries.data = _.filter(region.countries.data, country => {
-                            return !(country.name.en.indexOf(this.keywords) == -1);
-                        });
-                        return region.countries.data.length;
-                    });
-                }
-            },
             /**
              * Loads the product by its encoded ID
              * @param  {String} id
              */
             load(id) {
-                apiRequest.send('get', '/articles/', {})
+                apiRequest.send('get', '/settings/', {})
                 .then(response => {
 
+                    this.settings = response;
                     this.loaded = true;
  
                 }).catch(error => {
@@ -114,6 +103,7 @@
             <div class="panel">
                 <div class="panel-body">
                     <h3>// TODO: Input for Setting FAQ, Terms, and any static contents</h3>
+                    <h4>{{ JSON.stringify(settings) }}</h4>
                     <!-- <div class="form-group">
                         <label>Title</label>
                         <input type="text" class="form-control" v-model="article.title">
