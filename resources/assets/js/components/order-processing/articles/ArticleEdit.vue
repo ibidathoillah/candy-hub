@@ -125,7 +125,7 @@
 
                     for(let i=0;i<tags.length;i++){
                         if(tags[i]!="")
-                        tags_data.push({ name : tags[x] })
+                        tags_data.push({ name : tags[i] })
                     }
 
                     this.article.tags = tags_data;
