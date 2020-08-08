@@ -55,7 +55,7 @@
             },
             del(a){
                 if(window.confirm("Apakah kamu yakin untuk menghapus pengaturan" +a.name)){
-                    this.request.send('delete', '/settings/' + a.name)
+                    this.request.send('delete', '/sites-settings/' + a.name)
                     .then(response => {
                         CandyEvent.$emit('notification', {
                             level: 'success'
@@ -88,7 +88,7 @@
                 
             },
             save(data) {
-                this.request.send('put', '/settings/' + data.name, data)
+                this.request.send('put', '/sites-settings/' + data.name, data)
                 .then(response => {
                     CandyEvent.$emit('notification', {
                         level: 'success'
@@ -105,7 +105,7 @@
              * @param  {String} id
              */
             load(id) {
-                this.request.send('get', '/settings/', {})
+                this.request.send('get', '/sites-settings/', {})
                 .then(response => {
 
                     this.settings = response;
