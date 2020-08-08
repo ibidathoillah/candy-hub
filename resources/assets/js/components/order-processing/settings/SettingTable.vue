@@ -42,7 +42,17 @@
         methods: {
             desc(e) {
                 console.log("saved settings", e)
-                $($(e.target).next()[0]).show('slow')
+                var cur = $(e.target);
+                var next = $(cur.next()[0]);
+
+                if(next.is(":visible")){
+                    next.hide('slow');
+                    cur.text("+ Tambah Deskripsi")
+                }else {
+                    next.show('slow');
+                    cur.text("- Tutup")
+                }
+                
             },
             save() {
                 console.log("saved settings")
@@ -78,15 +88,16 @@
                     <div v-for="set in settings" style="margin-bottom: 50px;">
                         <div class="form-group" >
                             <input type="text" class="form-control" placeholder="Nama" v-model="set.name">
-                             <a href="#" @click="desc($event)">Tambah Deskripsi</a>
+                            <input type="text" class="form-control" :placeholder="'Link '" v-model="set.url">
+                            <input type="text" class="form-control" :placeholder="'URL Gambar '"  v-model="set.image_url">
+                            <a href="#" @click="desc($event)">+ Tambah Deskripsi</a>
                              <div style="display:none"><candy-textarea
                                         :placeholder="'Isi'" 
                                         :id="'default-content'"
                                         :richtext="true"
                                         v-model="set.value">
                             </candy-textarea></div>
-                            <input type="text" class="form-control" :placeholder="'Link '" v-model="set.url">
-                            <input type="text" class="form-control" :placeholder="'URL Gambar '"  v-model="set.image_url">
+
                             <div style="padding: 20px;padding-top:5px;zoom: 0.7;">
                             <button class="btn btn-success" style="float:right;margin-bottom:10px" @click="showSub = true">Tambah Detail</button>
                             
@@ -108,15 +119,15 @@
                             <div style="margin-bottom:5px" v-if="set.sub_settings" v-for="set2 in set.sub_settings">
 
                             <input type="text" class="form-control" placeholder="Nama" v-model="set2.name">
-                            <a href="#" @click="desc($event)">Tambah Deskripsi</a>
+                            <input type="text" class="form-control" :placeholder="'Link '" v-model="set2.url">
+                            <input type="text" class="form-control" :placeholder="'URL Gambar '"  v-model="set2.image_url">
+                             <a href="#" @click="desc($event)">+ Tambah Deskripsi</a>
                              <div style="display:none"><candy-textarea
                                         :placeholder="'Isi'" 
                                         :id="'default-content'"
                                         :richtext="true"
                                         v-model="set2.value">
                             </candy-textarea></div>
-                            <input type="text" class="form-control" :placeholder="'Link '" v-model="set2.url">
-                            <input type="text" class="form-control" :placeholder="'URL Gambar '"  v-model="set2.image_url">
                                 <button class="btn btn-warning" style="float:right">Hapus</button>
                             </div>
                             </div>
