@@ -50,6 +50,7 @@
                 CandyEvent.$emit('notification', {
                         level: 'success'
                 });
+                this.save(this.currentSet);
                 this.currentSub = {};
                 this.showSub = false;
             },
@@ -72,7 +73,10 @@
 
             },
             del2(a,b){
-                a.sub_settings = a.sub_settings.filter(x => x.name!=b.name)
+                 if(window.confirm("Apakah kamu yakin untuk menghapus sub " +b.name)){
+                     a.sub_settings = a.sub_settings.filter(x => x.name!=b.name);
+                     this.save(a);
+                 }
             },
             desc(e) {
                 var cur = $(e.target);
