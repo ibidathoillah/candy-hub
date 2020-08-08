@@ -104,6 +104,7 @@
                 <div class="panel-body">
                     <h3>// TODO: Input for Setting FAQ, Terms, and any static contents</h3>
                     <h4>{{ JSON.stringify(settings) }}</h4>
+                    <h3>tes</h3>
                     <div v-for="set in settings">
                         <div class="form-group" >
                             <label>Nama</label>
