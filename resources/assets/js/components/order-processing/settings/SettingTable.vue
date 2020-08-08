@@ -94,9 +94,9 @@
                     <div v-for="set in settings" style="margin-bottom: 50px;">
                          <label>Pengaturan {{set.name}}</label>
                         <div class="form-group" >
-                            <input type="text" class="form-control" placeholder="Nama" v-model="set.name">
-                            <input type="text" class="form-control" :placeholder="'Link '" v-model="set.url">
-                            <input type="text" class="form-control" :placeholder="'URL Gambar '"  v-model="set.image_url">
+                            <div class="input-group input-group-full"><span class="input-group-addon">Nama</span>  <input type="text" class="form-control" placeholder="Nama" v-model="set.name"></div>
+                            <div class="input-group input-group-full"><span class="input-group-addon">Link</span>  <input type="text" class="form-control" placeholder="Link" v-model="set.url"></div>
+                           <div class="input-group input-group-full"><span class="input-group-addon">URL Gambar</span>  <input type="text" class="form-control" placeholder="URL Gambar" v-model="set.image_url"></div>
                             <a href="#" @click="desc($event)">+ Tambah Deskripsi</a>
                              <div style="display:none"><candy-textarea
                                         :placeholder="'Isi'" 
@@ -107,9 +107,7 @@
 
                             <div style="padding: 20px;padding-top:5px;zoom: 0.7;">
                             <button class="btn btn-success" @click="showSub = true">Tambah Detail</button>
-                            
-
-                                    <candy-modal :title="'Buat Sub Pengaturan'"  v-show="showSub" size="modal-md" @closed="showSub = false">
+                                    <candy-modal :title="'Buat Sub Pengaturan' + [set.name]"  v-show="showSub" size="modal-md" @closed="showSub = false">
                                         <div slot="body">
                                             <div class="form-group">
                                                 <label for="title">Enter the title sub.</label>
@@ -125,9 +123,9 @@
 
                             <div style="margin-bottom:5px" v-if="set.sub_settings" v-for="set2 in set.sub_settings">
                             <label>Sub Pengaturan - {{set2.name}}</label>
-                            <input type="text" class="form-control" placeholder="Nama" v-model="set2.name">
-                            <input type="text" class="form-control" :placeholder="'Link '" v-model="set2.url">
-                            <input type="text" class="form-control" :placeholder="'URL Gambar '"  v-model="set2.image_url">
+                            <div class="input-group input-group-full"><span class="input-group-addon">Nama</span>  <input type="text" class="form-control" placeholder="Nama" v-model="set2.name"></div>
+                            <div class="input-group input-group-full"><span class="input-group-addon">Link</span>  <input type="text" class="form-control" placeholder="Link" v-model="set2.url"></div>
+                           <div class="input-group input-group-full"><span class="input-group-addon">URL Gambar</span>  <input type="text" class="form-control" placeholder="URL Gambar" v-model="set2.image_url"></div>
                              <a href="#" @click="desc($event)">+ Tambah Deskripsi</a>
                              <div style="display:none"><candy-textarea
                                         :placeholder="'Isi'" 
