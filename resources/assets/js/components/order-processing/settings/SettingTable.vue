@@ -109,14 +109,33 @@
                             <button class="btn btn-success" @click="showSub = true">Tambah Detail</button>
                                     <candy-modal :title="'Buat Sub Pengaturan' + [set.name]"  v-show="showSub" size="modal-md" @closed="showSub = false">
                                         <div slot="body">
-                                            <div class="form-group">
-                                                <label for="title">Enter the title sub.</label>
-                                                <input type="text" id="title" class="form-control" v-model="currentSub.title">
-                                                <span class="text-danger" v-if="request.getError('title')" v-text="request.getError('title')"></span>
-                                            </div>
+                <div class="form-group">
+                    <label for="name">Nama Pengaturan</label>
+                    <input type="text" id="name" class="form-control" v-model="currentSub.name">
+                    <span class="text-danger" v-if="request.getError('name')" v-text="request.getError('name')"></span>
+                </div>
+                 <div class="form-group">
+                    <label for="value">Isi</label>
+                    <candy-textarea
+                                        :placeholder="'Isi'" 
+                                        :id="'default-content'"
+                                        :richtext="true"
+                                        v-model="currentSub.value"></candy-textarea>
+                    <span class="text-danger" v-if="request.getError('value')" v-text="request.getError('value')"></span>
+                </div>
+                <div class="form-group">
+                    <label for="url">Link URL</label>
+                    <input type="text" id="url" class="form-control" v-model="currentSub.url">
+                    <span class="text-danger" v-if="request.getError('url')" v-text="request.getError('url')"></span>
+                </div>
+                <div class="form-group">
+                    <label for="image_url">URL Gambar</label>
+                    <input type="text" id="image_url" class="form-control" v-model="currentSub.image_url">
+                    <span class="text-danger" v-if="request.getError('image_url')" v-text="request.getError('image_url')"></span>
+                </div>
                                         </div>
                                         <template slot="footer">
-                                            <button type="button" class="btn btn-primary" @click="save">Create sub</button>
+                                            <button type="button" class="btn btn-primary" @click="createsub">Create sub</button>
                                         </template>
                                     </candy-modal>
 

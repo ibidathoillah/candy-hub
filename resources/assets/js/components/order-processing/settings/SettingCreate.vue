@@ -53,8 +53,12 @@
                     <span class="text-danger" v-if="request.getError('name')" v-text="request.getError('name')"></span>
                 </div>
                  <div class="form-group">
-                    <label for="value">Judul</label>
-                    <input type="text" id="value" class="form-control" v-model="settings.value">
+                    <label for="value">Isi</label>
+                    <candy-textarea
+                                        :placeholder="'Isi'" 
+                                        :id="'default-content'"
+                                        :richtext="true"
+                                        v-model="settings.value"></candy-textarea>
                     <span class="text-danger" v-if="request.getError('value')" v-text="request.getError('value')"></span>
                 </div>
                 <div class="form-group">
