@@ -12,7 +12,8 @@
                 settings: {},
                 currentSub: {},
                 keywords: '',
-                showSub: false
+                showSub: false,
+                request : apiRequest,
             }
         },
         props: {
@@ -47,7 +48,7 @@
              * @param  {String} id
              */
             load(id) {
-                apiRequest.send('get', '/settings/', {})
+                request.send('get', '/settings/', {})
                 .then(response => {
 
                     this.settings = response;
