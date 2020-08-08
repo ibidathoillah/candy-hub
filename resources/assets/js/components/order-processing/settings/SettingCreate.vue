@@ -18,7 +18,7 @@
         },
         methods: {
             save() {
-                this.request.send('post', '/settings', this.settings)
+                this.request.send('post', '/sites-settings', this.settings)
                 .then(response => {
                     CandyEvent.$emit('notification', {
                         level: 'success'
