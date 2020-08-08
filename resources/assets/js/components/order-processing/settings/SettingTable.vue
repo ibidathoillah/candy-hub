@@ -45,22 +45,31 @@
                 if(!this.currentSet.sub_settings){
                     this.currentSet.sub_settings = [];
                 }
-                this.currentSet.sub_settings.push(this.currentSub);
+                var data = this.currentSub;
+                this.currentSet.sub_settings.push(data);
+                CandyEvent.$emit('notification', {
+                        level: 'success'
+                });
+                this.currentSub = {};
+                this.showSub = false;
             },
             del(a){
-                 this.request.send('delete', '/settings/' + a.name)
-                .then(response => {
-                    CandyEvent.$emit('notification', {
-                        level: 'success'
-                    });
-                    this.settings = this.settings.filter(x => x.id!=a.id)
+                if(window.confirm("Apakah kamu yakin untuk menghapus pengaturan" +a.name)){
+                    this.request.send('delete', '/settings/' + a.name)
+                    .then(response => {
+                        CandyEvent.$emit('notification', {
+                            level: 'success'
+                        });
+                        this.settings = this.settings.filter(x => x.name!=a.name)
 
-                }).catch(response => {
-                    CandyEvent.$emit('notification', {
-                        level: 'error',
-                        message: 'Missing / Invalid fields'
+                    }).catch(response => {
+                        CandyEvent.$emit('notification', {
+                            level: 'error',
+                            message: 'Missing / Invalid fields'
+                        });
                     });
-                });
+                }
+
             },
             del2(a,b){
                 a.sub_settings = a.sub_settings.filter(x => x.id!=b.id)
