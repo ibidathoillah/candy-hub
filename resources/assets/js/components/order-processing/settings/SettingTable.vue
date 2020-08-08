@@ -74,7 +74,8 @@
                     <div v-for="set in settings" style="margin-bottom: 50px;">
                         <div class="form-group" >
                             <input type="text" class="form-control" placeholder="Nama" v-model="set.name">
-                             <candy-textarea
+                             <a href="#" @click="set.open = true">Tambah Deskripsi</a>
+                             <candy-textarea v-if="set.open"
                                         :placeholder="'Isi'" 
                                         :id="'default-content'"
                                         :richtext="true"
@@ -101,7 +102,8 @@
 
 
                             <div style="margin-bottom:5px" v-if="set.sub_settings" v-for="set2 in set.sub_settings">
-                            <candy-textarea
+                            <a href="#" @click="set2.open = true">Tambah Deskripsi</a>
+                            <candy-textarea v-if="set2.open"
                                         :placeholder="'Isi'" 
                                         :id="'default-content'"
                                         :richtext="true"
