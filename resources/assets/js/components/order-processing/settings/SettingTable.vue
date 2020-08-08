@@ -14,6 +14,7 @@
                 keywords: '',
                 showSub: false,
                 request : apiRequest,
+                currentSet: {}
             }
         },
         props: {
@@ -107,24 +108,7 @@
         <template v-if="loaded">
             <div class="panel">
                 <div class="panel-body">
-                    <!-- <h4>{{ JSON.stringify(settings) }}</h4> -->
-                    <div v-for="set in settings">
-                         <h3>Pengaturan {{set.name}}</h3>
-                        <div class="form-group" >
-                            <div class="input-group input-group-full"><span class="input-group-addon">Nama</span>  <input type="text" class="form-control" placeholder="Nama" v-model="set.name"></div>
-                            <div class="input-group input-group-full"><span class="input-group-addon">Link</span>  <input type="text" class="form-control" placeholder="Link" v-model="set.url"></div>
-                           <div class="input-group input-group-full"><span class="input-group-addon">URL Gambar</span>  <input type="text" class="form-control" placeholder="URL Gambar" v-model="set.image_url"></div>
-                            <a @click="desc($event)">+ Tambah Deskripsi</a>
-                             <div style="display:none"><candy-textarea
-                                        :placeholder="'Isi'" 
-                                        :id="'default-content'"
-                                        :richtext="true"
-                                        v-model="set.value">
-                            </candy-textarea></div>
-
-                            <div style="padding: 20px;padding-top:5px;zoom: 0.7;">
-                            <button class="btn btn-success" @click="showSub = true">Tambah Detail</button>
-                                    <candy-modal :title="'Buat Sub Pengaturan' + [set.name]"  v-show="showSub" size="modal-md" @closed="showSub = false">
+                    <candy-modal :title="'Buat Sub Pengaturan' + [currentSet.name]"  v-show="showSub" size="modal-md" @closed="showSub = false">
                                         <div slot="body">
                 <div class="form-group">
                     <label for="name">Nama Pengaturan</label>
@@ -155,8 +139,23 @@
                                             <button type="button" class="btn btn-primary" @click="createsub">Create sub</button>
                                         </template>
                                     </candy-modal>
+                    <!-- <h4>{{ JSON.stringify(settings) }}</h4> -->
+                    <div v-for="set in settings">
+                         <h3>Pengaturan {{set.name}}</h3>
+                        <div class="form-group" >
+                            <div class="input-group input-group-full"><span class="input-group-addon">Nama</span>  <input type="text" class="form-control" placeholder="Nama" v-model="set.name"></div>
+                            <div class="input-group input-group-full"><span class="input-group-addon">Link</span>  <input type="text" class="form-control" placeholder="Link" v-model="set.url"></div>
+                           <div class="input-group input-group-full"><span class="input-group-addon">URL Gambar</span>  <input type="text" class="form-control" placeholder="URL Gambar" v-model="set.image_url"></div>
+                            <a @click="desc($event)">+ Tambah Deskripsi</a>
+                             <div style="display:none"><candy-textarea
+                                        :placeholder="'Isi'" 
+                                        :id="'default-content'"
+                                        :richtext="true"
+                                        v-model="set.value">
+                            </candy-textarea></div>
 
-
+                            <div style="padding: 20px;padding-top:5px;zoom: 0.7;">
+                            <button class="btn btn-success" @click="showSub = true;currentSet=set">Tambah Detail</button>
                             <div style="margin-bottom:5px" v-if="set.sub_settings" v-for="set2 in set.sub_settings">
                             <label>Sub Pengaturan - {{set2.name}}</label>
                             <div class="input-group input-group-full"><span class="input-group-addon">Nama</span>  <input type="text" class="form-control" placeholder="Nama" v-model="set2.name"></div>
