@@ -110,14 +110,14 @@
                             <input type="text" class="form-control" :placeholder="'Isi ' + [[ set.name ]]" v-model="set.value">
                             <input type="text" class="form-control" :placeholder="'Link ' + [[ set.name ]]" v-model="set.url">
                             <input type="text" class="form-control" :placeholder="'URL Gambar ' + [[ set.name ]]"  v-model="set.image_url">
-                            <div style="padding:20px">
-                            <button class="btn btn-success">Tambah Sub {{set.name}}</button>
-                            <div v-if="set.sub_settings" v-for="set2 in set.sub_settings">
+                            <div style="padding: 20px;padding-top:5px;zoom: 0.7;">
+                            <button class="btn btn-success" style="float:right;margin-bottom:10px">Tambah Sub {{set.name}}</button>
+                            <div style="margin-bottom:5px" v-if="set.sub_settings" v-for="set2 in set.sub_settings">
                             <input type="text" class="form-control" placeholder="Nama" v-model="set2.name">
                             <input type="text" class="form-control" :placeholder="'Isi ' + [[ set2.name ]]" v-model="set2.value">
                             <input type="text" class="form-control" :placeholder="'Link ' + [[ set2.name ]]" v-model="set2.url">
                             <input type="text" class="form-control" :placeholder="'URL Gambar ' + [[ set2.name ]]"  v-model="set2.image_url">
-                                <button class="btn btn-danger">Hapus {{set2.name}}</button>
+                                <button class="btn btn-warning" style="float:right">Hapus {{set2.name}}</button>
                             </div>
                             </div>
                         </div>

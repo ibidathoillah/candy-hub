@@ -46,5 +46,6 @@
 <template>
     <div>
         <button class="btn btn-success" @click="save"><fa icon="plus" /> Save Settings</button>
+        <button class="btn btn-success" @click="add"><fa icon="plus" /> Save Settings</button>
     </div>
 </template>
