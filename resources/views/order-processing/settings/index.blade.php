@@ -5,8 +5,8 @@
 @endsection
 
 @section('header_title')
-    <small>Settings</small>
-    <h1>Settings</h1>
+    <small>Pengaturan</small>
+    <h1>Pengaturan</h1>
 @endsection
 
 @section('header_actions')
