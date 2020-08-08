@@ -40,6 +40,12 @@
             Dispatcher.add('save-settings', this);
         },
         methods: {
+            del(a){
+                console.log(a)
+            },
+            del2(a,b){
+                console.log(a,b)
+            },
             desc(e) {
                 console.log("saved settings", e)
                 var cur = $(e.target);
@@ -84,8 +90,9 @@
         <template v-if="loaded">
             <div class="panel">
                 <div class="panel-body">
-                    <h4>{{ JSON.stringify(settings) }}</h4>
+                    <!-- <h4>{{ JSON.stringify(settings) }}</h4> -->
                     <div v-for="set in settings" style="margin-bottom: 50px;">
+                         <label>Pengaturan {{set.name}}</label>
                         <div class="form-group" >
                             <input type="text" class="form-control" placeholder="Nama" v-model="set.name">
                             <input type="text" class="form-control" :placeholder="'Link '" v-model="set.url">
@@ -99,7 +106,7 @@
                             </candy-textarea></div>
 
                             <div style="padding: 20px;padding-top:5px;zoom: 0.7;">
-                            <button class="btn btn-success" style="float:right;margin-bottom:10px" @click="showSub = true">Tambah Detail</button>
+                            <button class="btn btn-success" @click="showSub = true">Tambah Detail</button>
                             
 
                                     <candy-modal :title="'Buat Sub Pengaturan'"  v-show="showSub" size="modal-md" @closed="showSub = false">
@@ -117,7 +124,7 @@
 
 
                             <div style="margin-bottom:5px" v-if="set.sub_settings" v-for="set2 in set.sub_settings">
-
+                            <label>Sub Pengaturan - {{set2.name}}</label>
                             <input type="text" class="form-control" placeholder="Nama" v-model="set2.name">
                             <input type="text" class="form-control" :placeholder="'Link '" v-model="set2.url">
                             <input type="text" class="form-control" :placeholder="'URL Gambar '"  v-model="set2.image_url">
@@ -128,11 +135,12 @@
                                         :richtext="true"
                                         v-model="set2.value">
                             </candy-textarea></div>
-                                <button class="btn btn-warning" style="float:right">Hapus</button>
+                                <button class="btn btn-warning" style="float:right" @click="del2($set,$set2)">Hapus</button>
                             </div>
                             </div>
                         </div>
-                        <button class="btn btn-danger">Hapus</button>
+                        <button @click="save($set)"  class="btn btn-primary">Simpan</button> <button class="btn btn-danger"  @click="del($set)">Hapus</button>
+                        <hr/>
                     </div>
                     <!-- <div class="form-group">
                         <label>Title</label>
