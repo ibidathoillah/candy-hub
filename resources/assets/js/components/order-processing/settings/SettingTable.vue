@@ -60,7 +60,7 @@
                         CandyEvent.$emit('notification', {
                             level: 'success'
                         });
-                        this.settings = this.settings.filter(x => x.name!=a.name)
+                        this.settings = this.settings.filter(x => x.id!=a.id)
 
                     }).catch(response => {
                         CandyEvent.$emit('notification', {
@@ -72,7 +72,7 @@
 
             },
             del2(a,b){
-                a.sub_settings = a.sub_settings.filter(x => x.id!=b.id)
+                a.sub_settings = a.sub_settings.filter(x => x.name!=b.name)
             },
             desc(e) {
                 var cur = $(e.target);
