@@ -48,7 +48,7 @@
              * @param  {String} id
              */
             load(id) {
-                request.send('get', '/settings/', {})
+                this.request.send('get', '/settings/', {})
                 .then(response => {
 
                     this.settings = response;
