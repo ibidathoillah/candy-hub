@@ -102,31 +102,26 @@
         <template v-if="loaded">
             <div class="panel">
                 <div class="panel-body">
-                    <h3>// TODO: Input for Setting FAQ, Terms, and any static contents</h3>
                     <h4>{{ JSON.stringify(settings) }}</h4>
-                    <h3>tes</h3>
                     <div v-for="set in settings">
                         <div class="form-group" >
-                            <label>Nama</label>
-                            <input type="text" class="form-control" v-model="set.name">
+                            <label>Pengaturan {{set.name}}</label>
+                            <input type="text" class="form-control" placeholder="Nama" v-model="set.name">
+                            <input type="text" class="form-control" :placeholder="'Isi ' + [[ set.name ]]" v-model="set.value">
+                            <input type="text" class="form-control" :placeholder="'Link ' + [[ set.name ]]" v-model="set.url">
+                            <input type="text" class="form-control" :placeholder="'URL Gambar ' + [[ set.name ]]"  v-model="set.image_url">
+                            <div style="padding:20px">
+                            <button class="btn btn-success">Tambah Sub {{set.name}}</button>
+                            <div v-if="set.sub_settings" v-for="set2 in set.sub_settings">
+                            <input type="text" class="form-control" placeholder="Nama" v-model="set2.name">
+                            <input type="text" class="form-control" :placeholder="'Isi ' + [[ set2.name ]]" v-model="set2.value">
+                            <input type="text" class="form-control" :placeholder="'Link ' + [[ set2.name ]]" v-model="set2.url">
+                            <input type="text" class="form-control" :placeholder="'URL Gambar ' + [[ set2.name ]]"  v-model="set2.image_url">
+                                <button class="btn btn-danger">Hapus {{set2.name}}</button>
+                            </div>
+                            </div>
                         </div>
-                        <div class="form-group" >
-                            <label>Isi</label>
-                            <input type="text" class="form-control" v-model="set.value">
-                        </div>
-                        <div class="form-group" >
-                            <label>Link</label>
-                            <input type="text" class="form-control" v-model="set.url">
-                        </div> 
-                        <div class="form-group" >
-                            <label>URL Gambar</label>
-                            <input type="text" class="form-control" v-model="set.image_url">
-                        </div>
-                        
-                        <div v-if="settings.sub_settings" v-for="set2 in settings.sub_settings">
-                            <label>Isi</label>
-                            <input type="text" class="form-control" v-model="set.value">
-                        </div>
+                        <button class="btn btn-danger">Hapus {{set.name}}</button>
                     </div>
                     <!-- <div class="form-group">
                         <label>Title</label>
