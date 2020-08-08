@@ -50,7 +50,6 @@
                 <div class="form-group">
                     <label for="name">Nama Pengaturan</label>
                     <input type="text" id="name" class="form-control" v-model="settings.name">
-                    <span class="text-info" v-if="settings.name">Your name will be sanitized to: <code>{{ nameUrl }}</code></span>
                     <span class="text-danger" v-if="request.getError('name')" v-text="request.getError('name')"></span>
                 </div>
                  <div class="form-group">

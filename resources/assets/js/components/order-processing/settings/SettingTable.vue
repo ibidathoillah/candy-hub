@@ -10,6 +10,7 @@
                 loaded: false,
                 selected: [],
                 settings: {},
+                currentSub: {},
                 keywords: ''
             }
         },
@@ -68,7 +69,7 @@
             <div class="panel">
                 <div class="panel-body">
                     <h4>{{ JSON.stringify(settings) }}</h4>
-                    <div v-for="set in settings">
+                    <div v-for="set in settings" style="margin-bottom: 50px;">
                         <div class="form-group" >
                             <label>Pengaturan {{set.name}}</label>
                             <!-- <input type="text" class="form-control" placeholder="Nama" v-model="set.name"> -->
@@ -76,16 +77,32 @@
                             <input type="text" class="form-control" :placeholder="'Link ' + [[ set.name ]]" v-model="set.url">
                             <input type="text" class="form-control" :placeholder="'URL Gambar ' + [[ set.name ]]"  v-model="set.image_url">
                             <div style="padding: 20px;padding-top:5px;zoom: 0.7;">
-                            <button class="btn btn-success" style="float:right;margin-bottom:10px">Tambah Sub {{set.name}}</button>
+                            <button class="btn btn-success" style="float:right;margin-bottom:10px" @click="showSub = true">Tambah Sub {{set.name}}</button>
+                            
+
+                                    <candy-modal :title="'Buat Sub Pengaturan' + [[ set.name ]]"  v-show="showSub" size="modal-md" @closed="showSub = false">
+            <div slot="body">
+                <div class="form-group">
+                    <label for="title">Enter the title sub.</label>
+                    <input type="text" id="title" class="form-control" v-model="currentSub.title">
+                    <span class="text-danger" v-if="request.getError('title')" v-text="request.getError('title')"></span>
+                </div>
+            </div>
+            <template slot="footer">
+                <button type="button" class="btn btn-primary" @click="save">Create sub</button>
+            </template>
+        </candy-modal>
+
+
                             <div style="margin-bottom:5px" v-if="set.sub_settings" v-for="set2 in set.sub_settings">
                             <input type="text" class="form-control" :placeholder="'Judul ' + [[ set2.name ]]" v-model="set2.value">
                             <input type="text" class="form-control" :placeholder="'Link ' + [[ set2.name ]]" v-model="set2.url">
                             <input type="text" class="form-control" :placeholder="'URL Gambar ' + [[ set2.name ]]"  v-model="set2.image_url">
-                                <button class="btn btn-warning" style="float:right">Hapus {{set2.name}}</button>
+                                <button class="btn btn-warning" style="float:right">Hapus</button>
                             </div>
                             </div>
                         </div>
-                        <button class="btn btn-danger">Hapus {{set.name}}</button>
+                        <button class="btn btn-danger">Hapus</button>
                     </div>
                     <!-- <div class="form-group">
                         <label>Title</label>
