@@ -2,10 +2,10 @@
 
 return [
 
-    'catalogue_manager' => 'Catalogue Manager',
-    'order_processing'  => 'Order Processing',
+    'catalogue_manager' => 'Manajer Katalog',
+    'order_processing'  => 'Pemrosesan Pesanan',
     'marketing_suite'   => 'Marketing Suite',
-    'reports'           => 'Reports',
-    'settings'          => 'Settings',
+    'reports'           => 'Laporan',
+    'settings'          => 'Pengaturan',
 
 ];

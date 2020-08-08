@@ -2,22 +2,22 @@
 
 return [
     'error' => [
-        '200'            => 'You cannot error on a 200 response code',
+        '200'            => 'Anda tidak bisa membuat kesalahan pada 200 kode respon',
         'unauthorized'   => 'Unauthorized',
-        'wrong_args'     => 'Wrong arguments',
-        'not_found'      => 'Resource not found',
-        'internal'       => 'Internal server error',
-        'forbidden'      => 'Forbidden',
-        'invalid_lang'   => 'Invalid language code {:lang}',
-        'minimum_record' => 'You must have at least 1 enabled record in the database',
-        'expired'        => 'This resource has expired',
+        'wrong_args'     => 'Argumen salah',
+        'not_found'      => 'Sumber daya tidak ditemukan',
+        'internal'       => 'Kesalahan server internal',
+        'forbidden'      => 'Terlarang',
+        'invalid_lang'   => 'Kode bahasa tidak valid {:lang}',
+        'minimum_record' => 'Anda harus memiliki setidaknya 1 record yang diaktifkan dalam database',
+        'expired'        => 'Resource ini telah kadaluarsa',
     ],
     'success' => [
-        'sync' => ':element successfully synced',
+        'sync' => ':element berhasil disinkronkan',
     ],
     'token' => [
-        'missing' => 'Missing authorization token from request',
-        'expired' => 'Authorization token has expired',
-        'invalid' => 'Authorization token is invalid',
+        'missing' => 'Token otorisasi tidak ada dari permintaan',
+        'expired' => 'Token otorisasi telah kadaluarsa',
+        'invalid' => 'Token otorisasi tidak valid',
     ],
 ];

@@ -111,7 +111,7 @@ return [
     |
     */
 
-    'asset_url' => 'This is not a valid url',
+    'asset_url' => 'Ini bukan url yang valid',
     'custom'    => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
