@@ -42,15 +42,30 @@
         },
         methods: {
             createsub(){
+                if(!this.currentSet.sub_settings){
+                    this.currentSet.sub_settings = [];
+                }
+                this.currentSet.sub_settings.push(currentSub);
             },
             del(a){
-                console.log(a)
+                 this.request.send('delete', '/settings/' + data.name)
+                .then(response => {
+                    CandyEvent.$emit('notification', {
+                        level: 'success'
+                    });
+                    this.settings = this.settings.filter(x => x.id!=a.id)
+
+                }).catch(response => {
+                    CandyEvent.$emit('notification', {
+                        level: 'error',
+                        message: 'Missing / Invalid fields'
+                    });
+                });
             },
             del2(a,b){
-                console.log(a,b)
+                this.a.sub_settings = this.a.sub_settings.filter(x => x.id!=b.id)
             },
             desc(e) {
-                console.log("saved settings", e)
                 var cur = $(e.target);
                 var next = $(cur.next()[0]);
 
@@ -69,17 +84,12 @@
                     CandyEvent.$emit('notification', {
                         level: 'success'
                     });
-                    this.create = false;
-                    this.settings = this.baseSettings();
-                    CandyEvent.$emit('settings-added', response.data);
                 }).catch(response => {
                     CandyEvent.$emit('notification', {
                         level: 'error',
                         message: 'Missing / Invalid fields'
                     });
                 });
-
-                console.log("saved settings")
             },
             /**
              * Loads the product by its encoded ID
@@ -108,7 +118,7 @@
         <template v-if="loaded">
             <div class="panel">
                 <div class="panel-body">
-                    <candy-modal :title="'Buat Sub Pengaturan' + [currentSet.name]"  v-show="showSub" size="modal-md" @closed="showSub = false">
+                    <candy-modal :title="'Buat Sub Pengaturan [' + [currentSet.name] +']'"  v-show="showSub" size="modal-md" @closed="showSub = false">
                                         <div slot="body">
                 <div class="form-group">
                     <label for="name">Nama Pengaturan</label>
@@ -136,7 +146,7 @@
                 </div>
                                         </div>
                                         <template slot="footer">
-                                            <button type="button" class="btn btn-primary" @click="createsub">Create sub</button>
+                                            <button type="button" class="btn btn-primary" @click="createsub">Tambahkan Sub Pengaturan</button>
                                         </template>
                                     </candy-modal>
                     <!-- <h4>{{ JSON.stringify(settings) }}</h4> -->
