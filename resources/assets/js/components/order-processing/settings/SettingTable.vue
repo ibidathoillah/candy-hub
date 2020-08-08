@@ -72,16 +72,17 @@
                 <div class="panel-body">
                     <h4>{{ JSON.stringify(settings) }}</h4>
                     <div v-for="set in settings" style="margin-bottom: 50px;">
-                        <div class="form-group" v-if="set.open=false">
+                        <div class="form-group" >
                             <input type="text" class="form-control" placeholder="Nama" v-model="set.name">
-                            <button v-if="set.open==false" href="#" @click="set.open = true">Tambah Deskripsi</button>
-                            <button v-if="set.open==true" href="#" @click="set.open = true">Tutup</button>
-                            <candy-textarea v-if="set2.open==true"
+                             <a href="#" onclick"$($(this).next()[0]).show('slow')">Tambah Deskripsi</a>
+                             <span style="display:hidden">
+                             <candy-textarea v-if="set.open"
                                         :placeholder="'Isi'" 
                                         :id="'default-content'"
                                         :richtext="true"
                                         v-model="set.value">
                             </candy-textarea>
+                             </span>
                             <input type="text" class="form-control" :placeholder="'Link '" v-model="set.url">
                             <input type="text" class="form-control" :placeholder="'URL Gambar '"  v-model="set.image_url">
                             <div style="padding: 20px;padding-top:5px;zoom: 0.7;">
@@ -103,17 +104,19 @@
 
 
                             <div style="margin-bottom:5px" v-if="set.sub_settings" v-for="set2 in set.sub_settings">
-                            <input v-if="set2.open=false" type="text" class="form-control" placeholder="Nama" v-model="set2.name">
-                            <button v-if="set2.open==false" href="#" @click="set2.open = true">Tambah Deskripsi</button>
-                            <button v-if="set2.open==true" href="#" @click="set.open = true">Tutup</button>
-                            <candy-textarea v-if="set2.open==true"
+
+                            <input type="text" class="form-control" placeholder="Nama" v-model="set2.name">
+                            <input type="text" class="form-control" :placeholder="'Link '" v-model="set2.url">
+                            <input type="text" class="form-control" :placeholder="'URL Gambar '"  v-model="set2.image_url">
+                                                         <a href="#" onclick"$($(this).next()[0]).show('slow')">Tambah Deskripsi</a>
+                             <span style="display:hidden">
+                             <candy-textarea v-if="set.open"
                                         :placeholder="'Isi'" 
                                         :id="'default-content'"
                                         :richtext="true"
-                                        v-model="set2.value">
+                                        v-model="set.value">
                             </candy-textarea>
-                            <input type="text" class="form-control" :placeholder="'Link '" v-model="set2.url">
-                            <input type="text" class="form-control" :placeholder="'URL Gambar '"  v-model="set2.image_url">
+                             </span>
                                 <button class="btn btn-warning" style="float:right">Hapus</button>
                             </div>
                             </div>
