@@ -41,7 +41,6 @@
         },
         methods: {
             createsub(){
-                 console.log(this.currentSub)
             },
             del(a){
                 console.log(a)
@@ -63,7 +62,22 @@
                 }
                 
             },
-            save() {
+            save(data) {
+                this.request.send('put', '/settings/' + data.name, data)
+                .then(response => {
+                    CandyEvent.$emit('notification', {
+                        level: 'success'
+                    });
+                    this.create = false;
+                    this.settings = this.baseSettings();
+                    CandyEvent.$emit('settings-added', response.data);
+                }).catch(response => {
+                    CandyEvent.$emit('notification', {
+                        level: 'error',
+                        message: 'Missing / Invalid fields'
+                    });
+                });
+
                 console.log("saved settings")
             },
             /**
@@ -155,11 +169,11 @@
                                         :richtext="true"
                                         v-model="set2.value">
                             </candy-textarea></div>
-                                <button class="btn btn-warning" style="float:right" @click="del2($set,$set2)">Hapus</button>
+                                <button class="btn btn-warning" style="float:right" @click="del2(set,set2)">Hapus</button>
                             </div>
                             </div>
                         </div>
-                        <button @click="save($set)"  class="btn btn-primary">Simpan</button> <button class="btn btn-danger"  @click="del($set)">Hapus</button>
+                        <button @click="save(set)"  class="btn btn-primary">Simpan</button> <button class="btn btn-danger"  @click="del(set)">Hapus</button>
                         <hr/>
                     </div>
                     <!-- <div class="form-group">
