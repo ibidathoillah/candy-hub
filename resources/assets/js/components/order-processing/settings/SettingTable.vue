@@ -40,6 +40,9 @@
             Dispatcher.add('save-settings', this);
         },
         methods: {
+            createsub(){
+                 console.log(this.currentSub)
+            },
             del(a){
                 console.log(a)
             },
