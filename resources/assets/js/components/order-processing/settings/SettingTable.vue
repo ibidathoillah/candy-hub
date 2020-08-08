@@ -42,6 +42,7 @@
         methods: {
             desc(e) {
                 console.log("saved settings", e)
+                $($(e).next()[0]).show('slow')
             },
             save() {
                 console.log("saved settings")
@@ -71,6 +72,11 @@
 <template>
     <div>
         <template v-if="loaded">
+             <v-style>
+                .trumbowyg-box {
+                    display:none;
+                }
+            </v-style>
             <div class="panel">
                 <div class="panel-body">
                     <h4>{{ JSON.stringify(settings) }}</h4>
