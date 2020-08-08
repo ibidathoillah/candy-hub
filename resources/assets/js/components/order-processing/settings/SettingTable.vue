@@ -45,10 +45,10 @@
                 if(!this.currentSet.sub_settings){
                     this.currentSet.sub_settings = [];
                 }
-                this.currentSet.sub_settings.push(currentSub);
+                this.currentSet.sub_settings.push(this.currentSub);
             },
             del(a){
-                 this.request.send('delete', '/settings/' + data.name)
+                 this.request.send('delete', '/settings/' + a.name)
                 .then(response => {
                     CandyEvent.$emit('notification', {
                         level: 'success'
@@ -63,7 +63,7 @@
                 });
             },
             del2(a,b){
-                this.a.sub_settings = this.a.sub_settings.filter(x => x.id!=b.id)
+                a.sub_settings = a.sub_settings.filter(x => x.id!=b.id)
             },
             desc(e) {
                 var cur = $(e.target);
