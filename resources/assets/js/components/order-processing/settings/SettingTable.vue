@@ -72,9 +72,8 @@
                 <div class="panel-body">
                     <h4>{{ JSON.stringify(settings) }}</h4>
                     <div v-for="set in settings" style="margin-bottom: 50px;">
-                        <div class="form-group" >
+                        <div class="form-group" v-if="set.open=false">
                             <input type="text" class="form-control" placeholder="Nama" v-model="set.name">
-                            {{ set.open = false}}
                             <button v-if="set.open==false" href="#" @click="set.open = true">Tambah Deskripsi</button>
                             <button v-if="set.open==true" href="#" @click="set.open = true">Tutup</button>
                             <candy-textarea v-if="set2.open==true"
@@ -104,9 +103,7 @@
 
 
                             <div style="margin-bottom:5px" v-if="set.sub_settings" v-for="set2 in set.sub_settings">
-
-                            <input type="text" class="form-control" placeholder="Nama" v-model="set2.name">
-                            {{ set2.open = false}}
+                            <input v-if="set2.open=false" type="text" class="form-control" placeholder="Nama" v-model="set2.name">
                             <button v-if="set2.open==false" href="#" @click="set2.open = true">Tambah Deskripsi</button>
                             <button v-if="set2.open==true" href="#" @click="set.open = true">Tutup</button>
                             <candy-textarea v-if="set2.open==true"
