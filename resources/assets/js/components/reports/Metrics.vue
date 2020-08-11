@@ -4,7 +4,7 @@
             <div class="col-md-2">
                 <div class="panel">
                     <header class="panel-heading">
-                        <h3 class="metric-title">Sales Today</h3>
+                        <h3 class="metric-title">Penjualan Hari Ini</h3>
                     </header>
                     <div class="panel-body dashboard-figure">
                         <div>
@@ -28,7 +28,7 @@
             <div class="col-md-2">
                 <div class="panel">
                     <header class="panel-heading">
-                        <h3 class="metric-title">Sales this week</h3>
+                        <h3 class="metric-title">Penjualan Minggu Ini</h3>
                     </header>
                     <div class="panel-body dashboard-figure">
                         <div>
@@ -53,7 +53,7 @@
             <div class="col-md-2">
                 <div class="panel">
                     <header class="panel-heading">
-                        <h3 class="metric-title">Sales this month</h3>
+                        <h3 class="metric-title">Penjualan Bulan Ini</h3>
                     </header>
                     <div class="panel-body dashboard-figure">
                         <div class="">
