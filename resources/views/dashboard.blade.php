@@ -17,7 +17,7 @@
         <div class="col-md-6">
             <div class="panel">
                 <header class="panel-heading">
-                    <h3 class="panel-title">Orders totals for last 6 months</h3>
+                    <h3 class="panel-title">Total Pemesanan Selama 6 Bulan</h3>
                 </header>
                 <div class="panel-body">
                     <candy-orders-report initial-style="bar" from="{{ now()->subMonths(6) }}" to="{{ now() }}" :show-controls="false" />
@@ -29,10 +29,10 @@
                 <header class="panel-heading">
                     <div class="row">
                         <div class="col-md-9">
-                            <h3 class="panel-title">Orders / Sales Report</h3>
+                            <h3 class="panel-title">Laporan Pemesanan / Penjualan</h3>
                         </div>
                         <div class="col-md-3">
-                            <a href="{{ route('hub.reports.index') }}">View full report</a>
+                            <a href="{{ route('hub.reports.index') }}">Lihat Laporan Lebih Lengkap</a>
                         </div>
                     </div>
                 </header>

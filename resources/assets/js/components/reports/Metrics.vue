@@ -79,7 +79,7 @@
             <div class="col-md-2">
                 <div class="panel">
                     <header class="panel-heading">
-                        <h3 class="metric-title">Orders today</h3>
+                        <h3 class="metric-title">Pemesanan Hari Ini</h3>
                     </header>
                     <div class="panel-body dashboard-figure">
                         <div class=" ">
@@ -97,7 +97,7 @@
             <div class="col-md-2">
                 <div class="panel">
                     <header class="panel-heading">
-                        <h3 class="metric-title">Orders this week</h3>
+                        <h3 class="metric-title">Pemesanan Minggu Ini</h3>
                     </header>
                     <div class="panel-body dashboard-figure">
                         <div class="">
@@ -117,7 +117,7 @@
             <div class="col-md-2">
                 <div class="panel">
                     <header class="panel-heading">
-                        <h3 class="metric-title">Orders this month</h3>
+                        <h3 class="metric-title">Pemesanan Bulan Ini</h3>
                     </header>
                     <div class="panel-body dashboard-figure">
                         <div class=" ">

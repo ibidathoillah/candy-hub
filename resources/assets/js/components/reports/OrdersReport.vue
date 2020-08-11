@@ -132,7 +132,7 @@
                                     },
                                     scaleLabel: {
                                         display: true,
-                                        labelString: 'Total Value'
+                                        labelString: 'Harga Total'
                                     }
                                 }]
                             }
