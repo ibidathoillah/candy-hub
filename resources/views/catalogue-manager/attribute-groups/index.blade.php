@@ -6,7 +6,7 @@
 @endsection
 
 @section('header_title')
-    <small>Catalogue Manager</small>
+    <small>Manajer Katalog</small>
     <h1>Attribute Groups</h1>
 @endsection
 

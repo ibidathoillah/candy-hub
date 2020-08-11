@@ -8,7 +8,7 @@
 @endsection
 
 @section('header_title')
-    <small>Marketing Suite</small>
+    <small>Strategi Pemasaran</small>
     <h1>Create Discount</h1>
 @endsection
 

@@ -168,7 +168,7 @@ Any fields here will be shown when creating a customer and will go into the `fie
 - [added] Added "view" link on orders table
 - [fixed] Fixed issue where discounted line item was showing full line price on orders view
 - [improved] Improved logic to show phone number on an order
-- [added] Added handle on NavItem for catalogue manager so it can be listened to by plugins
+- [added] Added handle on NavItem for Manajer Katalog so it can be listened to by plugins
 
 #0.2.14
 

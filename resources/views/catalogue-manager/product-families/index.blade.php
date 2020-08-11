@@ -7,7 +7,7 @@
 @endsection
 
 @section('header_title')
-    <small>Catalogue Manager</small>
+    <small>Manajer Katalog</small>
     <h1>Brands</h1>
 @endsection
 

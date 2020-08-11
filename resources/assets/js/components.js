@@ -69,7 +69,7 @@ var includes = [
       }
   },
   /**
-   * Catalogue Manager
+   * Manajer Katalog
    */
   {
     path: 'catalogue-manager.elements',

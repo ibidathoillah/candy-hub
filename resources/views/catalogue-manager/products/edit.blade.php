@@ -7,7 +7,7 @@
 @endsection
 
 @section('header_title')
-    <small>Catalogue Manager</small>
+    <small>Manajer Katalog</small>
     <h1>@verbatim<template v-if="title"><span v-html="title.trunc(50)"></span></template>@endverbatim</h1>
 @endsection
 

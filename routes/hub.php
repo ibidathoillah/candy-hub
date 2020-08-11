@@ -58,7 +58,7 @@ Route::group([
         ]);
 
         /*
-         * Catalogue manager routes
+         * Manajer Katalog routes
          */
         $router->group(['prefix' => 'catalogue-manager', 'namespace' => 'CatalogueManager'], function ($router) {
             $router->get('attributes', [

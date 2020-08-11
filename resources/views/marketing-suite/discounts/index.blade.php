@@ -6,7 +6,7 @@
 @endsection
 
 @section('header_title')
-    <small>Marketing Suite</small>
+    <small>Strategi Pemasaran</small>
     <h1>Discounts</h1>
 @endsection
 
