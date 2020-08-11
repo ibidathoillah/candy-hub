@@ -5,9 +5,9 @@
             <div slot="body">
                 <template v-if="family && family.product_count">
                 <div class="alert alert-danger" v-if="!selected">
-                    If you don't choose a product family to migrate to, all products associated to this product family will move to "default"
+                    If you don't choose a Brands to migrate to, all products associated to this Brands will move to "default"
                 </div>
-                <p>Please select a product family to migrate the products too</p>
+                <p>Please select a Brands to migrate the products too</p>
                 <select class="form-control" v-model="selected">
                     <option v-for="family in filtered" :value="family.id" :key="family.id">
                         {{ family|attribute('name') }}
@@ -15,7 +15,7 @@
                 </select>
                 </template>
                 <template v-else>
-                    <p>Are you sure you want to remove this product family?</p>
+                    <p>Are you sure you want to remove this Brands?</p>
                 </template>
             </div>
             <template slot="footer">

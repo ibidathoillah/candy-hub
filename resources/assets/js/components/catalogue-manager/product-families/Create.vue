@@ -27,8 +27,8 @@
 
 <template>
     <div>
-        <button class="btn btn-success" @click="modal = true"><fa icon="plus" class="fa-first"></fa> Create Product Family</button>
-        <candy-modal title="Create Product Family" v-show="modal" size="modal-md" @closed="modal = false">
+        <button class="btn btn-success" @click="modal = true"><fa icon="plus" class="fa-first"></fa> Create Brands</button>
+        <candy-modal title="Create Brands" v-show="modal" size="modal-md" @closed="modal = false">
             <div slot="body">
                 <div class="form-group">
                     <label>Name</label>

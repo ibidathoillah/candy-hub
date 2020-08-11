@@ -38,7 +38,7 @@
                     .then(response => {
                         let data = this.setUp(response.data);
                         this.family = data;
-                        document.title = this.$options.filters.attribute(this.family, 'name') + ' Product Family - GetCandy';
+                        document.title = this.$options.filters.attribute(this.family, 'name') + ' Brands - GetCandy';
                         CandyEvent.$emit('title-changed', {
                             title: this.family
                         });
@@ -64,7 +64,7 @@
     <div>
         <template v-if="loaded">
             <candy-tabs initial="productfamilydetails">
-                <candy-tab name="Product Family Details" :selected="true" handle="product-family-details" dispatch="product-family-details">
+                <candy-tab name="Brands Details" :selected="true" handle="product-family-details" dispatch="product-family-details">
                     <candy-tabs nested="true">
                         <candy-tab v-for="(group, index) in attribute_groups" :name="group.name" :handle="group.id" :key="group.id" :selected="index == 0 ? true : false" dispatch="product-details">
                             <family-details :family="family" :group="group"></family-details>
