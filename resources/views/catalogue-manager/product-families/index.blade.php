@@ -1,5 +1,5 @@
 @extends('hub::layout', [
-    'title' => 'Product Families',
+    'title' => 'Brands',
 ])
 
 @section('side_menu')
@@ -8,7 +8,7 @@
 
 @section('header_title')
     <small>Catalogue Manager</small>
-    <h1>Product Families</h1>
+    <h1>Brands</h1>
 @endsection
 
 @section('header_actions')

@@ -34,7 +34,7 @@
             <div class="panel-body">
 
                 <div v-show="loading">
-                    <span><i class="fa fa-sync fa-spin"></i></span> Loading Report
+                    <span><i class="fa fa-sync fa-spin"></i></span> Memuat Laporan
                 </div>
                 <canvas ref="graph" v-show="!loading"/>
             </div>
@@ -129,7 +129,7 @@
                                     display: true,
                                     scaleLabel: {
                                         display: true,
-                                        labelString: 'Week'
+                                        labelString: 'Mingguan'
                                     }
                                 }],
                                 yAxes: [
@@ -141,7 +141,7 @@
                                         },
                                         scaleLabel: {
                                             display: true,
-                                            labelString: '# Orders'
+                                            labelString: '# Total Pesanan'
                                         }
                                     },
                                     {
@@ -155,7 +155,7 @@
                                         },
                                         scaleLabel: {
                                             display: true,
-                                            labelString: 'Total Value'
+                                            labelString: 'Total Harga'
                                         }
                                     }
                                 ]
