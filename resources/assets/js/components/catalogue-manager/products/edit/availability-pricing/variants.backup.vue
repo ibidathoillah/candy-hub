@@ -261,7 +261,7 @@
                     <candy-select :options="['l', 'ml']" v-model="current.volume.unit"></candy-select>
                   </div>
                 </div>
-                <button class="btn btn-danger" @click="deleteVariant(currentIndex)" v-if="variants.length > 1"><i class="fa fa-trash"></i> Delete variant</button>
+                <button class="btn btn-danger" @click="deleteVariant(currentIndex)" v-if="variants.length > 1"><i class="fa fa-trash"></i> Hapus variant</button>
               </div>
             </div>
           </div>

@@ -19,7 +19,7 @@
                 </template>
             </div>
             <template slot="footer">
-                <button type="button" class="btn btn-primary" @click="trash">Delete {{ element }}</button>
+                <button type="button" class="btn btn-primary" @click="trash">Hapus {{ element }}</button>
             </template>
         </candy-modal>
     </div>

@@ -331,7 +331,7 @@
                     <div class="col-xs-12">
                         <div class="row">
                             <div class="col-md-8">
-                                <h4>Product Availability</h4>
+                                <h4>Ketersediaan Produk</h4>
                             </div>
                             <div class="col-md-4 text-right">
                                 <candy-edit-options :product="product" :showModal="editOptions"></candy-edit-options>
@@ -347,13 +347,13 @@
                         <template v-if="variants.length > 1">
                             <div class="row">
                                 <div class="col-xs-6">
-                                    <h4>Options</h4>
+                                    <h4>Opsi</h4>
                                 </div>
                                 <div class="col-xs-6 text-right">
                                     <div class="form-inline">
                                         <div class="form-group">
                                             <div v-show="translating">
-                                                <label class="sr-only">Language</label>
+                                                <label class="sr-only">Bahasa</label>
                                                 <candy-select :options="languages" v-model="translationLanguage" v-if="languages.length"></candy-select>
                                             </div>
                                         </div>
@@ -379,12 +379,12 @@
                                                  class="placeholder placeholder-empty" v-else>
                                         </figure>
                                         <span class="change-img">
-                                            <span v-if="getThumbnail(current)">Change image</span>
-                                            <span v-else>Choose image</span>
+                                            <span v-if="getThumbnail(current)">Ganti gambar</span>
+                                            <span v-else>Pilih gambar</span>
                                         </span>
                                     </button>
 
-                                    <candy-modal title="Change variant image" v-show="changeImage"
+                                    <candy-modal title="Ganti gambar variant" v-show="changeImage"
                                                  @closed="changeImage = false">
                                         <div slot="body">
                                             <div class="row">
@@ -484,12 +484,12 @@
                                     <template v-else>
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label>Price</label>
+                                                <label>Harga</label>
                                                 <price-input v-model="current.unit_price"></price-input>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label>Tax</label>
+                                                    <label>Pajak</label>
                                                     <candy-select :options="taxes" v-model="current.tax_id"></candy-select>
                                                 </div>
                                             </div>
@@ -498,7 +498,7 @@
                             </div>
                         </div>
 
-                        <h4>Price Tiers</h4>
+                        <h4>Tingkatan Harga</h4>
                         <hr>
                         <div class="row" v-for="(tier, index) in priceTiers" v-if="customerGroupSelect.length">
                             <div class="col-md-3">
@@ -508,11 +508,11 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <label>Price</label>
+                                <label>Harga</label>
                                 <price-input v-model="tier.price"></price-input>
                             </div>
                             <div class="col-md-6">
-                                <label>Pelanggan Group</label>
+                                <label>Group Pelanggan</label>
                                 <div class="row">
                                     <div class="col-md-10">
                                         <candy-select :options="customerGroupSelect" v-model="tier.customer_group_id"></candy-select>
@@ -529,7 +529,7 @@
 
                         <div class="form-group">
                             <button class="btn btn-primary" @click="addPriceTier">
-                                <fa icon="plus"></fa> Tambah tier
+                                <fa icon="plus"></fa> Tambah Tingkatan
                             </button>
                         </div>
 
@@ -544,7 +544,7 @@
                             </div>
                             <div class="col-xs-12 col-md-2">
                                 <div class="form-group">
-                                    <label>In Stock</label>
+                                    <label>Stok Tersedia</label>
                                     <input type="number" class="form-control" v-model="current.inventory">
                                 </div>
                             </div>
@@ -559,19 +559,18 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>
-                                        Purchasability
-
+                                        Atur Pembelian
                                     </label>
                                     <candy-select :options="backorderOptions" v-model="current.backorder"></candy-select>
                                     <em class="text-info help-txt">
                                             <span v-if="current.backorder == 'in-stock'">
-                                                This item can <strong>only</strong> be bought when in stock.
+                                                Item ini <strong>hanya</strong> bisa dibeli ketika stock tersedia.
                                             </span>
                                             <span v-if="current.backorder == 'expected'">
-                                                This item can be bought when on backorder <strong>or</strong> in stock
+                                                Item ini bisa di beli preorder <strong>namun</strong> ketika stock tersedia
                                             </span>
                                             <span v-if="current.backorder == 'always'">
-                                                This item can be bought when <strong>not</strong> in stock <strong>or</strong> not on backorder
+                                                Item ini selalu bisa di beli walau stock <strong>tidak</strong> tersedia<strong>atau</strong> tidak tersedia preorder
                                             </span>
                                         </em>
                                 </div>
@@ -594,7 +593,7 @@
                                 </div>
                             </div>
                         </div>
-                        </candy-disabled>
+                        </candy-disabled> -->
                         <div class="row">
                             <div class="col-xs-12 col-md-5">
                                 <div class="form-group">
@@ -659,11 +658,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <button class="btn btn-danger" @click="deleteVariant(currentIndex)"
-                                    v-if="variants.length > 1"><i class="fa fa-trash"></i> Delete variant
+                                    v-if="variants.length > 1"><i class="fa fa-trash"></i> Hapus variant
                                 </button>
                             </div>
                        </div>

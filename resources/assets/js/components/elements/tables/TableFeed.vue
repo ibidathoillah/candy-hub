@@ -32,7 +32,7 @@
                 <a href="#" class="btn btn-outline btn-sm">Edit</a>
                 <a href="#" class="btn btn-outline btn-sm">Publish</a>
                 <a href="#" class="btn btn-outline btn-sm">Hide</a>
-                <a href="#" class="btn btn-outline btn-sm">Delete</a>
+                <a href="#" class="btn btn-outline btn-sm">Hapus</a>
               </div>
               <div class="all-selected">
                 <em>All products one this page are selected</em>

@@ -130,13 +130,13 @@
                     </candy-tab>
 
 
-                    <candy-tab name="Availability" handle="collection-availability" dispatch="collection-availability">
+                    <candy-tab name="Ketersediaan" handle="collection-availability" dispatch="collection-availability">
                         <candy-collection-availability :collection="collection" :languages="languages"></candy-collection-availability>
                     </candy-tab>
 
-                    <candy-tab name="Associations">
+                    <candy-tab name="Produk Terkait">
                         <candy-tabs nested="true">
-                            <candy-tab name="Products" :selected="true">
+                            <candy-tab name="Produk" :selected="true">
                                 <candy-collection-products :collection-id="collection.id" :products="collection.products.data"></candy-collection-products>
                             </candy-tab>
                         </candy-tabs>
