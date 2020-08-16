@@ -104,7 +104,7 @@
               <thead>
                 <tr>
                   <td width="30%">Redirect URL</td>
-                  <td>Description</td>
+                  <td>Deskripsi</td>
                 </tr>
               </thead>
               <tbody>

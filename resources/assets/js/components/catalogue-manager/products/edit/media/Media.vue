@@ -262,7 +262,7 @@
                             <th></th>
                             <th></th>
                             <th>Title/Alt Tag</th>
-                            <th>Description</th>
+                            <th>Deskripsi</th>
                             <th width="230">Tags</th>
                             <th>File Type</th>
                             <th></th>

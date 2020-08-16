@@ -195,7 +195,7 @@
                     </candy-tab>
 
                     <candy-tab
-                        name="Availability &amp; Pricing"
+                        name="Ketersediaan &amp; Harga"
                         handle="product-availability"
                         dispatch="product-variants"
                     >
@@ -203,15 +203,15 @@
                                                     v-if="product"></candy-product-availability>
                     </candy-tab>
 
-                    <candy-tab name="Associations">
+                    <candy-tab name="Produk Terkait">
                         <candy-tabs nested="true">
-                            <candy-tab name="Categories" handle="categories" :selected="true" :badge="getCategoryCount()">
+                            <candy-tab name="Kategori" handle="categories" :selected="true" :badge="getCategoryCount()">
                                 <candy-categories :product="product"></candy-categories>
                             </candy-tab>
-                            <candy-tab name="Collections" handle="collections">
+                            <candy-tab name="Occassion" handle="collections">
                                 <candy-product-collections :product-id="product.id" :existing="product.collections.data"></candy-product-collections>
                             </candy-tab>
-                            <candy-tab name="Products" handle="products" :badge="getAssociationCount()" dispatch="product-associations">
+                            <candy-tab name="Produk" handle="products" :badge="getAssociationCount()" dispatch="product-associations">
                                 <candy-products :product="product"></candy-products>
                             </candy-tab>
                             <candy-tab :name="component.tabLabel" :handle="component.reference" :dispatch="component.reference" v-for="(component, index) in getComponents('catalogue-manager.product.associations')" :key="index">

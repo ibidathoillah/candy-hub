@@ -6,7 +6,7 @@
                 <th width="25%">Product</th>
                 <th width="10%">Stock</th>
                 <th width="15%">Channels</th>
-                <th width="19%">Pelanggan Grup</th>
+                <th width="19%">Grup Pelanggan</th>
                 <th width="19%">Purchasable</th>
             </template>
             <template slot-scope="products">

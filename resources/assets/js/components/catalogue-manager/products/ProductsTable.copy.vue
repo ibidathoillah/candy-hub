@@ -267,8 +267,8 @@
                             <th width="5%"></th>
                             <th width="25%">Product</th>
                             <th width="10%">Stock</th>
-                            <th width="15%">Channels</th>
-                            <th width="19%">Pelanggan Grup</th>
+                            <th width="15%">Channel</th>
+                            <th width="19%">Grup Pelanggan</th>
                             <th width="19%">Purchasable</th>
                             <!-- <th width="19%">Grup</th> -->
                         </tr>

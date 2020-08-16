@@ -7,7 +7,7 @@
                     <th>Public</th>
                     <th>System Generated</th>
                     <th>Performed by</th>
-                    <th>Description</th>
+                    <th>Deskripsi</th>
                     <th>Details</th>
                     <th>Tanggal</th>
                 </tr>
