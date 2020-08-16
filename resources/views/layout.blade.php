@@ -20,7 +20,7 @@
         <div class="side-purple-overlay"></div>
 
                 <div class="user-info">
-          <small>Hello,</small>
+          <small>Selamat Datang,</small>
           <strong>
             @if(Auth::user()->firstname)
               {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}

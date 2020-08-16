@@ -90,20 +90,20 @@ Route::group([
                 'uses' => 'ProductsController@getEdit',
             ]);
 
-            $router->get('product-families', [
+            $router->get('brands', [
                 'as'   => 'hub.product-families.index',
                 'uses' => 'ProductFamilyController@getIndex',
             ]);
-            $router->get('product-families/{id}', [
+            $router->get('brands/{id}', [
                 'as'   => 'hub.product-families.edit',
                 'uses' => 'ProductFamilyController@getEdit',
             ]);
 
-            $router->get('collections', [
+            $router->get('occasions', [
                 'as'   => 'hub.collections.index',
                 'uses' => 'CollectionsController@getIndex',
             ]);
-            $router->get('collections/{id}', [
+            $router->get('occasions/{id}', [
                 'as'   => 'hub.collections.edit',
                 'uses' => 'CollectionsController@getEdit',
             ]);
