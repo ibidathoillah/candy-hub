@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label>Date Range</label>
+                            <label>Rentang Tanggal</label>
                             <candy-daterange-picker @update="update" :from="fromDate" :to="toDate" />
                         </div>
                     </div>

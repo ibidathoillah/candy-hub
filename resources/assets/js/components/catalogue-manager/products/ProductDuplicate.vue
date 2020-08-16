@@ -96,7 +96,7 @@
         <candy-modal title="Duplicate Product" v-show="show" size="modal-md" @closed="show = false">
             <div slot="body">
                 <template v-if="fetching">
-                    <fa icon="sync" spin/> Loading
+                    <fa icon="sync" spin/> Memuat
                 </template>
                 <template v-else>
                     <p>Isi bidang di bawah ini untuk membuat produk duplikat. Anda akan dapat mengubah bidang lain setelah dibuat</p>
@@ -130,7 +130,7 @@
                 </template>
                 <template v-else>
                     <button type="button" class="btn btn-default" disabled>
-                        <fa icon="sync" spin /> Processing
+                        <fa icon="sync" spin /> Diproses
                     </button>
 
                 </template>
