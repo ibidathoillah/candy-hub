@@ -44,7 +44,7 @@
 
 <template>
     <div>
-        <button class="btn btn-success" @click="create = true"><fa icon="plus" /> Tambah Article</button>
+        <button class="btn btn-success" @click="create = true"><fa icon="plus" /> Tambah Artikel</button>
         <candy-modal title="Create Article" v-show="create" size="modal-md" @closed="create = false">
             <div slot="body">
                 <div class="form-group">

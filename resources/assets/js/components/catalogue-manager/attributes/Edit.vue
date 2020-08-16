@@ -124,7 +124,7 @@
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th>Settings</th>
+                                                    <th>Pengaturan</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

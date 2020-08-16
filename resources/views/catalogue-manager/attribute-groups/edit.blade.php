@@ -7,7 +7,7 @@
 @endsection
 
 @section('header_title')
-    <small>Settings</small>
+    <small>Pengaturan</small>
     <h1>@verbatim<template v-if="title">{{ title }}</template>@endverbatim</h1>
 @endsection
 
