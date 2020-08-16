@@ -86,7 +86,7 @@
           </form>
           <hr>
           <div class="text-center">
-            Know your password? <a href="{{ route('hub.login') }}" title="Go to Login page">Go to Login page</a>
+            Know your password? <a href="{{ route('hub.login') }}" title="Kunjungi Login page">Kunjungi Login page</a>
           </div>
         </div>
       </div>

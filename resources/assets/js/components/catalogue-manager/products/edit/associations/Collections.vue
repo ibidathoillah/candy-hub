@@ -112,7 +112,7 @@
                 <thead>
                 <tr>
                     <td></td>
-                    <td>Collection Name</td>
+                    <td>Nama Occasion</td>
                     <td colspan="2">URL</td>
                 </tr>
                 </thead>
@@ -154,7 +154,7 @@
             </div>
 
             <div slot="footer">
-                <button type="button" class="btn btn-primary" @click="removeCollection()">Confirm Removal</button>
+                <button type="button" class="btn btn-primary" @click="removeCollection()">Konfirmasi Removal</button>
             </div>
 
         </candy-modal>

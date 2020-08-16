@@ -29,12 +29,12 @@
     <div>
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                <h4>Customer Groups</h4>
+                <h4>Pelanggan Grup</h4>
                 <hr>
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Group</th>
+                        <th>Grup</th>
                         <th v-for="col in cols">{{ col|capitalize }}</th>
                     </tr>
                     </thead>

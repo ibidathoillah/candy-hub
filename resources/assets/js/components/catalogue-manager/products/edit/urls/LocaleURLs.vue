@@ -104,7 +104,7 @@
                         <h4>Locale URLs</h4>
                     </div>
                     <div class="col-xs-12 col-sm-6 text-right">
-                        <button type="button" class="btn btn-primary" @click="addLocaleModalOpen = true">Add Locale URL</button>
+                        <button type="button" class="btn btn-primary" @click="addLocaleModalOpen = true">Tambah Locale URL</button>
                     </div>
                 </div>
                 <hr>
@@ -140,7 +140,7 @@
 
         <candy-modal title="Are you wish to delete this URL?" v-show="deleteUrlModalOpen" size="modal-sm" @closed="closeUrlDeleteModal">
             <div slot="body">
-                <p>Once deleted this action can not be undone</p>
+                <p>Ketika sudah dihapus tidak akan bisa dikembalikan</p>
                 <div class="form-group">
                     <input type="text" class="form-control" :value="urlToDelete.slug" disabled>
                     <span class="text-danger" v-if="request.getError()" v-text="request.getError()"></span>
@@ -148,11 +148,11 @@
                 </div>
             </div>
             <template slot="footer">
-                <button type="button" class="btn btn-primary" @click="deleteUrl">Confirm Deletion</button>
+                <button type="button" class="btn btn-primary" @click="deleteUrl">Konfirmasi Penghapusan</button>
             </template>
         </candy-modal>
 
-        <candy-modal title="Add Locale URL" v-show="addLocaleModalOpen" size="modal-md" @closed="addLocaleModalOpen = false">
+        <candy-modal title="Tambah Locale URL" v-show="addLocaleModalOpen" size="modal-md" @closed="addLocaleModalOpen = false">
             <div slot="body">
                 <div class="row">
                     <div class="col-xs-12 col-sm-3">
@@ -165,14 +165,14 @@
                         <div class="form-group">
                             <label for="redirectURL">Enter the Locale URL you wish to add to this product.</label>
                             <input type="text" id="redirectURL" class="form-control" v-model="newUrl.slug" @input="request.clearError('url')">
-                            <span class="text-info" v-if="newUrl.slug && slugify != newUrl.slug">Your url will be sanitized to: <code>{{ slugify }}</code></span>
+                            <span class="text-info" v-if="newUrl.slug && slugify != newUrl.slug">URL anda akan disanitasi menjadi: <code>{{ slugify }}</code></span>
                         </div>
                         <span class="text-danger" v-if="request.getError('slug')" v-text="request.getError('slug')"></span>
                     </div>
                 </div>
             </div>
             <template slot="footer">
-                <button class="btn btn-primary" @click="saveUrl()">Save URL</button>
+                <button class="btn btn-primary" @click="saveUrl()">Simpan URL</button>
             </template>
         </candy-modal>
 

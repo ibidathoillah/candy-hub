@@ -8,9 +8,9 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th width="25%">Name</th>
+                                    <th width="25%">Nama</th>
                                     <th width="25%">Handle</th>
-                                    <th width="25%">Type</th>
+                                    <th width="25%">Tipe</th>
                                     <th></th>
                                 </tr>
                             </thead>

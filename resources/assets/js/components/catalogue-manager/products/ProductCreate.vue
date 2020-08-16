@@ -55,7 +55,7 @@
                 }).catch(response => {
                     CandyEvent.$emit('notification', {
                         level: 'error',
-                        message: 'Missing / Invalid fields'
+                        message: 'Ada field yang belum diisi'
                     });
                 });
             },
@@ -77,11 +77,11 @@
 
 <template>
     <div>
-        <button class="btn btn-success" @click="createProduct = true"><i class="fa fa-plus fa-first" aria-hidden="true"></i> Add Product</button>
+        <button class="btn btn-success" @click="createProduct = true"><i class="fa fa-plus fa-first" aria-hidden="true"></i> Tambah Product</button>
         <candy-modal title="Create Product" v-show="createProduct" size="modal-md" @closed="createProduct = false">
             <div slot="body">
                 <div class="form-group">
-                    <label for="name">Product name</label>
+                    <label for="name">Nama Produk</label>
                     <input type="text" class="form-control" id="name" v-model="productName" @input="request.clearError('name')">
                     <span class="text-danger" v-if="request.getError('name')" v-text="request.getError('name')"></span>
                 </div>
@@ -103,7 +103,7 @@
                 <div class="form-group">
                     <label for="redirectURL">Enter the slug product.</label>
                     <input type="text" id="redirectURL" class="form-control" v-model="product.url">
-                    <span class="text-info" v-if="product.url">Your url will be sanitized to: <code>{{ productUrl }}</code></span>
+                    <span class="text-info" v-if="product.url">URL anda akan disanitasi menjadi: <code>{{ productUrl }}</code></span>
                     <span class="text-danger" v-if="request.getError('url')" v-text="request.getError('url')"></span>
                 </div>
 
@@ -118,7 +118,7 @@
 
             </div>
             <template slot="footer">
-                <button type="button" class="btn btn-primary" @click="save">Create product</button>
+                <button type="button" class="btn btn-primary" @click="save">Buat product</button>
             </template>
         </candy-modal>
     </div>

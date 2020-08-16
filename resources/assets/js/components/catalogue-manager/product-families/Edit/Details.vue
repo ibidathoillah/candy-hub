@@ -31,7 +31,7 @@
                     }).catch(errors => {
                         CandyEvent.$emit('notification', {
                             level: 'error',
-                            message: 'Missing / Invalid fields'
+                            message: 'Ada field yang belum diisi'
                         });
                     });
             },
@@ -70,7 +70,7 @@
                 }).catch(errors => {
                     CandyEvent.$emit('notification', {
                         level: 'error',
-                        message: 'Missing / Invalid fields'
+                        message: 'Ada field yang belum diisi'
                     });
                 });
         }

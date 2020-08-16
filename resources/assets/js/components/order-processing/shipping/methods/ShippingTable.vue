@@ -73,11 +73,11 @@
                 <table class="table table-striped collection-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
+                            <th>Nama</th>
+                            <th>Tipe</th>
                             <th>Prices</th>
                             <th>Zones</th>
-                            <th>Customer Groups</th>
+                            <th>Pelanggan Grup</th>
                         </tr>
                     </thead>
                     <tbody v-if="loaded">
@@ -115,7 +115,7 @@
                         <tr>
                             <td colspan="25" style="padding:40px;">
                                 <div class="loading">
-                                    <span><fa icon="spinner" size="3x" spin /></span> <strong>Loading</strong>
+                                    <span><fa icon="spinner" size="3x" spin /></span> <strong>Memuat</strong>
                                 </div>
                             </td>
                         </tr>

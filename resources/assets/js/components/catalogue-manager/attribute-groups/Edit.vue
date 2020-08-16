@@ -116,16 +116,16 @@
                                         <hr>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <h4>Attributes</h4>
+                                                <h4>Atributs</h4>
                                             </div>
                                         </div>
                                         <table class="table">
                                             <thead>
                                                 <tr>
                                                     <th></th>
-                                                    <th>Name</th>
+                                                    <th>Nama</th>
                                                     <th>Handle</th>
-                                                    <th>Type</th>
+                                                    <th>Tipe</th>
                                                     <th>Searchable</th>
                                                 </tr>
                                             </thead>
@@ -168,7 +168,7 @@
         </template>
         <div v-else>
             <div class="page-loading loading">
-                <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+                <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Memuat</strong>
             </div>
         </div>
 

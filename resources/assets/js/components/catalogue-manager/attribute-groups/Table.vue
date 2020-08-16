@@ -66,9 +66,9 @@
                         <tr>
                             <th width="5%"></th>
                             <th width="8%">ID</th>
-                            <th>Name</th>
+                            <th>Nama</th>
                             <th>Handle</th>
-                            <th>No. Attributes</th>
+                            <th>No. Atribut</th>
                         </tr>
                     </thead>
                     <tbody v-if="loaded" v-sortable="sortableOptions">
@@ -101,7 +101,7 @@
                         <tr>
                             <td colspan="25" style="padding:40px;">
                                 <div class="loading">
-                                    <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+                                    <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Memuat</strong>
                                 </div>
                             </td>
                         </tr>

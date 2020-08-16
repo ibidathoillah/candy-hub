@@ -85,7 +85,7 @@
             <tfoot>
                 <tr>
                     <td :colspan="defCols.length + 2">
-                        <button class="add-row-btn" @click="addRow">Add row</button>
+                        <button class="add-row-btn" @click="addRow">Tambah row</button>
                     </td>
                 </tr>
             </tfoot>

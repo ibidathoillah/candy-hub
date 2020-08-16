@@ -7,7 +7,7 @@
             <div slot="body">
                 <p>You will be emailed a link to download the CSV export</p>
                 <div class="form-group">
-                    <label>Email Address</label>
+                    <label>Email Alamat</label>
                     <input class="form-control" v-model="email" type="email">
                     <template v-if="errors && errors.email">
                         <span class="text-danger" v-for="error in errors.email" :key="error">{{ error }}</span>

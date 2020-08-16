@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label>Attribute</label>
+                            <label>Atribut</label>
                             <select class="form-control" v-model="attribute">
                                 <option value>Select an attribute</option>
                                 <option v-for="attribute in attributes" :value="attribute" :key="attribute.id">{{ attribute.name.en }}</option>

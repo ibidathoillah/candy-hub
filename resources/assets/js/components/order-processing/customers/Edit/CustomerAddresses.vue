@@ -96,17 +96,17 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Address</th>
-                    <th>Address line 2</th>
-                    <th>Address line 3</th>
-                    <th width="10%">City</th>
-                    <th>County</th>
-                    <th width="10%">State</th>
-                    <th>Zip</th>
-                    <th>Country</th>
-                    <th>Shipping / Billing</th>
+                    <th>Nama Depan</th>
+                    <th>Nama Belakang</th>
+                    <th>Alamat</th>
+                    <th>Alamat baris 2</th>
+                    <th>Alamat baris 3</th>
+                    <th width="10%">Kota</th>
+                    <th>Daerah</th>
+                    <th width="10%">Provinsi</th>
+                    <th>Kode Pos</th>
+                    <th>Negara</th>
+                    <th>Pengiriman / Pembayaran </th>
                     <th width="7%"></th>
                 </tr>
             </thead>
@@ -130,8 +130,8 @@
                     <td>{{ address.zip }}</td>
                     <td>{{ address.country }}</td>
                     <td>
-                        <span class="text-info" v-if="address.shipping">Shipping</span>
-                        <span class="text-warning" v-if="address.billing">Billing</span>
+                        <span class="text-info" v-if="address.shipping">Pengiriman</span>
+                        <span class="text-warning" v-if="address.billing">Pembayaran</span>
                     </td>
                     <td>
                         <button class="btn btn-action btn-default" @click="edit(index)"><fa icon="edit"></fa></button>
@@ -141,7 +141,7 @@
             </tbody>
         </table>
 
-        <button class="btn btn-primary" @click="create"><fa icon="plus"></fa> Add Address</button>
+        <button class="btn btn-primary" @click="create"><fa icon="plus"></fa> Tambah Alamat</button>
         <hr>
         <candy-modal id="editAddressModel" :title="title" size="modal-md" v-show="editing" @closed="editing = false">
 
@@ -149,13 +149,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>First name</label>
+                            <label>Nama Depan</label>
                             <input v-model="model.firstname" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Last name</label>
+                            <label>Nama Belakang</label>
                             <input v-model="model.lastname" class="form-control">
                         </div>
                     </div>
@@ -164,13 +164,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Address Line 1</label>
+                            <label>Alamat Baris 1</label>
                             <input v-model="model.address" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Address Line 2</label>
+                            <label>Alamat Baris 2</label>
                             <input v-model="model.address_two" class="form-control">
                         </div>
                     </div>
@@ -178,13 +178,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Address Line 3</label>
+                            <label>Alamat Baris 3</label>
                             <input v-model="model.address_three" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>City</label>
+                            <label>Kota</label>
                             <input v-model="model.city" class="form-control">
                         </div>
                     </div>
@@ -192,13 +192,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>County</label>
+                            <label>Daerah</label>
                             <input v-model="model.county" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>State</label>
+                            <label>Provinsi</label>
                             <input v-model="model.state" class="form-control">
                         </div>
                     </div>
@@ -206,13 +206,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Zip</label>
+                            <label>Kode Pos</label>
                             <input v-model="model.zip" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Country</label>
+                            <label>Negara</label>
                             <input v-model="model.country" class="form-control">
                         </div>
                     </div>
@@ -220,10 +220,10 @@
                 <div class="row">
                   <div class="col-md-6">
                         <div class="form-group">
-                            <label>Type</label>
+                            <label>Tipe</label>
                             <select class="form-control" v-model="type">
-                                <option value="shipping">Shipping</option>
-                                <option value="billing">Billing</option>
+                                <option value="shipping">Pengiriman</option>
+                                <option value="billing">Pembayaran</option>
                             </select>
                         </div>
                     </div>
@@ -231,7 +231,7 @@
             </div>
 
             <div slot="footer">
-                <button type="button" class="btn btn-primary" @click="save">Save Address</button>
+                <button type="button" class="btn btn-primary" @click="save">Simpan Alamat</button>
             </div>
 
         </candy-modal>

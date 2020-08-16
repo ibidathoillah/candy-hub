@@ -66,7 +66,7 @@
                     }).catch(response => {
                         CandyEvent.$emit('notification', {
                             level: 'error',
-                            message: 'Missing / Invalid fields'
+                            message: 'Ada field yang belum diisi'
                         });
                     });
                 }
@@ -100,7 +100,7 @@
                 }).catch(response => {
                     CandyEvent.$emit('notification', {
                         level: 'error',
-                        message: 'Missing / Invalid fields'
+                        message: 'Ada field yang belum diisi'
                     });
                 });
             },
@@ -225,7 +225,7 @@
 
         <div v-else>
             <div class="page-loading loading">
-                <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+                <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Memuat</strong>
             </div>
         </div>
 

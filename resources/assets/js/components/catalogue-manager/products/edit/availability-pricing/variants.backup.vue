@@ -187,7 +187,7 @@
               </div>
             </div>
 
-            <h4>Shipping</h4>
+            <h4>Pengiriman</h4>
             <hr>
             <div class="form-group">
               <label for="requiresShipping">

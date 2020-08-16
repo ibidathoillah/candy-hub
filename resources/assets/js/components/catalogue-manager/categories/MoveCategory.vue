@@ -31,7 +31,7 @@
             </div>
         </div>
         <template slot="footer">
-            <button type="button" class="btn btn-primary" @click="move">Move Category</button>
+            <button type="button" class="btn btn-primary" @click="move">Move Kategori</button>
         </template>
     </candy-modal>
 </template>

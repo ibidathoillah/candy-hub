@@ -8,11 +8,11 @@
 
 @section('header_title')
     <small>Strategi Pemasaran</small>
-    <h1>Create Discount</h1>
+    <h1>Buat Diskon</h1>
 @endsection
 
 @section('header_actions')
-    <candy-button style="display: inline-block;" event="save-discount">Save Discount</candy-button>
+    <candy-button style="display: inline-block;" event="save-discount">Simpan Diskon</candy-button>
 @stop
 
 @section('content')

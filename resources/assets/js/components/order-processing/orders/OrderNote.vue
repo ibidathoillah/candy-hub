@@ -1,7 +1,7 @@
 <template>
     <span>
-        <button class="btn btn-primary" @click="show = true">Add Note</button>
-        <candy-modal title="Add order note" v-show="show" size="modal" @closed="reset">
+        <button class="btn btn-primary" @click="show = true">Tambah Note</button>
+        <candy-modal title="Tambah order note" v-show="show" size="modal" @closed="reset">
             <div slot="body" class="text-left">
                 <div class="form-group">
                     <label>Visibility</label>

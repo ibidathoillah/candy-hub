@@ -54,7 +54,7 @@
                 }).catch(response => {
                     CandyEvent.$emit('notification', {
                         level: 'error',
-                        message: 'Missing / Invalid fields'
+                        message: 'Ada field yang belum diisi'
                     });
                 });
             }
@@ -64,11 +64,11 @@
 
 <template>
     <div>
-        <button class="btn btn-success" @click="modal = true"><i class="fa fa-plus fa-first" aria-hidden="true"></i> Create Attribute</button>
+        <button class="btn btn-success" @click="modal = true"><i class="fa fa-plus fa-first" aria-hidden="true"></i> Create Atribut</button>
         <candy-modal title="Create Attribute" v-show="modal" size="modal-md" @closed="modal = false">
             <div slot="body">
                 <div class="form-group">
-                    <label>Name</label>
+                    <label>Nama</label>
                     <input class="form-control" v-model="name">
                 </div>
                 <div class="form-group">
@@ -77,24 +77,24 @@
                     <span class="text-danger" v-if="request.getError('handle')" v-text="request.getError('handle')"></span>
                 </div>
                 <div class="form-group">
-                    <label>Type</label>
+                    <label>Tipe</label>
                     <select class="form-control" v-model="attribute.type">
                         <option value="text">Text</option>
-                        <option value="select">Select</option>
-                        <option value="richtext">Richtext</option>
-                        <option value="checkbox">Checkbox</option>
+                        <option value="select">Pilihan</option>
+                        <option value="richtext">Text Lengkap</option>
+                        <option value="checkbox">Check Box</option>
                         <option value="radio">Radio</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Group</label>
+                    <label>Grup</label>
                     <select class="form-control" v-model="attribute.group_id">
                         <option v-for="group in groups" :value="group.id">{{ group.name|t }}</option>
                     </select>
                 </div>
             </div>
             <template slot="footer">
-                <button type="button" class="btn btn-primary" @click="save">Create Attribute</button>
+                <button type="button" class="btn btn-primary" @click="save">Buat Atribut</button>
             </template>
         </candy-modal>
     </div>

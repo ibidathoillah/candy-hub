@@ -30,7 +30,7 @@
                                 Select a status with a configured mailer to see preview.
                             </div>
                             <template v-if="loadingEmail">
-                                <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+                                <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Memuat</strong>
                             </template>
                             <iframe v-if="emailTemplate" :srcdoc="emailTemplate" ref="emailPreview">
                             </iframe>

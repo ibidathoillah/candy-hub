@@ -2,14 +2,14 @@
     <div >
         <button type="button" class="btn btn-primary" @click="show = true">{{ buttonText }}</button>
 
-        <candy-modal title="Add product associations" v-show="show" @closed="show = false">
+        <candy-modal title="Tambah product associations" v-show="show" @closed="show = false">
 
             <div slot="body">
                 <table class="table association-table text-left">
                     <thead>
                         <tr>
                             <th> </th>
-                            <th>Name</th>
+                            <th>Nama</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -17,7 +17,7 @@
                         <tr>
                             <td colspan="25" style="padding:40px;">
                                 <div class="loading">
-                                    <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+                                    <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Memuat</strong>
                                 </div>
                             </td>
                         </tr>

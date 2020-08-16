@@ -60,11 +60,11 @@
                                 <span v-else>-</span>
                             </div>
                             <div class="col-md-1" v-if="theme == 'default'">
-                                <small class="helper-label">Products</small><br>
+                                <small class="helper-label">Produk</small><br>
                                 {{ category.products_count }}
                             </div>
                             <div class="col-md-1" v-if="theme == 'default'">
-                                <small class="helper-label">Children</small><br>
+                                <small class="helper-label">Sub Kategori</small><br>
                                 {{ category.children_count }}
                             </div>
                             <div class="col-md-1" v-if="associatable">
@@ -72,7 +72,7 @@
                                 <button @click="disassociate(category)" class="btn btn-sm btn-default btn-action" v-else><fa icon="trash" /></button>
                             </div>
                             <div class="col-md-2 text-right node-action-btns" v-if="theme == 'default'">
-                                <button @click.prevent="addingChild = true" data-toggle="tooltip" title="Add Child" data-placement="top">
+                                <button @click.prevent="addingChild = true" data-toggle="tooltip" title="Tambah Child" data-placement="top">
                                     <i class="fa fa-layer-group"></i>
                                 </button>
 
@@ -89,7 +89,7 @@
         <div class="pushed">
             <div class="node-creator" v-if="addingChild">
                 <div class="creator-input">
-                    <label>Category Name</label>
+                    <label>Nama Kategori</label>
                     <input type="text" v-model="newName">
                 </div>
                 <div class="creator-input">
@@ -97,8 +97,8 @@
                     <input type="text" v-model="newSlug" @keyup="editedSlug = true">
                 </div>
                 <div class="creator-btn">
-                    <button class="btn btn-primary" @click="save">Save</button>
-                    <button class="btn btn-grey" @click="cancel">Cancel</button>
+                    <button class="btn btn-primary" @click="save">Simpan</button>
+                    <button class="btn btn-grey" @click="cancel">Batal</button>
                 </div>
             </div>
             <div class="list-nodes">

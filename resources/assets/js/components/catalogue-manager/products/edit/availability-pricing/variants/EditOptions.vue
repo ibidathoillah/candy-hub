@@ -73,7 +73,7 @@
                     }).catch(response => {
                         CandyEvent.$emit('notification', {
                             level: 'error',
-                            message: 'Missing / Invalid fields'
+                            message: 'Ada field yang belum diisi'
                         });
                     });
             },
@@ -352,7 +352,7 @@
                                 </ul>
                                 <div class="sortable-tags-list-input">
                                     <form class="option-form">
-                                        <input type="text" placeholder="Add option" :ref="getOptionRef(handle)">
+                                        <input type="text" placeholder="Tambah option" :ref="getOptionRef(handle)">
                                         <button @click.prevent="addOption(option, handle)"><i class="fa fa-plus"></i>
                                         </button>
                                     </form>
@@ -451,7 +451,7 @@
                 </table>-->
             </div>
             <template slot="footer">
-                <button class="btn btn-primary" @click="save()">Save Options</button>
+                <button class="btn btn-primary" @click="save()">Simpan Options</button>
             </template>
         </candy-modal>
     </div>

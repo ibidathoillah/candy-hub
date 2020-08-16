@@ -6,7 +6,7 @@
                 <th width="25%">Product</th>
                 <th width="10%">Stock</th>
                 <th width="15%">Channels</th>
-                <th width="19%">Customer Groups</th>
+                <th width="19%">Pelanggan Grup</th>
                 <th width="19%">Purchasable</th>
             </template>
             <template slot-scope="products">
@@ -46,7 +46,7 @@
                 </div>
             </div>
             <template slot="footer">
-                <button type="button" class="btn btn-primary" @click="quickSave">Save Stock</button>
+                <button type="button" class="btn btn-primary" @click="quickSave">Simpan Stock</button>
             </template>
         </candy-modal>
     </div>

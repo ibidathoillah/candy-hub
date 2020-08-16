@@ -10,7 +10,7 @@
 @endsection
 
 @section('header_actions')
-    <candy-button style="display: inline-block;" override="save-articles">Save Article</candy-button>
+    <candy-button style="display: inline-block;" override="save-articles">Simpan Article</candy-button>
 
 @stop
 

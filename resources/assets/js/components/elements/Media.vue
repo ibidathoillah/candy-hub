@@ -259,7 +259,7 @@
                             <input type="radio" id="allMedia" value="" checked="checked" v-model="filter">
                             <label for="allMedia">
                                 <span class="check"></span>
-                                <span class="faux-label">All Media</span>
+                                <span class="faux-label">Semua Media</span>
                             </label>
                         </div>
                         <div class="toggle-radio">
@@ -290,10 +290,10 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                            <th>Title/Alt Tag</th>
-                            <th>Description</th>
+                            <th>Judul/Alt Tag</th>
+                            <th>Deskripsi</th>
                             <th width="230">Tags</th>
-                            <th>File Type</th>
+                            <th>Tipe File</th>
                             <th></th>
                         </tr>
                         </thead>
@@ -318,7 +318,7 @@
                                         <input type="radio" :id="asset.id" value="true" v-model="asset.primary" @click="setPrimary(asset)">
                                         <label :for="asset.id">
                                             <span class="check"></span>
-                                            <span class="faux-label">Primary</span>
+                                            <span class="faux-label">Utama</span>
                                         </label>
                                     </div>
                                 </td>
@@ -328,8 +328,8 @@
                                     </a>
                                     <img :src="getIcon(asset.extension)" :alt="asset.title" v-else>
                                 </td>
-                                <td><input v-model="asset.title" placeholder="Add a title" type="text" class="form-control"></td>
-                                <td><input v-model="asset.caption" placeholder="Add a description" type="text" class="form-control"></td>
+                                <td><input v-model="asset.title" placeholder="Tambah a title" type="text" class="form-control"></td>
+                                <td><input v-model="asset.caption" placeholder="Tambah a description" type="text" class="form-control"></td>
                                 <td>
                                     <candy-taggable :options="defaultTags" v-model="asset.tags"></candy-taggable>
                                 </td>
@@ -345,7 +345,7 @@
                         <tfoot v-if="!getFilteredResults(filter).length">
                             <tr>
                               <td colspan="2">
-                                <span class="text-muted">No assets found</span>
+                                <span class="text-muted">File aset tidak ditemukan</span>
                               </td>
                             </tr>
                         </tfoot>
@@ -355,7 +355,7 @@
             </div>
         </div>
         <div class="sub-nav media-upload">
-            <button type="button" class="btn btn-primary btn-full" @click="openUrlModal">Add by URL</button>
+            <button type="button" class="btn btn-primary btn-full" @click="openUrlModal">Tambah by URL</button>
             <candy-alert :shown="true" level="danger" v-for="(file, index) in failedUploads" :key="index">
                 <strong>{{ file.filename }}</strong> <br>
                 <ul class="list-unstyled">
@@ -377,23 +377,23 @@
             >
                 <div class="dz-default dz-message media-box">
                     <i class="fa fa-upload icon" aria-hidden="true"></i>
-                    <p>Drop files here or click to upload</p>
+                    <p>Letakkan file disini atau klik untuk mengunggah</p>
                 </div>
                 <input type="hidden" name="_token" :value="token">
             </dropzone>
         </div>
-        <candy-modal title="Add media by URL" v-show="urlUploadModalOpen" @closed="closeUrlModal">
+        <candy-modal title="Tambah media by URL" v-show="urlUploadModalOpen" @closed="closeUrlModal">
             <div slot="body">
                 <div class="row">
                     <div class="col-xs-12 col-sm-3">
                         <div class="form-group">
-                            <label>Type</label>
+                            <label>Tipe</label>
                             <candy-select ref="urlTypeDropdown" :options="mimeTypes" v-model="urlUpload.type"></candy-select>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-9">
                         <div class="form-group">
-                            <label for="urlUpload">Enter the URL to the asset.</label>
+                            <label for="urlUpload">Masukkan URL asset.</label>
                             <input type="text" id="urlUpload" class="form-control" v-model="urlUpload.url" @blur="detectAssetUrlType()">
                         </div>
                         <span class="text-danger" v-if="request.getError('url')" v-text="request.getError('url')"></span>
@@ -402,17 +402,17 @@
             </div>
             <template slot="footer">
                 <button type="button" class="btn btn-primary" @click="uploadUrlMedia" :disabled="processingAssetUrl">
-                    <template v-if="!processingAssetUrl">Add media</template>
+                    <template v-if="!processingAssetUrl">Tambah media</template>
                     <template v-else>Processing</template>
                 </button>
             </template>
         </candy-modal>
         <candy-modal title="Are you wish to delete this asset?" v-show="deleteModalOpen" @closed="closeDeleteModal">
             <div slot="body">
-                <p>Once deleted this action can not be undone</p>
+                <p>Ketika sudah dihapus tidak akan bisa dikembalikan</p>
             </div>
             <template slot="footer">
-                <button type="button" class="btn btn-primary" @click="deleteAsset">Confirm Deletion</button>
+                <button type="button" class="btn btn-primary" @click="deleteAsset">Konfirmasi Penghapusan</button>
             </template>
         </candy-modal>
     </div>

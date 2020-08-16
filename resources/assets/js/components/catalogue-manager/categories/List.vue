@@ -124,13 +124,13 @@
                                 <span class="input-group-addon">
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                 </span>
-                                <label class="sr-only" for="search">Search</label>
+                                <label class="sr-only" for="search">Cari</label>
                                 <input type="text" class="form-control" id="search" placeholder="Search" @keyup="search" v-model="keywords">
                             </div>
                         </div>
                         <div class="form-group col-xs-12 col-md-2">
                             <button type="button" class="btn btn-default btn-full" @click="saveSearch()">
-                                <i class="fa fa-floppy-o fa-first" aria-hidden="true"></i> Save Search
+                                <i class="fa fa-floppy-o fa-first" aria-hidden="true"></i> Simpan Pencarian
                             </button>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
                 </template>
                 <template v-else>
                     <div class="loading">
-                        <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+                        <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Memuat</strong>
                     </div>
                 </template>
 

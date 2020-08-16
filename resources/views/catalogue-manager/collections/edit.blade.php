@@ -19,7 +19,7 @@
       redirect="/{{ config('getcandy.hub_prefix', 'hub') }}/catalogue-manager/collections"
       style="display: inline-block;"
     ></candy-delete>
-    <candy-button style="display: inline-block;" event="save-collection">Save Collection</candy-button>
+    <candy-button style="display: inline-block;" event="save-collection">Simpan Occasion</candy-button>
 @endsection
 
 @section('content')

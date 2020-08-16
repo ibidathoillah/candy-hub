@@ -123,7 +123,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-6 text-right">
                     <button type="button" class="btn btn-primary" @click="addModalOpen = true">
-                        Add User
+                        Tambah User
                     </button>
                 </div>
             </div>
@@ -131,7 +131,7 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <td>Name</td>
+                    <td>Nama</td>
                     <td>Email</td>
                 </tr>
                 </thead>
@@ -160,19 +160,19 @@
             </table>
         </div>
 
-        <!-- Add category to product Modal -->
-        <candy-modal id="addModal" title="Add users to shipping method" size="modal-lg" v-show="addModalOpen" @closed="closeAddModal()">
+        <!-- Tambah category to product Modal -->
+        <candy-modal id="addModal" title="Tambah users to shipping method" size="modal-lg" v-show="addModalOpen" @closed="closeAddModal()">
 
             <div slot="body">
                 <div class="form-group">
-                    <label class="sr-only">Search</label>
+                    <label class="sr-only">Cari</label>
                     <input type="text" class="form-control search" v-model="search" placeholder="Search by name or email" v-on:input="updateKeywords">
                 </div>
                 <hr>
                 <table class="table association-table">
                     <thead>
                         <tr>
-                            <th width="30%">Name</th>
+                            <th width="30%">Nama</th>
                             <th width="30%">Email</th>
                             <th></th>
                         </tr>
@@ -181,7 +181,7 @@
                         <tr>
                             <td colspan="25" style="padding:40px;">
                                 <div class="loading">
-                                    <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+                                    <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Memuat</strong>
                                 </div>
                             </td>
                         </tr>
@@ -218,7 +218,7 @@
             </div>
 
             <div slot="footer">
-                <button type="button" class="btn btn-primary" @click="save()">Save Assignments</button>
+                <button type="button" class="btn btn-primary" @click="save()">Simpan Assignments</button>
             </div>
 
         </candy-modal>
@@ -233,7 +233,7 @@
             </div>
 
             <div slot="footer">
-                <button type="button" class="btn btn-primary" @click="remove()">Confirm Removal</button>
+                <button type="button" class="btn btn-primary" @click="remove()">Konfirmasi Removal</button>
             </div>
 
         </candy-modal>

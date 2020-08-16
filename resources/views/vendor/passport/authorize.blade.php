@@ -79,7 +79,7 @@
 
                                 <input type="hidden" name="state" value="{{ $request->state }}">
                                 <input type="hidden" name="client_id" value="{{ $client->id }}">
-                                <button class="btn btn-danger">Cancel</button>
+                                <button class="btn btn-danger">Batal</button>
                             </form>
                         </div>
                     </div>

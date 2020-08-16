@@ -130,11 +130,11 @@
         <div class="col-xs-12">
             <div class="row">
                 <div class="col-xs-12 col-sm-6">
-                    <h4>Categories</h4>
+                    <h4>Kategori</h4>
                 </div>
                 <div class="col-xs-12 col-sm-6 text-right">
                     <button type="button" class="btn btn-primary" @click="addModalOpen = true">
-                        Add Category
+                        Tambah Category
                     </button>
                 </div>
             </div>
@@ -143,7 +143,7 @@
                 <thead>
                 <tr>
                     <td></td>
-                    <td>Category Name</td>
+                    <td>Nama Kategori</td>
                     <td colspan="2">URL</td>
                 </tr>
                 </thead>
@@ -175,8 +175,8 @@
             </table>
         </div>
 
-        <!-- Add category to product Modal -->
-        <candy-modal id="addModal" title="Add this product to categories" size="modal-lg" v-show="addModalOpen" @closed="closeAddModal()">
+        <!-- Tambah category to product Modal -->
+        <candy-modal id="addModal" title="Tambah this product to categories" size="modal-lg" v-show="addModalOpen" @closed="closeAddModal()">
 
             <div slot="body">
                 <template v-if="categoriesLoaded">
@@ -188,7 +188,7 @@
             </div>
 
             <div slot="footer">
-                <button type="button" class="btn btn-primary" @click="save()">Save Assignments</button>
+                <button type="button" class="btn btn-primary" @click="save()">Simpan Assignments</button>
             </div>
 
         </candy-modal>
@@ -203,7 +203,7 @@
             </div>
 
             <div slot="footer">
-                <button type="button" class="btn btn-primary" @click="removeCategory()">Confirm Removal</button>
+                <button type="button" class="btn btn-primary" @click="removeCategory()">Konfirmasi Removal</button>
             </div>
 
         </candy-modal>

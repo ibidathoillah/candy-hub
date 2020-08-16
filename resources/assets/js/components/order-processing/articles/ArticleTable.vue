@@ -73,7 +73,7 @@
                         <tr>
                             <td colspan="25" style="padding:40px;">
                                 <div class="loading">
-                                    <span><fa icon="spinner" size="3x" spin /></span> <strong>Loading</strong>
+                                    <span><fa icon="spinner" size="3x" spin /></span> <strong>Memuat</strong>
                                 </div>
                             </td>
                         </tr>

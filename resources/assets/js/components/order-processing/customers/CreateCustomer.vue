@@ -25,7 +25,7 @@
                 }).catch(response => {
                     CandyEvent.$emit('notification', {
                         level: 'error',
-                        message: 'Missing / Invalid fields'
+                        message: 'Ada field yang belum diisi'
                     });
                 });
             },
@@ -45,21 +45,21 @@
 
 <template>
     <div>
-        <button class="btn btn-success" @click="create = true"><i class="fa fa-plus fa-first" aria-hidden="true"></i> Add Customer</button>
+        <button class="btn btn-success" @click="create = true"><i class="fa fa-plus fa-first" aria-hidden="true"></i> Tambah Customer</button>
         <candy-modal title="Create Customer" v-show="create" size="modal-md" @closed="create = false">
             <div slot="body">
                 {{ request.getError('email') }}
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="firstnamer">First name</label>
+                            <label for="firstnamer">Nama Depan</label>
                             <input type="text" class="form-control" id="firstnamer" v-model="customer.firstname" @input="request.clearError('firstname')">
                             <span class="text-danger" v-text="error" v-for="error in request.getError('firstname')" :key="error"></span>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="lastname">Last name</label>
+                            <label for="lastname">Nama Belakang</label>
                             <input type="text" class="form-control" id="lastname" v-model="customer.lastname" @input="request.clearError('lastname')">
                             <span class="text-danger" v-text="error" v-for="error in request.getError('lastname')" :key="error"></span>
                         </div>
@@ -80,7 +80,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="password_confirmation">Password Confirmation</label>
+                            <label for="password_confirmation">Password Konfirmasi</label>
                             <input type="password" class="form-control" id="password_confirmation" v-model="customer.password_confirmation" @input="request.clearError('password')">
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                     </div>
             </div>
             <template slot="footer">
-                <button type="button" class="btn btn-primary" @click="save">Save and Continue</button>
+                <button type="button" class="btn btn-primary" @click="save">Simpan dan Lanjutkan</button>
             </template>
         </candy-modal>
     </div>

@@ -31,12 +31,12 @@
         <candy-modal title="Create Brands" v-show="modal" size="modal-md" @closed="modal = false">
             <div slot="body">
                 <div class="form-group">
-                    <label>Name</label>
+                    <label>Nama</label>
                     <input class="form-control" v-model="name">
                 </div>
             </div>
             <template slot="footer">
-                <button type="button" class="btn btn-primary" @click="save">Save</button>
+                <button type="button" class="btn btn-primary" @click="save">Simpan</button>
             </template>
         </candy-modal>
     </div>

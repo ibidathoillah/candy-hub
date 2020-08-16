@@ -314,7 +314,7 @@
                             <span class="input-group-addon">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </span>
-                            <label class="sr-only" for="search">Search</label>
+                            <label class="sr-only" for="search">Cari</label>
                             <input type="text" class="form-control" id="search" placeholder="Search" @keyup="search" v-model="keywords">
                         </div>
                     </div>
@@ -397,7 +397,7 @@
                                     <tr>
                                         <td colspan="25" style="padding:40px;">
                                             <div class="loading">
-                                                <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+                                                <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Memuat</strong>
                                             </div>
                                         </td>
                                     </tr>

@@ -170,18 +170,18 @@
                         <div class="sub-content block section">
                             <div class="row">
                                 <div class="col-md-8">
-                                    <h4>Customer Details</h4>
+                                    <h4>Detail Pelanggan</h4>
                                     <hr>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>First name</label>
+                                                <label>Nama Depan</label>
                                                 <input class="form-control" v-model="customer.details.data.firstname">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>Last name</label>
+                                                <label>Nama Belakang</label>
                                                 <input class="form-control" v-model="customer.details.data.lastname">
                                             </div>
                                         </div>
@@ -199,7 +199,7 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>Company Name</label>
+                                                <label>Nama Perusahaan</label>
                                                 <input class="form-control" v-model="customer.details.data.company_name">
                                             </div>
                                             <span class="text-danger" v-if="request.hasError('company_name')">
@@ -217,7 +217,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>VAT Number</label>
+                                                <label>NPWP</label>
                                                 <input class="form-control" v-model="customer.details.data.vat_no">
                                             </div>
                                             <span class="text-danger" v-if="request.hasError('vat_no')">
@@ -228,13 +228,13 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>New Password</label>
+                                                <label>Password Baru</label>
                                                 <input autocomplete="new-password" class="form-control" type="password" v-model="newPassword">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>New Password confirmation</label>
+                                                <label>Konfirmasi Password Baru</label>
                                                 <input class="form-control" type="password" v-model="confirmPassword">
                                             </div>
                                             <span class="text-danger" v-if="request.hasError('password')">
@@ -246,7 +246,7 @@
                                         <template v-if="customer.details.data && customer.details.data.fields">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <h4>Additional Information</h4>
+                                                    <h4>Informasi Tambahan</h4>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -264,12 +264,12 @@
                                         </template>
                                     </div>
                                 <div class="col-md-4">
-                                    <h4>Customer Groups</h4>
+                                    <h4>Pelanggan Grup</h4>
                                     <hr>
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>Group</th>
+                                                <th>Grup</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -320,7 +320,7 @@
                                                 <th>Order Id</th>
                                                 <th>Order Reference</th>
                                                 <th>Total</th>
-                                                <th>Shipping</th>
+                                                <th>Pengiriman</th>
                                                 <th>Date Placed / Created</th>
                                             </tr>
                                         </thead>

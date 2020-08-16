@@ -200,7 +200,7 @@
                 });
             },
             createNewButton: function(parentID, parentName) {
-                return '<a data-parent-id="'+ parentID +'" data-parent-name="'+ parentName +'" class="btn btn-default modal-button"><i class="fa fa-plus"></i> Create Subcategory</a>';
+                return '<a data-parent-id="'+ parentID +'" data-parent-name="'+ parentName +'" class="btn btn-default modal-button"><i class="fa fa-plus"></i> Create SubKategori</a>';
             },
             getImage: function(data) {
                 let url = _.get(data, ['assets', 0, 'url'], '/candy-hub/images/placeholder/no-image.svg');
@@ -279,7 +279,7 @@
                 }).catch(response => {
                     CandyEvent.$emit('notification', {
                         level: 'error',
-                        message: 'Missing / Invalid fields'
+                        message: 'Ada field yang belum diisi'
                     });
                 });
             },

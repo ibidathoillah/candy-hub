@@ -171,7 +171,7 @@
                         <h4>Shipping method prices</h4>
                     </div>
                     <div class="col-md-4 text-right">
-                        <button class="btn btn-primary" @click="add()"><fa icon="plus"></fa> Add price</button>
+                        <button class="btn btn-primary" @click="add()"><fa icon="plus"></fa> Tambah price</button>
                     </div>
                 </div>
             </div> <!-- col-xs-12 -->
@@ -326,7 +326,7 @@
                     <candy-customer-groups :groups="current.customer_groups.data" :cols="['visible']" v-if="current.customer_groups"></candy-customer-groups>
                 </div>
                 <template slot="footer">
-                    <button class="btn btn-primary" @click="savePrice()">Save Options</button>
+                    <button class="btn btn-primary" @click="savePrice()">Simpan Options</button>
                 </template>
             </candy-modal>
     </div>

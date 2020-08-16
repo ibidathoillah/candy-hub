@@ -243,7 +243,7 @@
                                     <span>{{ order.reference }}</span> <candy-clipboard-copy :text="order.reference" />
                                 </div>
                                 <div class="col-md-2">
-                                    <strong>Customer Reference</strong> <br>
+                                    <strong>Pelanggan Reference</strong> <br>
                                     <span ref="customerRef">{{ order.customer_reference ? order.customer_reference : '-' }}</span> <candy-clipboard-copy :text="order.customer_reference" v-if="order.customer_reference"/>
                                 </div>
                                 <div class="col-md-2">
@@ -348,7 +348,7 @@
                                             <th>QTY</th>
                                             <th>Unit Price</th>
                                             <th>Shipping Total</th>
-                                            <th>Discount</th>
+                                            <th>Diskon</th>
                                             <th>Tax Rate</th>
                                             <th>Tax Amount</th>
                                             <th>Line total</th>
@@ -475,10 +475,10 @@
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Type</th>
+                                                <th>Nama</th>
+                                                <th>Tipe</th>
                                                 <th>Value</th>
-                                                <th>Amount</th>
+                                                <th>Jumlah</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -520,7 +520,7 @@
                                         {{ t.transaction_id }}
                                     </div>
                                     <div class="col-md-2">
-                                        <strong>Date</strong><br>
+                                        <strong>Tanggal</strong><br>
                                         {{ t.created_at|formatDate }}
                                     </div>
                                     <div class="col-md-2">
@@ -528,7 +528,7 @@
                                         {{ t.merchant }} / {{ t.provider }}
                                     </div>
                                     <div class="col-md-1">
-                                        <strong>Amount</strong><br>
+                                        <strong>Jumlah</strong><br>
                                         <span v-html="currencySymbol(t.amount)"></span>
                                     </div>
                                     <div class="col-md-2 text-right">
@@ -582,7 +582,7 @@
                                             </div>
 
                                             <div class="col-md-3">
-                                                <span>Address</span><br>
+                                                <span>Alamat</span><br>
                                                 <template v-if="t.address_matched">
                                                     <i class="fa fa-check text-success"></i>
                                                 </template>
@@ -616,7 +616,7 @@
 
                                 <template v-if="t.notes">
                                     <hr>
-                                    <strong>Notes</strong><br>
+                                    <strong>Catatan</strong><br>
                                     {{ t.notes }}
                                 </template>
                             </div>
@@ -627,7 +627,7 @@
 
         <div v-else>
             <div class="page-loading loading">
-                <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+                <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Memuat</strong>
             </div>
         </div>
 

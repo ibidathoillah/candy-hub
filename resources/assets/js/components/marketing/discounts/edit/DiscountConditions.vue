@@ -91,7 +91,7 @@
                                         <li><a href="#" @click="addCondition(index, 'coupon')">Coupon</a></li>
                                         <li><a href="#" @click="addCondition(index, 'products')">Product in list</a></li>
                                         <li><a href="#" @click="addCondition(index, 'users')">User in list</a></li>
-                                        <li><a href="#" @click="addCondition(index, 'customer-group')">Customer groups</a></li>
+                                        <li><a href="#" @click="addCondition(index, 'customer-group')">Pelanggan groups</a></li>
                                     </ul>
                                 </div>
                                 <button class="btn btn-danger btn-sm btn-action" @click="deleteSet(index)"><i class="fa fa-trash"></i></button>
@@ -117,7 +117,7 @@
 
                     </div>
                 </div>
-                <button @click="addSet" class="btn btn-info">Add Set</button>
+                <button @click="addSet" class="btn btn-info">Tambah Set</button>
             </div>
         </div>
     </div>

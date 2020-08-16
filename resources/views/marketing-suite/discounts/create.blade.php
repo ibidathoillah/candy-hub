@@ -9,7 +9,7 @@
 
 @section('header_title')
     <small>Strategi Pemasaran</small>
-    <h1>Create Discount</h1>
+    <h1>Buat Diskon</h1>
 @endsection
 
 @section('content')
@@ -27,7 +27,7 @@
         <div class="tab-content sub-content section block">
             <div class="row">
                 <div class="col-md-12">
-                    Conditions
+                    Kondisi
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="tab-content sub-content section block">
             <div class="row">
                 <div class="col-md-12">
-                    Rewards
+                    Reward
                 </div>
             </div>
         </div>

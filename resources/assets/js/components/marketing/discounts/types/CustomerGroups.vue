@@ -48,11 +48,11 @@
 
 <template>
     <div>
-        <h5>Customer groups</h5>
+        <h5>Pelanggan groups</h5>
         <table class="table">
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th>Nama</th>
                 </tr>
             </thead>
             <tbody>

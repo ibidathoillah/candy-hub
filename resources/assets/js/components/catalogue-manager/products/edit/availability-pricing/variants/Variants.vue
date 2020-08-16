@@ -401,7 +401,7 @@
                                                         >
                                                             <div class="dz-default dz-message media-box">
                                                                 <i class="fa fa-upload icon" aria-hidden="true"></i>
-                                                                <p>Drop files here or click to upload</p>
+                                                                <p>Letakkan file disini atau klik untuk mengunggah</p>
                                                             </div>
                                                         </dropzone>
                                                     </div>
@@ -512,7 +512,7 @@
                                 <price-input v-model="tier.price"></price-input>
                             </div>
                             <div class="col-md-6">
-                                <label>Customer Group</label>
+                                <label>Pelanggan Group</label>
                                 <div class="row">
                                     <div class="col-md-10">
                                         <candy-select :options="customerGroupSelect" v-model="tier.customer_group_id"></candy-select>
@@ -529,7 +529,7 @@
 
                         <div class="form-group">
                             <button class="btn btn-primary" @click="addPriceTier">
-                                <fa icon="plus"></fa> Add tier
+                                <fa icon="plus"></fa> Tambah tier
                             </button>
                         </div>
 
@@ -577,7 +577,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <h4>Shipping</h4>
+                        <!-- <h4>Pengiriman</h4>
                         <hr>
                         <div class="form-group">
                             <label for="requiresShipping">

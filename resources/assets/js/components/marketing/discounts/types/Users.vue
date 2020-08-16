@@ -91,7 +91,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th>Nama</th>
                     <th>Email</th>
                     <th></th>
                 </tr>
@@ -100,7 +100,7 @@
                 <tr v-if="loading">
                     <td colspan="2">
                         <div class="loading">
-                            <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+                            <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Memuat</strong>
                         </div>
                     </td>
                 </tr>

@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Amount</label>
+                            <label>Jumlah</label>
                             <input type="number" class="form-control" v-model="amount" :max="max">
                             <template v-if="this.errors.amount">
                                 <span class="text-danger" v-for="error in this.errors.amount">{{ error }}</span> <br>
@@ -33,7 +33,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>Notes</label>
+                            <label>Catatan</label>
                             <textarea type="text" v-model="notes" class="form-control"></textarea>
                         </div>
                     </div>

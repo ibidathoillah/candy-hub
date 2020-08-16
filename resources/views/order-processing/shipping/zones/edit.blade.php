@@ -10,7 +10,7 @@
 @endsection
 
 @section('header_actions')
-    <candy-button style="display: inline-block;" override="save-shipping-zone">Save Zone</candy-button>
+    <candy-button style="display: inline-block;" override="save-shipping-zone">Simpan Zone</candy-button>
 
 @stop
 

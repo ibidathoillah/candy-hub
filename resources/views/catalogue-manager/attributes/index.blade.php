@@ -8,7 +8,7 @@
 
 @section('header_title')
     <small>Manajer Katalog</small>
-    <h1>Attributes</h1>
+    <h1>Atributs</h1>
 @endsection
 
 @section('header_actions')

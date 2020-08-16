@@ -39,8 +39,8 @@
         placeClass      : 'nestable-placeholder',
         noDragClass     : 'nestable-nodrag',
         emptyClass      : 'nestable-empty',
-        expandBtnHTML   : '<button data-action="expand" type="button">Expand</button>',
-        collapseBtnHTML : '<button data-action="collapse" type="button">Collapse</button>',
+        expandBtnHTML   : '<button data-action="expand" type="button">Perlebar</button>',
+        collapseBtnHTML : '<button data-action="collapse" type="button">Perkecil</button>',
         group           : 0,
         maxDepth        : 15,
         threshold       : 20

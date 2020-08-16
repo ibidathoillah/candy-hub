@@ -48,7 +48,7 @@
                     }).catch(response => {
                         CandyEvent.$emit('notification', {
                             level: 'error',
-                            message: 'Missing / Invalid fields'
+                            message: 'Ada field yang belum diisi'
                         });
                     });
             }
@@ -58,7 +58,7 @@
 
 <template>
     <div>
-        <button class="btn btn-primary" @click="modalOpen = true">Create variant</button>
+        <button class="btn btn-primary" @click="modalOpen = true">Buat variant</button>
         <candy-modal title="Create variant" v-show="modalOpen" @closed="modalOpen = false">
             <div slot="body" class="text-left">
                 <div class="row">
@@ -92,7 +92,7 @@
 
             </div>
             <template slot="footer">
-                <button class="btn btn-primary" @click="save()">Save Variant</button>
+                <button class="btn btn-primary" @click="save()">Simpan Variant</button>
             </template>
         </candy-modal>
     </div>

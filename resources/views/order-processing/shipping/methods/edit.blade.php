@@ -12,7 +12,7 @@
 @endsection
 
 @section('header_actions')
-    <candy-button style="display: inline-block;" event="save-shipping-method">Save Shipping Method</candy-button>
+    <candy-button style="display: inline-block;" event="save-shipping-method">Simpan Shipping Method</candy-button>
 @endsection
 
 @section('content')

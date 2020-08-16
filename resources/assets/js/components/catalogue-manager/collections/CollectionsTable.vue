@@ -96,7 +96,7 @@
                         <div class="col-xs-12 col-md-2">
                             <candy-disabled>
                                 <button type="button" class="btn btn-default btn-full btn-pop-over">
-                                    Add Filter <i class="fa fa-angle-down fa-last" aria-hidden="true"></i>
+                                    Tambah Filter <i class="fa fa-angle-down fa-last" aria-hidden="true"></i>
                                 </button>
                             </candy-disabled>
 
@@ -116,7 +116,7 @@
                                             <option>Visible on Storefront</option>
                                         </select>
                                     </div>
-                                    <button type="button" class="btn btn-default">Add filter</button>
+                                    <button type="button" class="btn btn-default">Tambah filter</button>
                                 </form>
                             </div>
 
@@ -127,7 +127,7 @@
                                 <span class="input-group-addon">
                                   <i class="fa fa-search" aria-hidden="true"></i>
                                 </span>
-                                <label class="sr-only" for="search">Search</label>
+                                <label class="sr-only" for="search">Cari</label>
                                 <input type="text" class="form-control" id="search" placeholder="Search">
                             </div>
 
@@ -135,7 +135,7 @@
                         <div class="form-group col-xs-12 col-md-2">
 
                             <button type="submit" class="btn btn-default btn-full" @click.prevent="loadCollections();">
-                                <i class="fa fa-floppy-o fa-first" aria-hidden="true"></i> Save Search
+                                <i class="fa fa-floppy-o fa-first" aria-hidden="true"></i> Simpan Pencarian
                             </button>
 
                         </div>
@@ -179,10 +179,10 @@
                                     </div>
                                 </candy-disabled>
                             </th> -->
-                            <th width="10%">Image</th>
-                            <th width="25%">Collection</th>
-                            <th width="19%">Display</th>
-                            <th width="19%">Purchasable</th>
+                            <th width="10%">Gambar</th>
+                            <th width="25%">Occasion</th>
+                            <th width="19%">Tampilkan</th>
+                            <th width="19%">Dapat Dibeli</th>
                         </tr>
                     </thead>
                     <tbody v-if="loaded">
@@ -208,7 +208,7 @@
                         <tr>
                             <td colspan="25" style="padding:40px;">
                                 <div class="loading">
-                                    <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+                                    <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Memuat</strong>
                                 </div>
                             </td>
                         </tr>

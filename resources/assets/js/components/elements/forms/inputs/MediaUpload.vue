@@ -13,7 +13,7 @@
             >
                 <div class="dz-default dz-message media-box">
                     <i class="fa fa-upload icon" aria-hidden="true"></i>
-                    <p>Drop files here or click to upload</p>
+                    <p>Letakkan file disini atau klik untuk mengunggah</p>
                 </div>
                 <input type="hidden" name="_token" :value="token">
             </dropzone>

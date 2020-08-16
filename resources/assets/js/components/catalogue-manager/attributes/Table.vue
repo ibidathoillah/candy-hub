@@ -50,10 +50,10 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Name</th>
+                            <th>Nama</th>
                             <th>Handle</th>
-                            <th>Group</th>
-                            <th>Type</th>
+                            <th>Grup</th>
+                            <th>Tipe</th>
                             <th>Searchable</th>
                             <th>Required</th>
                         </tr>
@@ -93,7 +93,7 @@
                         <tr>
                             <td colspan="25" style="padding:40px;">
                                 <div class="loading">
-                                    <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+                                    <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Memuat</strong>
                                 </div>
                             </td>
                         </tr>

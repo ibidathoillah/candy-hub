@@ -55,8 +55,8 @@
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Type</th>
-                            <th>Amount</th>
+                            <th>Tipe</th>
+                            <th>Jumlah</th>
                             <th width="5%"></th>
                         </tr>
                     </thead>
@@ -65,9 +65,9 @@
                             <th></th>
                             <th>
                                 <select v-model="newReward.type" class="form-control">
-                                    <option value="percentage_amount">Percentage</option>
-                                    <option value="fixed_amount">Fixed amount</option>
-                                    <option value="to_fixed_price">Fixed Price</option>
+                                    <option value="percentage_amount">Persentase</option>
+                                    <option value="fixed_amount">Jumlah Fixed</option>
+                                    <option value="to_fixed_price">Harga Fixed</option>
                                 </select>
                             </th>
                             <th>

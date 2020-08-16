@@ -9,7 +9,7 @@
                     <th>Performed by</th>
                     <th>Description</th>
                     <th>Details</th>
-                    <th>Date</th>
+                    <th>Tanggal</th>
                 </tr>
             </thead>
             <tbody>

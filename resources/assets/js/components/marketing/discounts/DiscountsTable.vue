@@ -74,7 +74,7 @@
                 <table class="table table-striped discount-table">
                     <thead>
                         <tr>
-                            <th width="25%">Name</th>
+                            <th width="25%">Nama</th>
                             <th>Start</th>
                             <th>End</th>
                             <th>Priority</th>
@@ -101,7 +101,7 @@
                         <tr>
                             <td colspan="25" style="padding:40px;">
                                 <div class="loading">
-                                    <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+                                    <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Memuat</strong>
                                 </div>
                             </td>
                         </tr>

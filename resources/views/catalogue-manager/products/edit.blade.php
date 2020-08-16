@@ -12,7 +12,7 @@
 @endsection
 
 @section('header_actions')
-    <candy-button style="display: inline-block;">Save Product</candy-button>
+    <candy-button style="display: inline-block;">Simpan Product</candy-button>
     <candy-delete
       element="product"
       endpoint="/products/{{ $id }}"

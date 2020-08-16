@@ -91,7 +91,7 @@
                         <table width="100%">
                             <tr>
                                 <td align="left" width="33%">
-                                    <h3>Billing</h3>
+                                    <h3>Pembayaran</h3>
                                     {{ $order->billing_firstname }} {{ @$order->billing_lastname }}<br>
                                     {{ $order->billing_address }}
                                     @if ($order->billing_address_two)
@@ -111,7 +111,7 @@
                                 </td>
 
                                 <td align="left" width="33%">
-                                    <h3>Shipping</h3>
+                                    <h3>Pengiriman</h3>
                                     {{ $order->shipping_firstname }} {{ @$order->shipping_lastname }}<br>
                                     {{ $order->shipping_address }}
                                     @if ($order->shipping_address_two)
@@ -218,7 +218,7 @@
                         @foreach ($order->discounts as $discount)
                             <tr class="discount-row">
                                 <td colspan="4">
-                                    <strong>{{ $discount->name }}</strong> @if($discount->type == 'percentage') @ {{ $discount->amount }}%@endif Discount<br>
+                                    <strong>{{ $discount->name }}</strong> @if($discount->type == 'percentage') @ {{ $discount->amount }}%@endif Diskon<br>
                                     @if ($discount->coupon)
                                     Code: <code>{{ $discount->coupon }}</code>
                                     @endif
@@ -230,7 +230,7 @@
                     <tr>
                         <td colspan="5"></td>
                         <td colspan="2">
-                            <strong>Shipping</strong> <br>
+                            <strong>Pengiriman</strong> <br>
                             <small>{{ $order->shipping_method }}</small>
                         </td>
                         <td>{!! $order->currency == 'GBP' ? 'IDR' : '&euro;' !!}{{ number_format($order->delivery_total / 100, 2) }}</td>

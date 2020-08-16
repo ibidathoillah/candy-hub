@@ -13,7 +13,7 @@
 
 @section('header_actions')
     <candy-customer-impersonate customer-id="{{ $id }}" style="display: inline-block;" override="save-customer"></candy-customer-impersonate>
-    <candy-button style="display: inline-block;" override="save-customer">Save Customer</candy-button>
+    <candy-button style="display: inline-block;" override="save-customer">Simpan Customer</candy-button>
 @stop
 
 @section('content')

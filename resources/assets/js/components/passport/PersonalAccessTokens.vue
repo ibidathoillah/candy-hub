@@ -34,7 +34,7 @@
                     <table class="table table-borderless m-b-none" v-if="tokens.length > 0">
                         <thead>
                             <tr>
-                                <th>Name</th>
+                                <th>Nama</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -87,7 +87,7 @@
                         <form class="form-horizontal" role="form" @submit.prevent="store">
                             <!-- Name -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Name</label>
+                                <label class="col-md-4 control-label">Nama</label>
 
                                 <div class="col-md-6">
                                     <input id="create-token-name" type="text" class="form-control" name="name" v-model="form.name">

@@ -15,9 +15,9 @@
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Category</th>
-                            <th>Children</th>
-                            <th>Products</th>
+                            <th>Kategori</th>
+                            <th>Sub Kategori</th>
+                            <th>Produk</th>
                         </tr>
                     </thead>
                     <tbody  v-sortable="sortableOptions">
@@ -44,8 +44,8 @@
                                 <td>
                                     {{ item.products_count }}
                                     <template v-if="item.products_count">
-                                        <a href="#" @click.prevent="expand(item.id)" v-if="!isExpanded(item.id)">Expand</a>
-                                        <a href="#" @click.prevent="collapse(item.id)" v-else>Collapse</a>
+                                        <a href="#" @click.prevent="expand(item.id)" v-if="!isExpanded(item.id)">Perlebar</a>
+                                        <a href="#" @click.prevent="collapse(item.id)" v-else>Perkecil</a>
                                     </template>
                                 </td>
                             </tr>
@@ -55,7 +55,7 @@
                                         <table class="table product-table">
                                         <thead>
                                             <tr>
-                                                <th>Product Name</th>
+                                                <th>Nama Produk</th>
                                             </tr>
                                         </thead>
                                         <tbody>

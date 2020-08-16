@@ -65,7 +65,7 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>Nama</th>
                             <th>Active</th>
                         </tr>
                     </thead>

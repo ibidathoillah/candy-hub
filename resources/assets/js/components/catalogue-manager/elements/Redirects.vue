@@ -101,7 +101,7 @@
                 <h4>Redirect URLs</h4>
               </div>
               <div class="col-xs-12 col-sm-6 text-right">
-                <button type="button" class="btn btn-primary" @click="saveModalOpen = true">Add Redirect</button>
+                <button type="button" class="btn btn-primary" @click="saveModalOpen = true">Tambah Redirect</button>
               </div>
             </div>
             <hr>
@@ -135,7 +135,7 @@
         </div>
        <candy-modal title="Are you wish to delete this Route?" v-show="deleteModalOpen" @closed="closeDeleteModal">
            <div slot="body">
-               <p>Once deleted this action can not be undone</p>
+               <p>Ketika sudah dihapus tidak akan bisa dikembalikan</p>
                <div class="form-group">
                    <input type="text" class="form-control" :value="redirectToDelete.slug" disabled>
                    <span class="text-danger" v-if="request.getError()" v-text="request.getError()"></span>
@@ -143,15 +143,15 @@
                </div>
            </div>
            <template slot="footer">
-               <button type="button" class="btn btn-primary" @click="deleteRedirect">Confirm Deletion</button>
+               <button type="button" class="btn btn-primary" @click="deleteRedirect">Konfirmasi Penghapusan</button>
            </template>
        </candy-modal>
-       <candy-modal title="Add redirect" v-show="saveModalOpen" @closed="saveModalOpen = false">
+       <candy-modal title="Tambah redirect" v-show="saveModalOpen" @closed="saveModalOpen = false">
            <div slot="body">
                <div class="form-group">
                    <label for="redirectURL">Enter the URL you wish to redirect to.</label>
                    <input type="text" class="form-control" v-model="newUrl.slug" @input="request.clearError('url')">
-                   <span class="text-info" v-if="newUrl.slug && slugify != newUrl.slug">Your url will be sanitized to: <code>{{ slugify }}</code></span>
+                   <span class="text-info" v-if="newUrl.slug && slugify != newUrl.slug">URL anda akan disanitasi menjadi: <code>{{ slugify }}</code></span>
                    <span class="text-danger" v-if="request.getError('slug')" v-text="request.getError('slug')"></span>
                </div>
                <div class="form-group">
@@ -160,7 +160,7 @@
                </div>
            </div>
            <template slot="footer">
-               <button class="btn btn-primary" @click="saveRedirect()">Save Redirect</button>
+               <button class="btn btn-primary" @click="saveRedirect()">Simpan Redirect</button>
            </template>
        </candy-modal>
    </div>

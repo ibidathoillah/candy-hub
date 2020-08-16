@@ -12,7 +12,7 @@
 @endsection
 
 @section('header_actions')
-    <candy-button style="display: inline-block;" event="save-attribute">Save Attribute</candy-button>
+    <candy-button style="display: inline-block;" event="save-attribute">Simpan Atribut</candy-button>
 @stop
 
 

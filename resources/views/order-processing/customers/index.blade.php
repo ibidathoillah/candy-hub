@@ -8,7 +8,7 @@
 
 @section('header_title')
     <small>Order Management</small>
-    <h1>Customers</h1>
+    <h1>Pelanggan</h1>
 @endsection
 
 @section('header_actions')

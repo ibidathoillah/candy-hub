@@ -13,7 +13,7 @@
                     </template>
                 </div>
                 <div class="form-group">
-                    <label>Email Address</label>
+                    <label>Email Alamat</label>
                     <small class="help-txt">So we can notify you when the import has completed</small>
                     <input class="form-control" v-model="email" type="email">
                     <template v-if="errors && errors.email">

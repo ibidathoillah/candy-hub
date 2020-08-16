@@ -33,7 +33,7 @@
                     <thead>
                         <tr>
                             <th>Client ID</th>
-                            <th>Name</th>
+                            <th>Nama</th>
                             <th>Secret</th>
                             <th></th>
                             <th></th>
@@ -104,7 +104,7 @@
                         <form class="form-horizontal" role="form">
                             <!-- Name -->
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Name</label>
+                                <label class="col-md-3 control-label">Nama</label>
 
                                 <div class="col-md-7">
                                     <input id="create-client-name" type="text" class="form-control"
@@ -172,7 +172,7 @@
                         <form class="form-horizontal" role="form">
                             <!-- Name -->
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Name</label>
+                                <label class="col-md-3 control-label">Nama</label>
 
                                 <div class="col-md-7">
                                     <input id="edit-client-name" type="text" class="form-control"

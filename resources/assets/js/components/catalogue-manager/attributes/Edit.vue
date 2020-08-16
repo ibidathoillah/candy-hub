@@ -106,11 +106,11 @@
                                             <input class="form-control" v-model="attribute.handle" :readonly="attribute.system">
                                         </div>
                                         <div class="form-group">
-                                            <label>Type</label>
+                                            <label>Tipe</label>
                                             <select class="form-control" v-model="attribute.type" :disabled="attribute.system">
                                                 <option value="text">Text</option>
-                                                <option value="richtext">Richtext</option>
-                                                <option value="select">Select</option>
+                                                <option value="richtext">Text Lengkap</option>
+                                                <option value="select">Pilihan</option>
                                             </select>
                                         </div>
                                         <template v-if="attribute.type == 'select'">
@@ -174,7 +174,7 @@
 
         <div v-else>
             <div class="page-loading loading">
-                <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+                <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Memuat</strong>
             </div>
         </div>
 

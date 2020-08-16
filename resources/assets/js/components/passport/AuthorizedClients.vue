@@ -19,7 +19,7 @@
                     <table class="table table-borderless m-b-none">
                         <thead>
                             <tr>
-                                <th>Name</th>
+                                <th>Nama</th>
                                 <th>Scopes</th>
                                 <th></th>
                             </tr>

@@ -58,13 +58,13 @@
         </template>
         <div v-else>
             <div class="page-loading loading">
-                <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+                <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Memuat</strong>
             </div>
         </div>
         <!--<div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Name</label>
+                    <label>Nama</label>
                     <input class="form-control" v-model="discount.name">
                 </div>
             </div>
@@ -152,11 +152,11 @@
                         <div class="panel-footer">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Add Criteria <span class="caret"></span>
+                                    Tambah Criteria <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li><a href="#" @click="addCoupon(setIndex)">Coupon</a></li>
-                                    <li><a href="#" @click="addCustomerGroup(setIndex)">Customer Group</a></li>
+                                    <li><a href="#" @click="addCustomerGroup(setIndex)">Pelanggan Group</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -171,6 +171,6 @@
             </div>
         </template>
         <hr>
-        <button class="btn btn-primary" @click="addSet">Add Set</button>-->
+        <button class="btn btn-primary" @click="addSet">Tambah Set</button>-->
     </div>
 </template>

@@ -47,7 +47,7 @@
                 }).catch(response => {
                     CandyEvent.$emit('notification', {
                         level: 'error',
-                        message: 'Missing / Invalid fields'
+                        message: 'Ada field yang belum diisi'
                     });
                 });
             }
@@ -61,7 +61,7 @@
         <candy-modal title="Create Attribute" v-show="modal" size="modal-md" @closed="modal = false">
             <div slot="body">
                 <div class="form-group">
-                    <label>Name</label>
+                    <label>Nama</label>
                     <input class="form-control" v-model="name">
                 </div>
                 <div class="form-group">
@@ -71,7 +71,7 @@
                 </div>
             </div>
             <template slot="footer">
-                <button type="button" class="btn btn-primary" @click="save">Create Attribute Group</button>
+                <button type="button" class="btn btn-primary" @click="save">Buat Attribute Group</button>
             </template>
         </candy-modal>
     </div>

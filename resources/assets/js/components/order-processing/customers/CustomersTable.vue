@@ -71,7 +71,7 @@
                                 <span class="input-group-addon">
                                   <i class="fa fa-search" aria-hidden="true"></i>
                                 </span>
-                                <label class="sr-only" for="search">Search</label>
+                                <label class="sr-only" for="search">Cari</label>
                                 <input type="text" class="form-control" id="search" placeholder="Search" @keyup="search" v-model="keywords">
                             </div>
                         </div>
@@ -81,10 +81,10 @@
                     <thead>
                         <tr>
                             <th width="10%">ID</th>
-                            <th width="10%">Customer name</th>
-                            <th width="19%">Company name</th>
+                            <th width="10%">Nama Pelanggan</th>
+                            <th width="19%">Nama Perusahaan</th>
                             <th width="19%">Email</th>
-                            <th>Customer Group(s)</th>
+                            <th>Grup Pelanggan</th>
                         </tr>
                     </thead>
                     <tbody v-if="loaded">
@@ -112,7 +112,7 @@
                         <tr>
                             <td colspan="25" style="padding:40px;">
                                 <div class="loading">
-                                    <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+                                    <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Memuat</strong>
                                 </div>
                             </td>
                         </tr>

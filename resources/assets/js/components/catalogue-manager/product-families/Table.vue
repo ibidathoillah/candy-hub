@@ -53,10 +53,10 @@
                     <thead>
                         <tr>
                             <th width="8%">ID</th>
-                            <th>Name</th>
-                            <th>No. of Products</th>
-                            <th>No. of Attributes</th>
-                            <th>Attribute groups</th>
+                            <th>Nama</th>
+                            <th>Jumlah Produk</th>
+                            <th>Jumlah Atribut</th>
+                            <th>Grup Atribut</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -80,7 +80,7 @@
                         <tr>
                             <td colspan="25" style="padding:40px;">
                                 <div class="loading">
-                                    <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+                                    <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Memuat</strong>
                                 </div>
                             </td>
                         </tr>

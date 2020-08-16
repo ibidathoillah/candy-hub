@@ -117,7 +117,7 @@
                     }).catch(response => {
                         CandyEvent.$emit('notification', {
                             level: 'error',
-                            message: 'Missing / Invalid fields'
+                            message: 'Ada field yang belum diisi'
                         });
                     });
             }
@@ -127,8 +127,8 @@
 
 <template>
     <div>
-        <button class="btn btn-primary" @click="modalOpen = true">Add price</button>
-        <candy-modal title="Add Shipping Price" v-show="modalOpen" @closed="modalOpen = false">
+        <button class="btn btn-primary" @click="modalOpen = true">Tambah price</button>
+        <candy-modal title="Tambah Shipping Price" v-show="modalOpen" @closed="modalOpen = false">
             <div slot="body" class="text-left">
                 <div class="row">
                     <div class="col-md-8">
@@ -199,7 +199,7 @@
                 </div>
             </div>
             <template slot="footer">
-                <button class="btn btn-primary" @click="save()">Save Price</button>
+                <button class="btn btn-primary" @click="save()">Simpan Price</button>
             </template>
         </candy-modal>
     </div>

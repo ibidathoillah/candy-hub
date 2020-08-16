@@ -22,7 +22,7 @@
                 }).catch(response => {
                     CandyEvent.$emit('notification', {
                         level: 'error',
-                        message: 'Missing / Invalid fields'
+                        message: 'Ada field yang belum diisi'
                     });
                 });
             },
@@ -37,17 +37,17 @@
 
 <template>
     <div>
-        <button class="btn btn-success" @click="create = true"><fa icon="plus" /> Add Shipping Zone</button>
+        <button class="btn btn-success" @click="create = true"><fa icon="plus" /> Tambah Shipping Zone</button>
         <candy-modal title="Create Shipping Zone" v-show="create" size="modal-md" @closed="create = false">
             <div slot="body">
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">Nama</label>
                     <input type="text" class="form-control" id="name" v-model="zone.name" @input="request.clearError('name')">
                     <span class="text-danger" v-if="request.getError('name')" v-text="request.getError('name')"></span>
                 </div>
             </div>
             <template slot="footer">
-                <button type="button" class="btn btn-primary" @click="save">Create zone</button>
+                <button type="button" class="btn btn-primary" @click="save">Buat zone</button>
             </template>
         </candy-modal>
     </div>

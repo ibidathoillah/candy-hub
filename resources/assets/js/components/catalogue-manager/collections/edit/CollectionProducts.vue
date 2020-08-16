@@ -4,10 +4,10 @@
             <div class="col-xs-12 col-md-12">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>Products</h4>
+                        <h4>Produk</h4>
                     </div>
                     <div class="col-xs-12 col-sm-6 text-right">
-                        <button type="button" class="btn btn-primary" @click="showModal = true">Add a Product</button>
+                        <button type="button" class="btn btn-primary" @click="showModal = true">Tambahkan Produk</button>
                     </div>
                 </div>
 
@@ -15,7 +15,7 @@
                 <table class="table table-striped sortable">
                     <thead>
                         <tr>
-                            <th>Product Name</th>
+                            <th>Nama Produk</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -35,10 +35,10 @@
         <!--
             Modal
         -->
-        <candy-modal title="Add product associations" v-show="showModal" @closed="showModal = false">
+        <candy-modal title="Tambah product associations" v-show="showModal" @closed="showModal = false">
             <div slot="body">
             <div class="form-group">
-                <label class="sr-only">Search</label>
+                <label class="sr-only">Cari</label>
                 <input type="text" class="form-control search" placeholder="Search Products" v-on:input="updateKeywords">
             </div>
             <hr>
@@ -46,7 +46,7 @@
                 <thead>
                 <tr>
                     <th> </th>
-                    <th>Name</th>
+                    <th>Nama</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -54,7 +54,7 @@
                     <tr>
                         <td colspan="25" style="padding:40px;">
                             <div class="loading">
-                                <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Loading</strong>
+                                <span><i class="fa fa-sync fa-spin fa-3x fa-fw"></i></span> <strong>Memuat</strong>
                             </div>
                         </td>
                     </tr>
@@ -95,7 +95,7 @@
                 <tr v-if="!loading && !products">
                     <td colspan="25">
                     <div class="alert alert-info">
-                        Start typing to see products
+                        Mulai ketikkan untuk melihat produk
                     </div>
                     </td>
                 </tr>
@@ -106,7 +106,7 @@
             </div>
             </div>
             <template slot="footer">
-                <button class="btn btn-primary" @click="save()">Associate products</button>
+                <button class="btn btn-primary" @click="save()">Associate Produk</button>
             </template>
         </candy-modal>
     </div>

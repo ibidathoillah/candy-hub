@@ -125,8 +125,8 @@
             </div>
             <template slot="footer">
                 <template v-if="!processing">
-                    <button type="button" class="btn btn-primary" @click="save(true)">Create & edit duplicate</button>
-                    <button type="button" class="btn btn-primary" @click="save(false)">Create & duplicate again</button>
+                    <button type="button" class="btn btn-primary" @click="save(true)">Buat & edit duplicate</button>
+                    <button type="button" class="btn btn-primary" @click="save(false)">Buat & duplicate again</button>
                 </template>
                 <template v-else>
                     <button type="button" class="btn btn-default" disabled>
