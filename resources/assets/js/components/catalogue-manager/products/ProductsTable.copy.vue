@@ -186,7 +186,7 @@
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" :class="{'active' : isActive('all')}">
                 <a href="#all-products" aria-controls="all-products" role="tab" data-toggle="tab" @click="resetSearch()">
-                    All Products
+                    Semua Produk
                 </a>
             </li>
             <li role="presentation" v-for="(search, index) in savedSearches" :key="search.id" :class="{'active' : isActive(search)}">

@@ -58,7 +58,7 @@
 <template>
     <div>
         <button class="btn btn-success" @click="modal = true"><fa icon="plus" class="fa-first"></fa> Buat Attribute Group</button>
-        <candy-modal title="Create Attribute" v-show="modal" size="modal-md" @closed="modal = false">
+        <candy-modal title="Buat Attribute" v-show="modal" size="modal-md" @closed="modal = false">
             <div slot="body">
                 <div class="form-group">
                     <label>Nama</label>

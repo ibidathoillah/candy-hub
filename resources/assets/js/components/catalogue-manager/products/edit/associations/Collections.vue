@@ -101,7 +101,7 @@
         <div class="col-xs-12">
             <div class="row">
                 <div class="col-xs-12 col-sm-6">
-                    <h4>Collections</h4>
+                    <h4>Occassion</h4>
                 </div>
                 <div class="col-xs-12 col-sm-6 text-right">
                     <candy-collection-browser @saved="addNew" :current="collections" v-if="collections"></candy-collection-browser>

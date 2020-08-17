@@ -52,7 +52,7 @@
 <template>
     <div>
         <button class="btn btn-success" @click="create = true"><fa icon="plus" /> Tambah Shipping Method</button>
-        <candy-modal title="Create Shipping Method" v-show="create" size="modal-md" @closed="create = false">
+        <candy-modal title="Buat Shipping Method" v-show="create" size="modal-md" @closed="create = false">
             <div slot="body">
                 <div class="form-group">
                     <label for="name">Nama</label>

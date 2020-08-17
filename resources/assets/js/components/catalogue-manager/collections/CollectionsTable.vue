@@ -81,7 +81,7 @@
         <!-- <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active">
                 <a href="#all-collections" aria-controls="all-products" role="tab" data-toggle="tab">
-                    All Collections
+                    All Occassion
                 </a>
             </li>
         </ul> -->

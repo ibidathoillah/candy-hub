@@ -1,7 +1,7 @@
 <template>
     <div class="btn-holder">
         <button class="btn btn-sm btn-default" @click="show = true">Update Status</button>
-            <candy-modal title="Create Attribute" v-show="show" size="modal-lg" @closed="reset">
+            <candy-modal title="Buat Attribute" v-show="show" size="modal-lg" @closed="reset">
                 <div slot="body" class="text-left">
                     <div class="row">
                         <div class="col-md-4">

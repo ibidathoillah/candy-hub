@@ -70,11 +70,11 @@
         props: {
             buttonText: {
                 type: String,
-                default: 'Browse Collections',
+                default: 'Browse Occassion',
             },
             buttonConfirm: {
                 type: String,
-                default: 'Attach Collections',
+                default: 'Attach Occassion',
             },
             current: {
                 type: Array|Object,
