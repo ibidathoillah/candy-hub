@@ -430,14 +430,14 @@
                                 </div>
                             </div>
                         </template>
-                        <h4>Pricing</h4>
+                        <h4>Penetapan harga</h4>
                         <hr>
                         <div class="row">
                             <div class="col-xs-12 col-md-3">
                                 <div class="form-group">
                                     <label>
-                                        Unit Quantity
-                                        <em class="help-txt">The number of units that make up the price</em>
+                                        Kuantitas unit
+                                        <em class="help-txt">Jumlah unit yang membentuk harga</em>
                                     </label>
                                     <input type="number" class="form-control" v-model="current.unit_qty">
                                 </div>
@@ -445,8 +445,8 @@
                             <div class="col-xs-12 col-md-3">
                                 <div class="form-group">
                                     <label>
-                                        Min Purchase Quantity
-                                        <em class="help-txt">The minimum amount that can be purchased</em>
+                                        Kuantitas Minimum Pembelian
+                                        <em class="help-txt">Jumlah minimum yang dapat dibeli</em>
                                     </label>
                                     <input type="number" class="form-control" v-model="current.min_qty">
                                 </div>
@@ -454,8 +454,8 @@
                             <div class="col-xs-12 col-md-3">
                                 <div class="form-group">
                                     <label>
-                                        Min Batch Quantity
-                                        <em class="help-txt">This product can be ordered in multiples of {{ current.min_batch }}</em>
+                                        Minimum Pembelian Setumpuk
+                                        <em class="help-txt">Produk ini bisa dipesan dalam kelipatan {{ current.min_batch }}</em>
                                     </label>
                                     <input type="number" class="form-control" v-model="current.min_batch">
                                 </div>
@@ -463,8 +463,8 @@
                             <div class="col-xs-12 col-md-3">
                                 <div class="form-group">
                                     <label>
-                                        Max Purchase Quantity
-                                        <em class="help-txt">The maximum amount that can be purchased (0 = unlim.)</em>
+                                        Kuantitas Maksimal Pembelian
+                                        <em class="help-txt">Jumlah maksimum yang dapat dibeli (0 = tak terbatas.)</em>
                                     </label>
                                     <input type="number" class="form-control" v-model="current.max_qty">
                                 </div>
@@ -475,7 +475,7 @@
                                 <div class="form-group">
                                     <label for="groupPricing">
                                         <input id="groupPricing" type="checkbox" v-model="hasGroupPricing">
-                                        <span class="faux-label"> Individual Customer Group Pricing</span>
+                                        <span class="faux-label"> Harga Grup Pelanggan Perorangan</span>
                                     </label>
                                 </div>
                                     <template v-if="hasGroupPricing">
