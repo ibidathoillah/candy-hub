@@ -5,7 +5,7 @@
                 <th width="5%"></th>
                 <th width="25%">Product</th>
                 <th width="10%">Stock</th>
-                <th width="15%"Saluran/th>
+                <th width="15%">Saluran</th>
                 <th width="19%">Grup Pelanggan</th>
                 <th width="19%">Purchasable</th>
             </template>
