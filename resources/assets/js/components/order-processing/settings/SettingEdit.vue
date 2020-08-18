@@ -8,10 +8,13 @@
             return {
                 title: '',
                 loaded: false,
-                countries: [],
                 selected: [],
-                article: {},
-                keywords: ''
+                settings: {},
+                currentSub: {},
+                keywords: '',
+                showSub: false,
+                request : apiRequest,
+                currentSet: {}
             }
         },
         props: {
@@ -25,118 +28,93 @@
             this.countryCache = [];
         },
         mounted() {
-            CandyEvent.$on('article-updated', event => {
+            CandyEvent.$on('settings-updated', event => {
                 this.loaded = false;
                 this.load(this.id);
             });
+            CandyEvent.$on('settings-added', event => {
+                this.loaded = false;
+                this.load(this.id);
+            });
+            
 
-            Dispatcher.add('save-articles', this);
-
-            this.loadCountries();
+            Dispatcher.add('save-settings', this);
         },
         methods: {
-            loadCountries() {
-                apiRequest.send('GET', '/countries').then(response => {
-                    this.countries = response.data;
-                    this.countryCache = response.data;
+            createsub(){
+                if(!this.currentSet.sub_settings){
+                    this.currentSet.sub_settings = [];
+                }
+                var data = this.currentSub;
+                this.currentSet.sub_settings.push(data);
+                CandyEvent.$emit('notification', {
+                        level: 'success'
                 });
+                this.save(this.currentSet);
+                this.currentSub = {};
+                this.showSub = false;
             },
-            save() {
-                var tags = [];
-                var temp = this.article;
-                for(let i=0;i<temp.tags.length;i++){
-                    if(temp.tags[i].name!="")
-                    tags.push(temp.tags[i].name)
+            del(a){
+                if(window.confirm("Apakah kamu yakin untuk menghapus pengaturan" +a.name)){
+                    this.request.send('delete', '/sites-settings/' + a.name)
+                    .then(response => {
+                        CandyEvent.$emit('notification', {
+                            level: 'success'
+                        });
+                        this.settings = this.settings.filter(x => x.id!=a.id)
+
+                    }).catch(response => {
+                        CandyEvent.$emit('notification', {
+                            level: 'error',
+                            message: 'Ada field yang belum diisi'
+                        });
+                    });
                 }
 
-                temp.tags = tags.toString();
-                apiRequest.send('PUT', '/articles/' + temp.id, temp).then(response => {
+            },
+            del2(a,b){
+                 if(window.confirm("Apakah kamu yakin untuk menghapus sub " +b.name)){
+                     a.sub_settings = a.sub_settings.filter(x => x.name!=b.name);
+                     this.save(a);
+                 }
+            },
+            desc(e) {
+                var cur = $(e.target);
+                var next = $(cur.next()[0]);
+
+                if(next.is(":visible")){
+                    next.hide('slow');
+                    cur.text("+ Tambah Deskripsi")
+                }else {
+                    next.show('slow');
+                    cur.text("- Tutup")
+                }
+                
+            },
+            save(data) {
+                this.request.send('put', '/sites-settings/' + data.name, data)
+                .then(response => {
                     CandyEvent.$emit('notification', {
                         level: 'success'
                     });
                 }).catch(response => {
                     CandyEvent.$emit('notification', {
                         level: 'error',
-                        message: response.message
+                        message: 'Ada field yang belum diisi'
                     });
                 });
-            },
-            getFlag: function(locale) {
-                if (locale == 'en') {
-                    locale = 'gb';
-                }
-                return 'flag-icon-' + locale.toLowerCase();
-            },
-            selectAll(region) {
-                _.each(region.countries.data, country => {
-                    if (!_.includes(this.selected, country.id)) {
-                        this.selected.push(country.id);
-                    }
-                });
-            },
-            selectedCount(region) {
-                var count = 0;
-                _.each(region.countries.data, country => {
-                    if (_.includes(this.selected, country.id)) {
-                        count++;
-                    }
-                });
-                return count;
-            },
-            deselect(region) {
-                var indexes = [],
-                    selected = [];
-
-                var ids = _.map(region.countries.data, item => {
-                    return item.id;
-                });
-
-                this.selected = _.filter(this.selected, item => {
-                    return !ids.includes(item);
-                });
-            },
-            isSelected(id) {
-                return this.selected.includes(id);
-            },
-            getCache() {
-                return JSON.parse(JSON.stringify(this.countryCache));
-            },
-            search() {
-                this.countries = this.getCache();
-                if (this.keywords) {
-                    this.countries = this.countries.filter(region => {
-                        region.countries.data = _.filter(region.countries.data, country => {
-                            return !(country.name.en.indexOf(this.keywords) == -1);
-                        });
-                        return region.countries.data.length;
-                    });
-                }
             },
             /**
              * Loads the product by its encoded ID
              * @param  {String} id
              */
             load(id) {
-                apiRequest.send('get', '/articles/' + id, {})
+                this.request.send('get', '/sites-settings/'+id, {})
                 .then(response => {
-                    this.article = response;
-                    var tags = this.article.tags.split(",");
-                    var tags_data = [];
 
-                    for(let i=0;i<tags.length;i++){
-                        if(tags[i]!="")
-                        tags_data.push({ name : tags[x] })
-                    }
-
-                    this.article.tags = tags_data;
+                    this.settings = [response];
                     this.loaded = true;
-
-                    CandyEvent.$emit('title-changed', {
-                        title: this.article.title
-                    });
-
-                    document.title = this.article.title + ' Articles';
-
+ 
                 }).catch(error => {
                     CandyEvent.$emit('notification', {
                         level: 'error',
@@ -153,7 +131,74 @@
         <template v-if="loaded">
             <div class="panel">
                 <div class="panel-body">
-                    <div class="form-group">
+                    <candy-modal :title="'Buat Sub Pengaturan [' + [currentSet.name] +']'"  v-show="showSub" size="modal-md" @closed="showSub = false">
+                                        <div slot="body">
+                <div class="form-group">
+                    <label for="name">Nama Pengaturan</label>
+                    <input type="text" id="name" class="form-control" v-model="currentSub.name">
+                    <span class="text-danger" v-if="request.getError('name')" v-text="request.getError('name')"></span>
+                </div>
+                 <div class="form-group">
+                    <label for="value">Isi</label>
+                    <candy-textarea
+                                        :placeholder="'Isi'" 
+                                        :id="'default-content'"
+                                        :richtext="true"
+                                        v-model="currentSub.value"></candy-textarea>
+                    <span class="text-danger" v-if="request.getError('value')" v-text="request.getError('value')"></span>
+                </div>
+                <div class="form-group">
+                    <label for="url">Link URL</label>
+                    <input type="text" id="url" class="form-control" v-model="currentSub.url">
+                    <span class="text-danger" v-if="request.getError('url')" v-text="request.getError('url')"></span>
+                </div>
+                <div class="form-group">
+                    <label for="image_url">URL Gambar</label>
+                    <input type="text" id="image_url" class="form-control" v-model="currentSub.image_url">
+                    <span class="text-danger" v-if="request.getError('image_url')" v-text="request.getError('image_url')"></span>
+                </div>
+                                        </div>
+                                        <template slot="footer">
+                                            <button type="button" class="btn btn-primary" @click="createsub">Tambahkan Sub Pengaturan</button>
+                                        </template>
+                                    </candy-modal>
+                    <!-- <h4>{{ JSON.stringify(settings) }}</h4> -->
+                    <div v-for="set in settings">
+                         <h3>Pengaturan {{set.name}}</h3>
+                        <div class="form-group" >
+                            <div class="input-group input-group-full"><span class="input-group-addon">Nama</span>  <input type="text" class="form-control" placeholder="Nama" v-model="set.name"></div>
+                            <div class="input-group input-group-full"><span class="input-group-addon">Link</span>  <input type="text" class="form-control" placeholder="Link" v-model="set.url"></div>
+                           <div class="input-group input-group-full"><span class="input-group-addon">URL Gambar</span>  <input type="text" class="form-control" placeholder="URL Gambar" v-model="set.image_url"></div>
+                            <a @click="desc($event)">+ Tambah Deskripsi</a>
+                             <div style="display:none"><candy-textarea
+                                        :placeholder="'Isi'" 
+                                        :id="'default-content'"
+                                        :richtext="true"
+                                        v-model="set.value">
+                            </candy-textarea></div>
+
+                            <div style="padding: 20px;padding-top:5px;zoom: 0.7;">
+                            <button class="btn btn-success" @click="showSub = true;currentSet=set">Tambah Detail</button>
+                            <div style="margin-bottom:5px" v-if="set.sub_settings" v-for="set2 in set.sub_settings">
+                            <label>Sub Pengaturan - {{set2.name}}</label>
+                            <div class="input-group input-group-full"><span class="input-group-addon">Nama</span>  <input type="text" class="form-control" placeholder="Nama" v-model="set2.name"></div>
+                            <div class="input-group input-group-full"><span class="input-group-addon">Link</span>  <input type="text" class="form-control" placeholder="Link" v-model="set2.url"></div>
+                           <div class="input-group input-group-full"><span class="input-group-addon">URL Gambar</span>  <input type="text" class="form-control" placeholder="URL Gambar" v-model="set2.image_url"></div>
+                             <a @click="desc($event)">+ Tambah Deskripsi</a>
+                             <div style="display:none"><candy-textarea
+                                        :placeholder="'Isi'" 
+                                        :id="'default-content'"
+                                        :richtext="true"
+                                        v-model="set2.value">
+                            </candy-textarea></div>
+                                <button class="btn btn-warning" style="float:right" @click="del2(set,set2)">Hapus</button>
+                            </div>
+                            </div>
+                        </div>
+                        <button @click="save(set)"  class="btn btn-primary">Simpan</button> <button class="btn btn-danger"  @click="del(set)">Hapus</button>
+                        <hr/>
+                    </div>
+                    <!-- <div class="form-group">
                         <label>Title</label>
                         <input type="text" class="form-control" v-model="article.title">
                     </div>
@@ -173,7 +218,7 @@
                         <label>Tag</label>
                         <candy-taggable v-model="article.tags">
                         </candy-taggable>
-                    </div> 
+                    </div>  -->
                 </div>
             </div>
         </template>

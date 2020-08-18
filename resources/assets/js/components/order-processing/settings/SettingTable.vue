@@ -32,7 +32,7 @@
                 this.load();
             },
             goTo: function (id) {
-                location.href = route('hub.setting.edit', id);
+                location.href = route('hub.settings.edit', id);
             },
         }
     }
