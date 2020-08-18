@@ -78,7 +78,7 @@
                         <input type="text" class="form-control" v-model="variant.sku">
                     </div>
                     <div class="col-md-4">
-                        <label for="sku">Price</label>
+                        <label for="sku">Harga</label>
                         <div class="input-group input-group-full">
                             <span class="input-group-addon">IDR</span>
                             <input type="number" class="form-control" v-model="variant.price">

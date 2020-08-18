@@ -77,7 +77,7 @@
 
 <template>
     <div>
-        <button class="btn btn-success" @click="createProduct = true"><i class="fa fa-plus fa-first" aria-hidden="true"></i> Tambah Product</button>
+        <button class="btn btn-success" @click="createProduct = true"><i class="fa fa-plus fa-first" aria-hidden="true"></i> Tambah Produk</button>
         <candy-modal title="Buat Product" v-show="createProduct" size="modal-md" @closed="createProduct = false">
             <div slot="body">
                 <div class="form-group">
@@ -91,7 +91,7 @@
                     <span class="text-danger" v-if="request.getError('sku')" v-text="request.getError('sku')"></span>
                 </div>
                 <div class="form-group">
-                    <label for="sku">Price</label>
+                    <label for="sku">Harga</label>
                     <input type="text" class="form-control" id="price" v-model="product.price" @input="request.clearError('price')">
                     <span class="text-danger" v-if="request.getError('price')" v-text="request.getError('price')"></span>
                 </div>

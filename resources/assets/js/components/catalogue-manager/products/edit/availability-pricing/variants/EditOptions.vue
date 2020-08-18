@@ -391,7 +391,7 @@
                         <th v-for="option in options">
                             {{ option.label.en }}
                         </th>
-                        <th>Price</th>
+                        <th>Harga</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -424,7 +424,7 @@
                     <thead>
                     <tr>
                         <th width="20%">Variant</th>
-                        <th width="20%">Price</th>
+                        <th width="20%">Harga</th>
                         <th width="40%">SKU</th>
                         <th width="10%">Inventory</th>
                         <th></th>

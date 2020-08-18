@@ -101,7 +101,7 @@
                         <div class="col-md-2">
                             <candy-product-browser
                                 :current="products"
-                                button-text="Tambah Product"
+                                button-text="Tambah Produk"
                                 button-confirm="Associate Products"
                                 @saved="add"
                             >
