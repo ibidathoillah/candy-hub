@@ -49,7 +49,7 @@
 <template>
     <div>
         <button class="btn btn-success" @click="create = true"><i class="fa fa-plus fa-first" aria-hidden="true"></i> Tambah Diskon</button>
-        <candy-modal title="Create Product" v-show="create" size="modal-md" @closed="create = false">
+        <candy-modal title="Buat Product" v-show="create" size="modal-md" @closed="create = false">
             <div slot="body">
                 <div class="form-group">
                     <label for="name">Nama Diskon</label>

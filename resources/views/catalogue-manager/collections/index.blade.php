@@ -1,5 +1,5 @@
 @extends('hub::layout', [
-    'title' => 'Collections',
+    'title' => 'Occassion',
 ])
 @section('side_menu')
     @include('hub::catalogue-manager.partials.side-menu')
@@ -7,7 +7,7 @@
 
 @section('header_title')
     <small>Manajer Katalog</small>
-    <h1>Collections</h1>
+    <h1>Occassion</h1>
 @endsection
 
 @section('header_actions')

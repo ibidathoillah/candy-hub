@@ -29,7 +29,7 @@
     <div>
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                <h4>Pelanggan Grup</h4>
+                <h4>Grup Pelanggan</h4>
                 <hr>
                 <table class="table">
                     <thead>

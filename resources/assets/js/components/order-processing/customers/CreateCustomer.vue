@@ -46,7 +46,7 @@
 <template>
     <div>
         <button class="btn btn-success" @click="create = true"><i class="fa fa-plus fa-first" aria-hidden="true"></i> Tambah Customer</button>
-        <candy-modal title="Create Customer" v-show="create" size="modal-md" @closed="create = false">
+        <candy-modal title="Buat Customer" v-show="create" size="modal-md" @closed="create = false">
             <div slot="body">
                 {{ request.getError('email') }}
                 <div class="row">

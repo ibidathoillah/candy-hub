@@ -5,12 +5,12 @@
                 <img :src="thumbnail" :alt="current.id" class="placeholder">
             </figure>
             <span class="change-img">
-                <span v-if="hasThumbnail">Change image</span>
-                <span v-else>Choose image</span>
+                <span v-if="hasThumbnail">Ganti gambar</span>
+                <span v-else>Pilih gambar</span>
             </span>
         </button>
 
-        <candy-modal title="Change variant image" v-show="changeImage" @closed="changeImage = false">
+        <candy-modal title="Ganti gambar variant" v-show="changeImage" @closed="changeImage = false">
             <div slot="body">
                 <div class="row">
                     <div class="col-md-4">

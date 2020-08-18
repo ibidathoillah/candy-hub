@@ -5,25 +5,25 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label>Date Range</label>
+                            <label>Rentang Tanggal</label>
                             <candy-daterange-picker @update="update" :from="fromDate" :to="toDate" />
                         </div>
                     </div>
                     <div class="col-md-1">
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label>Frequency</label>
+                            <label>Frekuensi</label>
                             <select class="form-control" v-model="viewMode" @change="refresh">
-                                <option value="daily">Daily</option>
-                                <option value="weekly">Weekly</option>
-                                <option value="monthly">Monthly</option>
+                                <option value="daily">Harian</option>
+                                <option value="weekly">Mingguan</option>
+                                <option value="monthly">Bulanan</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-md-1">
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label>Graph Type</label>
+                            <label>Tipe Grafik</label>
                             <select class="form-control" v-model="style" @change="refresh">
-                                <option value="line">Line</option>
+                                <option value="line">Garis</option>
                                 <option value="bar">Bar</option>
                             </select>
                         </div>
@@ -33,7 +33,7 @@
             <div class="panel-body">
 
                 <div v-show="loading">
-                    <span><i class="fa fa-sync fa-spin"></i></span> Loading Report
+                    <span><i class="fa fa-sync fa-spin"></i></span> Memuat Laporan
                 </div>
                 <canvas ref="graph" v-show="!loading"/>
             </div>

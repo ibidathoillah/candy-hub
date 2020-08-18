@@ -168,7 +168,7 @@
                 <tfoot v-if="!productCategories.length">
                     <tr>
                       <td colspan="4">
-                        <span class="text-muted">No categories found</span>
+                        <span class="text-muted">Tidak ada kategori yang ditemukan</span>
                       </td>
                     </tr>
                 </tfoot>
@@ -176,7 +176,7 @@
         </div>
 
         <!-- Tambah category to product Modal -->
-        <candy-modal id="addModal" title="Tambah this product to categories" size="modal-lg" v-show="addModalOpen" @closed="closeAddModal()">
+        <candy-modal id="addModal" title="Tambah Produk Ini Kedalam Kategori" size="modal-lg" v-show="addModalOpen" @closed="closeAddModal()">
 
             <div slot="body">
                 <template v-if="categoriesLoaded">
@@ -188,7 +188,7 @@
             </div>
 
             <div slot="footer">
-                <button type="button" class="btn btn-primary" @click="save()">Simpan Assignments</button>
+                <button type="button" class="btn btn-primary" @click="save()">Simpan Perubahan</button>
             </div>
 
         </candy-modal>

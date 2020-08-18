@@ -59,7 +59,7 @@
 <template>
     <div>
         <button class="btn btn-primary" @click="modalOpen = true">Buat variant</button>
-        <candy-modal title="Create variant" v-show="modalOpen" @closed="modalOpen = false">
+        <candy-modal title="Buat variant" v-show="modalOpen" @closed="modalOpen = false">
             <div slot="body" class="text-left">
                 <div class="row">
                     <div class="col-md-6" v-for="(option, handle) in options">

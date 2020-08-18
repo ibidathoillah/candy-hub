@@ -32,6 +32,7 @@
             });
 
             if (asset) {
+                console.log(asset);
                 let thumbnail = _.find(asset.transforms.data, transform => {
                     return transform.handle == this.size;
                 });

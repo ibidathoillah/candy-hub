@@ -61,7 +61,7 @@
 <template>
     <div>
         <button class="btn btn-success" @click="createCollection = true"><i class="fa fa-plus fa-first" aria-hidden="true"></i> Tambah Occasion</button>
-        <candy-modal title="Create Collection" v-show="createCollection" size="modal-md" @closed="createCollection = false">
+        <candy-modal title="Buat Collection" v-show="createCollection" size="modal-md" @closed="createCollection = false">
             <div slot="body">
                 <div class="form-group">
                     <label for="name">Nama Occasion</label>

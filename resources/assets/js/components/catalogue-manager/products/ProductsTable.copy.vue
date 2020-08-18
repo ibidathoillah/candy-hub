@@ -186,7 +186,7 @@
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" :class="{'active' : isActive('all')}">
                 <a href="#all-products" aria-controls="all-products" role="tab" data-toggle="tab" @click="resetSearch()">
-                    All Products
+                    Semua Produk
                 </a>
             </li>
             <li role="presentation" v-for="(search, index) in savedSearches" :key="search.id" :class="{'active' : isActive(search)}">
@@ -267,8 +267,8 @@
                             <th width="5%"></th>
                             <th width="25%">Product</th>
                             <th width="10%">Stock</th>
-                            <th width="15%">Channels</th>
-                            <th width="19%">Pelanggan Grup</th>
+                            <th width="15%">Channel</th>
+                            <th width="19%">Grup Pelanggan</th>
                             <th width="19%">Purchasable</th>
                             <!-- <th width="19%">Grup</th> -->
                         </tr>

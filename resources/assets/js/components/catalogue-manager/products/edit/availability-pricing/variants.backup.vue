@@ -24,7 +24,7 @@
                 this.currentIndex = index;
             },
             deleteVariant(index) {
-                if (confirm('Are you sure you want to delete this variant?')) {
+                if (confirm('Apakah kamu yakin ingin menghapus variant ini?')) {
                     apiRequest.send('delete', '/products/variants/' + this.variants[index].id)
                         .then(response => {
                             CandyEvent.$emit('notification', {
@@ -78,7 +78,7 @@
           <div class="col-xs-12">
             <div class="row">
               <div class="col-md-8">
-                <h4>Product Availability</h4>
+                <h4>Ketersediaan Produk</h4>
               </div>
               <div class="col-md-4 text-right">
                 <candy-create-variant :product="product" :showModal="createVariant"></candy-create-variant>
@@ -91,7 +91,7 @@
         </div>
         <div class="row">
           <div class="col-xs-12" :class="{'col-md-8 col-md-push-4': variants.length > 1}">
-            <h4>Options</h4>
+            <h4>Opsi</h4>
             <hr>
             <div class="row">
               <div class="col-xs-12 col-md-8">
@@ -106,7 +106,7 @@
                 <a href="" class="variant-option-img">
                   <div class="change-img">
                     <img src="/candy-hub/images/placeholder/no-image.svg" alt="Placeholder" class="placeholder">
-                    Change image
+                    Ganti Gambar
                   </div>
                 </a>
                 <!--
@@ -122,7 +122,7 @@
             <div class="row">
               <div class="col-xs-12 col-md-5">
                 <div class="form-group">
-                  <label>Price</label>
+                  <label>Harga</label>
                   <div class="input-group input-group-full">
                     <span class="input-group-addon">IDR</span>
                     <input type="number" class="form-control" v-model="current.price">
@@ -140,7 +140,7 @@
               </div>
               <div class="col-xs-6 col-md-2">
                 <div class="form-group">
-                  <label>Tax</label>
+                  <label>Pajak</label>
                   <candy-select :options="['0%','5%','20%']"></candy-select>
                 </div>
               </div>
@@ -207,7 +207,7 @@
               <div class="col-xs-12 col-md-5">
                 <div class="form-group">
                   <label>
-                    Weight
+                    Berat
                     <em class="help-txt">Description on what weigth is used for.</em>
                   </label>
                   <div class="input-group input-group-full">
@@ -223,7 +223,7 @@
               <div class="col-xs-12 col-md-5">
                 <div class="form-group">
                   <label>
-                    Height
+                    Tinggi
                     <em class="help-txt">Description on what height is used for.</em>
                   </label>
                   <div class="input-group input-group-full">
@@ -261,7 +261,7 @@
                     <candy-select :options="['l', 'ml']" v-model="current.volume.unit"></candy-select>
                   </div>
                 </div>
-                <button class="btn btn-danger" @click="deleteVariant(currentIndex)" v-if="variants.length > 1"><i class="fa fa-trash"></i> Delete variant</button>
+                <button class="btn btn-danger" @click="deleteVariant(currentIndex)" v-if="variants.length > 1"><i class="fa fa-trash"></i> Hapus variant</button>
               </div>
             </div>
           </div>

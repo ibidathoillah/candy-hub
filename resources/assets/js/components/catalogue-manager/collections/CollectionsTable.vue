@@ -81,7 +81,7 @@
         <!-- <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active">
                 <a href="#all-collections" aria-controls="all-products" role="tab" data-toggle="tab">
-                    All Collections
+                    All Occassion
                 </a>
             </li>
         </ul> -->
@@ -170,7 +170,7 @@
                                                 <a href="#" class="btn btn-outline btn-sm">Edit</a>
                                                 <a href="#" class="btn btn-outline btn-sm">Publish</a>
                                                 <a href="#" class="btn btn-outline btn-sm">Hide</a>
-                                                <a href="#" class="btn btn-outline btn-sm">Delete</a>
+                                                <a href="#" class="btn btn-outline btn-sm">Hapus</a>
                                             </div>
                                             <div v-if="checkedCount == collections.length" class="all-selected">
                                                 <em>All collections on this page are selected</em>

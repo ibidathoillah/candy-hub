@@ -5,8 +5,8 @@
 @endsection
 
 @section('header_title')
-    <small>Articles</small>
-    <h1>List Articles</h1>
+    <small>Artikel</small>
+    <h1>List Artikel</h1>
 @endsection
 
 @section('header_actions')

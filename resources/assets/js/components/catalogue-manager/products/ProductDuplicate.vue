@@ -96,11 +96,11 @@
         <candy-modal title="Duplicate Product" v-show="show" size="modal-md" @closed="show = false">
             <div slot="body">
                 <template v-if="fetching">
-                    <fa icon="sync" spin/> Loading
+                    <fa icon="sync" spin/> Memuat
                 </template>
                 <template v-else>
-                    <p>Fill in the fields below to create a duplicate product. You will be able to change the other fields once it's been created</p>
-                    <p class="text-info">Any duplicated products are initially set as inactive</p>
+                    <p>Isi bidang di bawah ini untuk membuat produk duplikat. Anda akan dapat mengubah bidang lain setelah dibuat</p>
+                    <p class="text-info">Setiap produk duplikat awalnya ditetapkan sebagai tidak aktif</p>
                     <div class="form-group">
                         <label>SKU<span v-if="skus.length > 1">'s</span></label>
                         <template v-for="(sku, index) in skus" >
@@ -126,11 +126,11 @@
             <template slot="footer">
                 <template v-if="!processing">
                     <button type="button" class="btn btn-primary" @click="save(true)">Buat & edit duplicate</button>
-                    <button type="button" class="btn btn-primary" @click="save(false)">Buat & duplicate again</button>
+                    <button type="button" class="btn btn-primary" @click="save(false)">Buat & duplicate lagi</button>
                 </template>
                 <template v-else>
                     <button type="button" class="btn btn-default" disabled>
-                        <fa icon="sync" spin /> Processing
+                        <fa icon="sync" spin /> Diproses
                     </button>
 
                 </template>

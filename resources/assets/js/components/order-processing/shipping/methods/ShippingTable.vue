@@ -77,7 +77,7 @@
                             <th>Tipe</th>
                             <th>Prices</th>
                             <th>Zones</th>
-                            <th>Pelanggan Grup</th>
+                            <th>Grup Pelanggan</th>
                         </tr>
                     </thead>
                     <tbody v-if="loaded">
