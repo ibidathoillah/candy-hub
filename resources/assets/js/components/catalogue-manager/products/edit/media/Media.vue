@@ -377,7 +377,7 @@
                 </button>
             </template>
         </candy-modal>
-        <candy-modal title="Are you wish to delete this asset?" v-show="deleteModalOpen" @closed="closeDeleteModal">
+        <candy-modal title="Apakah kamu ingin menghapus asset ini?" v-show="deleteModalOpen" @closed="closeDeleteModal">
             <div slot="body">
                 <p>Ketika sudah dihapus tidak akan bisa dikembalikan</p>
             </div>

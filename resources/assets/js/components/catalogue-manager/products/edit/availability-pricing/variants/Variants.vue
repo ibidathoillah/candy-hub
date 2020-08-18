@@ -593,7 +593,7 @@
                                 </div>
                             </div>
                         </div>
-                        </candy-disabled> -->
+                        </candy-disabled> 
                         <div class="row">
                             <div class="col-xs-12 col-md-5">
                                 <div class="form-group">
@@ -658,7 +658,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="row">
                             <div class="col-md-12">
                                 <button class="btn btn-danger" @click="deleteVariant(currentIndex)"
