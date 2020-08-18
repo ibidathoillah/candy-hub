@@ -40,18 +40,18 @@
     <div>
         <template v-if="loaded">
             <candy-tabs initial="save-discount">
-                <candy-tab name="Basic information" :selected="true"  dispatch="save-discount">
+                <candy-tab name="Informasi" :selected="true"  dispatch="save-discount">
                     <candy-discount-details :discount="discount"></candy-discount-details>
                 </candy-tab>
-                <candy-tab name="Conditions" dispatch="save-discount">
+                <candy-tab name="Kondisi" dispatch="save-discount">
                     <candy-discount-conditions :discount="discount"></candy-discount-conditions>
                 </candy-tab>
-                <candy-tab name="Rewards" dispatch="save-discount">
+                <candy-tab name="Reward" dispatch="save-discount">
                     <div class="tab-content sub-content section block">
                         <candy-discount-rewards :discount="discount"></candy-discount-rewards>
                     </div>
                 </candy-tab>
-                <candy-tab name="Availability" handle="collection-availability" dispatch="save-discount">
+                <candy-tab name="Ketersediaan" handle="collection-availability" dispatch="save-discount">
                     <candy-discount-availability :discount="discount"></candy-discount-availability>
                 </candy-tab>
             </candy-tabs>

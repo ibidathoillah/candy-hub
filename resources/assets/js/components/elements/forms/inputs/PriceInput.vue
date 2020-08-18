@@ -4,7 +4,7 @@
             <div class="input-group input-group-full" slot-scope="currency">
                 <span class="input-group-addon" v-html="currency.symbol"></span>
                 <input type="number" class="form-control" v-model="price" step="0.01">
-                <span class="input-group-addon">Excl. Tax</span>
+                <span class="input-group-addon">Tidak Termasuk Pajak</span>
             </div>
         </currency-data>
     </div>

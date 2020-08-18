@@ -6063,7 +6063,7 @@
             "license": [
                 "MIT"
             ],
-            "description": "Create deep copies (clones) of your objects",
+            "description": "Buat deep copies (clones) of your objects",
             "keywords": [
                 "clone",
                 "copy",

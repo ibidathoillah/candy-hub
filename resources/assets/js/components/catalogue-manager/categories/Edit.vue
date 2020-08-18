@@ -117,7 +117,7 @@
 
                 <candy-tabs initial="categorydetails">
 
-                    <candy-tab name="Category Details" handle="category-details" :selected="true" dispatch="category-details">
+                    <candy-tab name="Detail Kategori" handle="category-details" :selected="true" dispatch="category-details">
                         <candy-tabs nested="true">
                             <candy-tab v-for="(group, index) in attribute_groups" :name="group.name" :handle="group.id" :key="group.id" :selected="index == 0 ? true : false" dispatch="category-details">
                                 <candy-category-details :category="category" :languages="languages" :group="group">
@@ -130,16 +130,16 @@
                         <candy-media assetable="categories" :parent="category"></candy-media>
                     </candy-tab>
 
-                    <candy-tab name="Availability &amp; Pricing" handle="category-availability" dispatch="category-availability">
+                    <candy-tab name="Ketersediaan &amp; Harga" handle="category-availability" dispatch="category-availability">
                         <candy-category-availability :category="category" v-if="category"></candy-category-availability>
                     </candy-tab>
 
-                    <candy-tab name="Associations" dispatch="product-positioning">
+                    <candy-tab name="Produk Terkait" dispatch="product-positioning">
                         <candy-tabs nested="true">
                             <candy-tab name="Products" :selected="true" dispatch="product-positioning">
                                 <candy-category-product-positioning :category-id="category.id" :sort="category.sort" :products="category.products.data"></candy-category-product-positioning>
                             </candy-tab>
-                            <candy-tab name="Children Categories">
+                            <candy-tab name="Sub Ketegori">
                                 <candy-category-nodes :nodes="category.children.data" :category-id="category.id"></candy-category-nodes>
                             </candy-tab>
                         </candy-tabs>
