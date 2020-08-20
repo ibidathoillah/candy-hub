@@ -47,8 +47,10 @@
                 <table class="table table-striped collection-table">
                     <thead>
                         <tr>
-                            <th style="width: 400px;">Title</th>
-                            <th style="width: 200px;">Slug</th>
+                            <th style="width: 300px;">Title</th>
+                            <th style="width: 100px;">Kategori</th>
+                            <th style="width: 100px;">Slug</th>
+                            <th style="width: 100px;">Type</th>
                             <th style="width: 100px;">Tags</th>
                             <th>Content</th>
                         </tr>
@@ -58,14 +60,20 @@
                             <td @click="goTo(row.id)">
                                 {{ row.title }}
                             </td>
+                            <td @click="goTo(row.category)">
+                                {{ row.title }}
+                            </td>
                             <td @click="goTo(row.id)">
                                 <a href="#">/{{ row.slug }}</a>
+                            </td>
+                            <td @click="goTo(row.id)">
+                                <a href="#">{{ row.type }}</a>
                             </td>
                             <td @click="goTo(row.id)">
                                 <a href="#">{{ row.tags.toString() }}</a>
                             </td>
                             <td @click="goTo(row.id)">
-                                {{ row.body != "" ? row.body.substring(0,200) + "..."  : ""  }}
+                                {{ row.body != "" ? row.content.substring(0,200) + "..."  : ""  }}
                             </td>
                         </tr>
                     </tbody>
