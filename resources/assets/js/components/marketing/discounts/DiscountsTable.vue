@@ -64,7 +64,7 @@
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active" >
                 <a href="#all-discounts" aria-controls="all-discounts" role="tab" data-toggle="tab">
-                    All Discounts
+                    Semua Diskon
                 </a>
             </li>
         </ul>
@@ -75,11 +75,11 @@
                     <thead>
                         <tr>
                             <th width="25%">Nama</th>
-                            <th>Start</th>
-                            <th>End</th>
-                            <th>Priority</th>
+                            <th>Tanggal Mulai</th>
+                            <th>Tanggal Selesai</th>
+                            <th>Prioritas</th>
                             <th>Stop rules</th>
-                            <th>Uses</th>
+                            <th>Digunakan</th>
                         </tr>
                     </thead>
                     <tbody v-if="loaded">
