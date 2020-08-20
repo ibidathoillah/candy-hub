@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>GetCandy</title>
+    <title>Treasury</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <style>
         body {
@@ -77,7 +77,7 @@
                                 </td>
                                 <td align="right" width="50%">
                                     Invoice: {{ @$order->invoice_reference }} <br>
-                                    Created: {{ $order->created_at }}<br>
+                                    Tanggal Dibuat: {{ $order->created_at }}<br>
                                 </td>
                             </tr>
                         </table>
@@ -106,7 +106,7 @@
                                     {{ $order->billing_zip }}<br>
                                     {{ $order->billing_country }}
                                     @if($order->vat_no)
-                                        <p>VAT No.: {{ $order->vat_no }}</p>
+                                        <p>Pajak No.: {{ $order->vat_no }}</p>
                                     @endif
                                 </td>
 
@@ -135,10 +135,10 @@
                                     {{ $settings['address']['zip'] }}<br>
                                     {{ $settings['address']['country'] }}<br>
                                     @if($settings['tax']['vat_number'])
-                                    <p>VAT No.: {{ $settings['tax']['vat_number'] }}</p>
+                                    <p>Pajak No.: {{ $settings['tax']['vat_number'] }}</p>
                                     @endif
                                     @if($settings['contact']['telephone'])
-                                    <p>Tel No: {{ $settings['contact']['telephone'] }}</p>
+                                    <p>No Telephone: {{ $settings['contact']['telephone'] }}</p>
                                     @endif
                                 </td>
                             </tr>
@@ -151,7 +151,7 @@
                 <thead class="lines-heading">
                     <tr width="100%">
                         <th width="35%">
-                            Product
+                            Produk
                         </th>
                         <th width="28%">
                             SKU
@@ -160,19 +160,19 @@
                             Qty
                         </th>
                         <th width="15%">
-                            Unit Price
+                            Harga Per Unit
                         </th>
                         <th width="15%">
-                            Discount
+                            Diskon
                         </th>
                         <th width="15%">
-                            Tax Rate
+                            Rate Pajak
                         </th>
                         <th width="15%">
-                            Tax Amount
+                            Pajak
                         </th>
                         <th width="12%">
-                            Line Total
+                            Baris Total
                         </th>
                     </tr>
                 </thead>
@@ -203,7 +203,7 @@
                         <td>
                             {!! $order->currency == 'GBP' ? 'IDR' : '&euro;' !!}{{ number_format($item->discount_total / 100, 2) }}
                         </td>
-                        <td>VAT @ {{ $item->tax_rate }}%</td>
+                        <td>Pajak @ {{ $item->tax_rate }}%</td>
                         <td>
                             {!! $order->currency == 'GBP' ? 'IDR' : '&euro;' !!}{{ number_format($item->tax_total / 100, 2) }}
                         </td>
@@ -220,7 +220,7 @@
                                 <td colspan="4">
                                     <strong>{{ $discount->name }}</strong> @if($discount->type == 'percentage') @ {{ $discount->amount }}%@endif Diskon<br>
                                     @if ($discount->coupon)
-                                    Code: <code>{{ $discount->coupon }}</code>
+                                    Kode: <code>{{ $discount->coupon }}</code>
                                     @endif
                                 </td>
                                 <td>-{{ $order->currency == 'GBP' ? 'IDR' : '&euro;' }}{{ number_format($discount->total, 2) }}</td>
@@ -242,7 +242,7 @@
                     </tr>
                     <tr>
                         <td colspan="5"></td>
-                        <td colspan="2"><strong>VAT</strong></td>
+                        <td colspan="2"><strong>Pajak</strong></td>
                         <td>{!! $order->currency == 'GBP' ? 'IDR' : '&euro;' !!}{{ number_format($order->tax_total / 100, 2) }}</td>
                     </tr>
                     <tr>
@@ -254,7 +254,7 @@
             </table>
 
             @if($order->notes)
-            <p><strong>Order Notes</strong><br>
+            <p><strong>Catatan</strong><br>
             {{ $order->notes }}</p>
             <br>
             @endif

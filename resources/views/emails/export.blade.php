@@ -7,8 +7,8 @@
     <title>Dokumen</title>
 </head>
 <body>
-    Your export is ready to be downloaded, simply visit this url.
+    Ekspor Anda siap diunduh, cukup kunjungi url ini.
     <p><a href="{{ route('hub.export.download', $hash) }}">Unduh CSV</a></p>
-    <strong>This url will only work once</strong>
+    <strong>Url ini hanya akan bekerja sekali</strong>
 </body>
 </html>

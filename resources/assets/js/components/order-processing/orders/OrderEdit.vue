@@ -219,8 +219,8 @@
 
             <div class="row">
                 <div class="col-md-12 text-right">
-                    <a :href="customerLink(order.user.data)" class="btn   btn-primary" v-if="order.user.data">View Customer Account</a>
-                    <a :href="'/'+ hubPrefix +'/order-processing/orders/'+ order.id +'/invoice'" target="_blank" class="btn  btn-primary">Print Order</a>
+                    <a :href="customerLink(order.user.data)" class="btn   btn-primary" v-if="order.user.data">Lihat Akun Customer</a>
+                    <a :href="'/'+ hubPrefix +'/order-processing/orders/'+ order.id +'/invoice'" target="_blank" class="btn  btn-primary">Cetak Order</a>
                     <!-- <button @click="showStatusModal = true" class="btn  btn-primary">Update Status</button> -->
                     <update-order-status :order-id="order.id" :saving="showStatusModal" :show-modal="showStatusModal" :statuses="statuses" v-model="order.status" @save="updateStatus"></update-order-status>
                     <order-note :id="order.id"></order-note>
@@ -229,7 +229,7 @@
             <hr>
 
                     <div class="alert alert-warning text-center" v-if="dirty">
-                        <i class="fa fa-danger"></i> You have unsaved changes
+                        <i class="fa fa-danger"></i> Anda memiliki perubahan yang belum disimpan
                     </div>
                     <div class="panel">
                         <div class="panel-body">
@@ -239,11 +239,11 @@
                                     {{ order.display_id }}</span>
                                 </div>
                                 <div class="col-md-2">
-                                    <strong>Order Reference</strong><br>
+                                    <strong>Referensi Order</strong><br>
                                     <span>{{ order.reference }}</span> <candy-clipboard-copy :text="order.reference" />
                                 </div>
                                 <div class="col-md-2">
-                                    <strong>Pelanggan Reference</strong> <br>
+                                    <strong>Referensi Pelanggan</strong> <br>
                                     <span ref="customerRef">{{ order.customer_reference ? order.customer_reference : '-' }}</span> <candy-clipboard-copy :text="order.customer_reference" v-if="order.customer_reference"/>
                                 </div>
                                 <div class="col-md-2">
@@ -251,7 +251,7 @@
                                     {{ order.created_at|formatDate }}
                                 </div>
                                 <div class="col-md-2" v-if="order.placed_at">
-                                    <strong>Payment Date</strong><br>
+                                    <strong>Tanggal Pembayaran</strong><br>
                                     {{ order.placed_at|formatDate }}
                                 </div>
                                 <div class="col-md-2" v-if="order.placed_at">
@@ -262,7 +262,7 @@
                             <hr>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <strong style="margin-bottom:5px;display:block;">Billing info</strong>
+                                    <strong style="margin-bottom:5px;display:block;">Info Pembayaran</strong>
                                     {{ order.billing_details.firstname }} {{ order.billing_details.lastname }}<br>
                                     {{ order.billing_details.address }}<br>
                                     {{ order.billing_details.address_two }}<br v-if="order.billing_details.address_two">
@@ -276,7 +276,7 @@
                                     {{ order.billing_details.email }}
                                 </div>
                                 <div class="col-md-4">
-                                    <strong style="margin-bottom:5px;display:block;">Shipping info</strong>
+                                    <strong style="margin-bottom:5px;display:block;">Info Pengiriman</strong>
                                     {{ order.shipping_details.firstname }} {{ order.shipping_details.lastname }}<br>
                                     {{ order.shipping_details.address }}<br>
                                     {{ order.shipping_details.address_two }}<br v-if="order.shipping_details.address_two">
@@ -291,20 +291,20 @@
                                 </div>
                                 <div class="col-md-4">
                                     <p>
-                                        <strong style="margin-bottom:5px;display:block;">Contact Information</strong>
-                                        Email: {{ order.contact_details.email }} <span class="text-muted" v-if="!order.contact_details.email">Not provided</span> <br>
-                                        Telephone:
+                                        <strong style="margin-bottom:5px;display:block;">Informasi Kontak</strong>
+                                        Alamat Email: {{ order.contact_details.email }} <span class="text-muted" v-if="!order.contact_details.email">Not provided</span> <br>
+                                        No Hp:
                                             <span v-if="order.contact_details.phone">{{ order.contact_details.phone }}</span>
                                             <span v-else-if="order.billing_details.phone">{{ order.billing_details.phone }}</span>
                                             <span v-else-if="order.shipping_details.phone">{{ order.shipping_details.phone }}</span>
-                                            <span class="text-muted" v-else>Not provided</span>
+                                            <span class="text-muted" v-else>Tidak dicantumkan</span>
                                     </p>
                                     <template v-if="has(order, 'user.data.details.data.fields.account_number') &&
                                               get(order, 'user.data.details.data.fields.account_number') != 0">
-                                        <p><strong style="margin:10px 0 5px 0;display:block;">Account Number</strong>
+                                        <p><strong style="margin:10px 0 5px 0;display:block;">No Akun</strong>
                                         {{ get(order, 'user.data.details.data.fields.account_number') }}</p>
                                     </template>
-                                    <strong style="margi:10px  0;display:block;">Tracking Number</strong>
+                                    <strong style="margi:10px  0;display:block;">Nomor Tracking</strong>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <input class="form-control" v-model="order.tracking_no" @keyup="refreshState">
@@ -318,23 +318,11 @@
                             <hr>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="row" v-if="order.shipping">
+                                    <div class="row">
                                         <div class="col-md-4">
-                                            <h4>Shipping Method</h4>
+                                            <h4>Metode Pengiriman</h4>
                                             <strong class="text-info">
                                                 {{ order.shipping_details.method }}
-                                            </strong>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <h4>Shipping Zone</h4>
-                                            <strong class="text-info">
-                                                {{ order.shipping.option }}
-                                            </strong>
-                                        </div>
-                                        <div class="col-md-4" v-if="order.shipping_preference">
-                                            <h4>Shipping Preference</h4>
-                                            <strong class="text-info">
-                                                {{ order.shipping_preference }}
                                             </strong>
                                         </div>
                                     </div>
@@ -343,21 +331,21 @@
                                     <thead>
                                         <tr>
                                             <th>SKU</th>
-                                            <th>Product</th>
+                                            <th>Produk</th>
                                             <th>Variant</th>
                                             <th>QTY</th>
-                                            <th>Unit Price</th>
-                                            <th>Shipping Total</th>
+                                            <th>Harga</th>
+                                            <th>Total Pengiriman</th>
                                             <th>Diskon</th>
-                                            <th>Tax Rate</th>
-                                            <th>Tax Amount</th>
-                                            <th>Line total</th>
+                                            <th>Rate Pajak</th>
+                                            <th>Pajak</th>
+                                            <th>Baris Total</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <td colspan="6"></td>
-                                            <td colspan="2" align="right"><strong>Sub total (Excl VAT)</strong></td>
+                                            <td colspan="2" align="right"><strong>Sub total (Excl Pajak)</strong></td>
                                             <td v-html="currencySymbol(order.sub_total)"></td>
                                         </tr>
                                         <template v-if="shipping.length">
@@ -374,7 +362,7 @@
                                                 <td v-else>1</td>
                                                 <td>-</td>
                                                 <td v-html="currencySymbol(line.discount_total ? line.discount_total : 0)"></td>
-                                                <td><span v-if="line.tax_total">VAT @ {{ line.tax_rate }}%</span><span v-else>-</span></td>
+                                                <td><span v-if="line.tax_total">Pajak @ {{ line.tax_rate }}%</span><span v-else>-</span></td>
                                                 <td v-html="currencySymbol(line.tax_total)"></td>
                                                 <td v-html="currencySymbol(line.line_total)"></td>
                                             </tr>
@@ -382,7 +370,7 @@
                                         <template v-else>
                                             <tr>
                                                 <td colspan="7"></td>
-                                                <td colspan="2" align="right"><strong>Delivery Total (Excl Tax)</strong></td>
+                                                <td colspan="2" align="right"><strong>Biaya Pengiriman (Excl Pajak)</strong></td>
                                                 <td v-html="currencySymbol(order.delivery_total)"></td>
                                             </tr>
                                         </template>
@@ -408,7 +396,7 @@
                                         </tr> -->
                                         <tr>
                                             <td colspan="7"></td>
-                                            <td colspan="2" align="right"><strong>VAT</strong></td>
+                                            <td colspan="2" align="right"><strong>Pajak</strong></td>
                                             <td v-html="currencySymbol(order.tax_total)"></td>
                                         </tr>
                                         <tr>
@@ -471,7 +459,7 @@
 
                             <div class="row" v-if="order.discounts.data && order.discounts.data.length">
                                 <div class="col-md-12">
-                                    <h3>Discounts Applied</h3>
+                                    <h3>Memakai Diskon</h3>
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
@@ -497,7 +485,7 @@
                     </div>
 
                     <template v-if="transactions.length">
-                    <h3>Transactions</h3>
+                    <h3>Transaksi</h3>
                         <div class="transaction-panel" v-for="t in transactions" :key="t.id" :class="{
                             'transaction-charge' : !t.refund,
                             'transaction-refund': t.refund,
