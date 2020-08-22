@@ -64,7 +64,7 @@
                                 {{ row.title }}
                             </td>
                             <td @click="goTo(row.id)">
-                                <a href="#">/{{ row.slug }}</a>
+                                <a href="#">{{ row.slug }}</a>
                             </td>
                             <td @click="goTo(row.id)">
                                 <a href="#">{{ row.type }}</a>
@@ -73,7 +73,7 @@
                                 <a href="#">{{ row.tags.toString() }}</a>
                             </td>
                             <td @click="goTo(row.id)">
-                                {{ row.body != "" ? row.content.substring(0,200) + "..."  : ""  }}
+                                {{ row.content ? row.content.substring(0,200) + "..."  : ""  }}
                             </td>
                         </tr>
                     </tbody>

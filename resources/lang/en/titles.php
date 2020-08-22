@@ -14,7 +14,7 @@ return [
     'discounts'        => 'Diskon',
     'customers'        => 'Pelanggan',
     'sales-report'     => 'Laporan Penjualan',
-    'product-attributes-report'     => 'Attribut Product',
+    'product-attributes-report'     => 'Attribut Produk',
     'shipping-report'     => 'Laporan Pengiriman',
     'articles'   => 'Artikel',
     'settings'   => 'Pengaturan',

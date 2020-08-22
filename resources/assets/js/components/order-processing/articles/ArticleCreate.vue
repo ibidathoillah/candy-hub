@@ -48,7 +48,7 @@
         <candy-modal title="Buat Article" v-show="create" size="modal-md" @closed="create = false">
             <div slot="body">
                 <div class="form-group">
-                    <label for="title">Enter the title article.</label>
+                    <label for="title">Masukkan Judul Artikel</label>
                     <input type="text" id="title" class="form-control" v-model="article.title">
                     <span class="text-info" v-if="article.title">URL anda akan disanitasi menjadi: <code>{{ titleUrl }}</code></span>
                     <span class="text-danger" v-if="request.getError('title')" v-text="request.getError('title')"></span>
