@@ -52,6 +52,7 @@
                             <th style="width: 100px;">Slug</th>
                             <th style="width: 100px;">Type</th>
                             <th style="width: 100px;">Tags</th>
+                            <th style="width: 100px;">Status</th>
                             <th>Content</th>
                         </tr>
                     </thead>
@@ -71,6 +72,9 @@
                             </td>
                             <td @click="goTo(row.id)">
                                 <a href="#">{{ row.tags.toString() }}</a>
+                            </td>
+                            <td @click="goTo(row.id)">
+                                {{ row.is_published ? row.content.substring(0,200) + "..."  : ""  }}
                             </td>
                             <td @click="goTo(row.id)">
                                 {{ row.content ? row.content.substring(0,200) + "..."  : ""  }}

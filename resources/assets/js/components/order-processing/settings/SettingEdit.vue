@@ -113,7 +113,9 @@
                 .then(response => {
 
                     this.settings = [response];
-                    this.title = response.name;
+                    CandyEvent.$emit('title-changed', {
+                        title: response.name
+                    });
                     this.loaded = true;
  
                 }).catch(error => {
