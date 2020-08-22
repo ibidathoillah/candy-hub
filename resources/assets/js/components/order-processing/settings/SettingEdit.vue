@@ -113,6 +113,7 @@
                 .then(response => {
 
                     this.settings = [response];
+                    this.title = response.name;
                     this.loaded = true;
  
                 }).catch(error => {
@@ -121,6 +122,8 @@
                         message: error.message
                     });
                 });
+                
+                Dispatcher.add('save-settings', this);
             }
         }
     }
@@ -164,7 +167,7 @@
                                     </candy-modal>
                     <!-- <h4>{{ JSON.stringify(settings) }}</h4> -->
                     <div v-for="set in settings">
-                         <h3>Pengaturan {{set.name}}</h3>
+                         <!-- <h3>Pengaturan {{set.name}}</h3> -->
                         <div class="form-group" >
                             <div class="input-group input-group-full"><span class="input-group-addon">Nama</span>  <input type="text" class="form-control" placeholder="Nama" v-model="set.name"></div>
                             <div class="input-group input-group-full"><span class="input-group-addon">Link</span>  <input type="text" class="form-control" placeholder="Link" v-model="set.url"></div>

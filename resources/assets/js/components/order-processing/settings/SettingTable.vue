@@ -13,7 +13,7 @@
         },
         mounted() {
             this.load();
-            CandyEvent.$on('setting-added', product => {
+            CandyEvent.$on('settings-added', settings => {
                 this.load();
             });
         },
