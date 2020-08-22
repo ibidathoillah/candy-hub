@@ -403,7 +403,7 @@
             <template slot="footer">
                 <button type="button" class="btn btn-primary" @click="uploadUrlMedia" :disabled="processingAssetUrl">
                     <template v-if="!processingAssetUrl">Tambah media</template>
-                    <template v-else>Processing</template>
+                    <template v-else>Memproses</template>
                 </button>
             </template>
         </candy-modal>

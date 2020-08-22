@@ -12,7 +12,7 @@
     export default {
         data() {
             return {
-                message: 'Changes Saved',
+                message: 'Perubahan Tersimpan',
                 classname: 'success',
                 isActive: false,
                 icon: 'fa-check'

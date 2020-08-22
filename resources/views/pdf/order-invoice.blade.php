@@ -150,10 +150,10 @@
             <table cellpadding="0" cellspacing="0" width="100%" class="lines">
                 <thead class="lines-heading">
                     <tr width="100%">
-                        <th width="35%">
+                        <th width="28%">
                             Produk
                         </th>
-                        <th width="28%">
+                        <th width="15%">
                             SKU
                         </th>
                         <th width="10%">
@@ -198,17 +198,17 @@
                             {{ $item->quantity }}
                         </td>
                         <td>
-                            {!! $order->currency == 'GBP' ? 'IDR' : '&euro;' !!}{{ number_format($item->unit_price / 100, 2) }}
+                            {!! $order->currency == 'IDR' ? 'IDR' : '&euro;' !!}{{ number_format($item->unit_price / 100, 2) }}
                         </td>
                         <td>
-                            {!! $order->currency == 'GBP' ? 'IDR' : '&euro;' !!}{{ number_format($item->discount_total / 100, 2) }}
+                            {!! $order->currency == 'IDR' ? 'IDR' : '&euro;' !!}{{ number_format($item->discount_total / 100, 2) }}
                         </td>
                         <td>Pajak @ {{ $item->tax_rate }}%</td>
                         <td>
-                            {!! $order->currency == 'GBP' ? 'IDR' : '&euro;' !!}{{ number_format($item->tax_total / 100, 2) }}
+                            {!! $order->currency == 'IDR' ? 'IDR' : '&euro;' !!}{{ number_format($item->tax_total / 100, 2) }}
                         </td>
                         <td align="right">
-                            {!! $order->currency == 'GBP' ? 'IDR' : '&euro;' !!}{{ number_format($item->line_total / 100, 2) }}
+                            {!! $order->currency == 'IDR' ? 'IDR' : '&euro;' !!}{{ number_format($item->line_total / 100, 2) }}
                         </td>
                     </tr>
                     @endforeach
@@ -223,7 +223,7 @@
                                     Kode: <code>{{ $discount->coupon }}</code>
                                     @endif
                                 </td>
-                                <td>-{{ $order->currency == 'GBP' ? 'IDR' : '&euro;' }}{{ number_format($discount->total, 2) }}</td>
+                                <td>-{{ $order->currency == 'IDR' ? 'IDR' : '&euro;' }}{{ number_format($discount->total, 2) }}</td>
                             </tr>
                         @endforeach
                     @endif
@@ -233,22 +233,22 @@
                             <strong>Pengiriman</strong> <br>
                             <small>{{ $order->shipping_method }}</small>
                         </td>
-                        <td>{!! $order->currency == 'GBP' ? 'IDR' : '&euro;' !!}{{ number_format($order->delivery_total / 100, 2) }}</td>
+                        <td>{!! $order->currency == 'IDR' ? 'IDR' : '&euro;' !!}{{ number_format($order->delivery_total / 100, 2) }}</td>
                     </tr>
                     <tr>
                         <td colspan="5"></td>
                         <td colspan="2"><strong>Sub Total</strong></td>
-                        <td>{!! $order->currency == 'GBP' ? 'IDR' : '&euro;' !!}{{ number_format(($order->sub_total + $order->delivery_total) / 100, 2) }}</td>
+                        <td>{!! $order->currency == 'IDR' ? 'IDR' : '&euro;' !!}{{ number_format(($order->sub_total + $order->delivery_total) / 100, 2) }}</td>
                     </tr>
                     <tr>
                         <td colspan="5"></td>
                         <td colspan="2"><strong>Pajak</strong></td>
-                        <td>{!! $order->currency == 'GBP' ? 'IDR' : '&euro;' !!}{{ number_format($order->tax_total / 100, 2) }}</td>
+                        <td>{!! $order->currency == 'IDR' ? 'IDR' : '&euro;' !!}{{ number_format($order->tax_total / 100, 2) }}</td>
                     </tr>
                     <tr>
                         <td colspan="5"></td>
                         <td colspan="2"><strong>Total</strong></td>
-                        <td>{!! $order->currency == 'GBP' ? 'IDR' : '&euro;' !!}{{ number_format(($order->order_total) / 100, 2) }}</td>
+                        <td>{!! $order->currency == 'IDR' ? 'IDR' : '&euro;' !!}{{ number_format(($order->order_total) / 100, 2) }}</td>
                     </tr>
                 </tfoot>
             </table>

@@ -170,7 +170,7 @@
                             <div class="input-group input-group-full"><span class="input-group-addon">Link</span>  <input type="text" class="form-control" placeholder="Link" v-model="set.url"></div>
                            <div class="input-group input-group-full"><span class="input-group-addon">URL Gambar</span>  <input type="text" class="form-control" placeholder="URL Gambar" v-model="set.image_url"></div>
                             <a @click="desc($event)">+ Tambah Deskripsi</a>
-                             <div style="display:none"><candy-textarea
+                             <div :style="[set.value ? '' : 'display:none']"><candy-textarea
                                         :placeholder="'Isi'" 
                                         :id="'default-content'"
                                         :richtext="true"
