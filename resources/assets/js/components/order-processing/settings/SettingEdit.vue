@@ -153,7 +153,7 @@
                     <span class="text-danger" v-if="request.getError('url')" v-text="request.getError('url')"></span>
                 </div>
                 <div class="form-group">
-                    <label for="image_url">URL Gambar</label>
+                    <label for="image_url">Gambar</label>
                     <input type="text" id="image_url" class="form-control" v-model="currentSub.image_url">
                     <span class="text-danger" v-if="request.getError('image_url')" v-text="request.getError('image_url')"></span>
                 </div>
@@ -168,7 +168,7 @@
                         <div class="form-group" >
                             <div class="input-group input-group-full"><span class="input-group-addon">Nama</span>  <input type="text" class="form-control" placeholder="Nama" v-model="set.name"></div>
                             <div class="input-group input-group-full"><span class="input-group-addon">Link</span>  <input type="text" class="form-control" placeholder="Link" v-model="set.url"></div>
-                           <div class="input-group input-group-full"><span class="input-group-addon">URL Gambar</span>  <input type="text" class="form-control" placeholder="URL Gambar" v-model="set.image_url"></div>
+                           <div class="input-group input-group-full"><span class="input-group-addon">Gambar</span>  <input type="text" class="form-control" placeholder="Gambar" v-model="set.image_url" style="width:40%"><input type="text" class="form-control" placeholder="Alt" v-model="set.image_alt" style="width:30%"><input type="text" class="form-control" placeholder="Title" v-model="set.image_title" style="width:30%"></div>
                             <a @click="desc($event)">+ Tambah Deskripsi</a>
                              <div v-show="set.value"><candy-textarea
                                         :placeholder="'Isi'" 
@@ -180,11 +180,13 @@
                             <div style="padding: 20px;padding-top:5px;zoom: 0.7;">
                             <button class="btn btn-success" @click="showSub = true;currentSet=set">Tambah Detail</button>
                             <div style="margin-bottom:5px" v-if="set.sub_settings" v-for="set2 in set.sub_settings">
-                            <label>Sub Pengaturan - {{set2.name}}</label>
+                            <hr/>
+                            <h4>Sub Pengaturan - {{set2.name}}</h4>
                             <div class="input-group input-group-full"><span class="input-group-addon">Nama</span>  <input type="text" class="form-control" placeholder="Nama" v-model="set2.name"></div>
                             <div class="input-group input-group-full"><span class="input-group-addon">Link</span>  <input type="text" class="form-control" placeholder="Link" v-model="set2.url"></div>
-                           <div class="input-group input-group-full"><span class="input-group-addon">URL Gambar</span>  <input type="text" class="form-control" placeholder="URL Gambar" v-model="set2.image_url"></div>
-                             <a @click="desc($event)">+ Tambah Deskripsi</a>
+                           <div class="input-group input-group-full"><span class="input-group-addon">Gambar</span>  <input type="text" class="form-control" placeholder="Gambar" v-model="set2.image_url" style="width:40%"><input type="text" class="form-control" placeholder="Alt" v-model="set2.image_alt" style="width:30%"><input type="text" class="form-control" placeholder="Title" v-model="set2.image_title" style="width:30%"></div>
+                            
+                            <a @click="desc($event)">+ Tambah Deskripsi</a>
                              <div v-show="set2.value"><candy-textarea
                                         :placeholder="'Isi'" 
                                         :id="'default-content'"
@@ -192,11 +194,11 @@
                                         v-model="set2.value">
                             </candy-textarea></div>
                                 <button class="btn btn-warning" style="float:right" @click="del2(set,set2)">Hapus</button>
+                                <hr/>
                             </div>
                             </div>
                         </div>
                         <button @click="save(set)"  class="btn btn-primary">Simpan</button> <button class="btn btn-danger"  @click="del(set)">Hapus</button>
-                        <hr/>
                     </div>
                     <!-- <div class="form-group">
                         <label>Title</label>
