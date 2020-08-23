@@ -11,7 +11,7 @@
 
 @section('header_actions')
     <candy-button style="display: inline-block;" override="save">Simpan</candy-button>
-    @verbatim<candy-button style="display: inline-block;" override="{{status}}">{{status}}</candy-button>@endverbatim
+    @verbatim<candy-button style="display: inline-block;" v-if="status== 'Unpublish'" override="Unpublish">{{status}}</candy-button><candy-button style="display: inline-block;" v-if="status== 'Publish'" override="Publish">{{status}}</candy-button>@endverbatim
 @stop
 
 

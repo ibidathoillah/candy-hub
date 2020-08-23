@@ -14,7 +14,7 @@
                 article: {},
                 keywords: '',
                 Publish:{},
-                Draft:{}
+                Unpublish:{}
             }
         },
         props: {
@@ -35,17 +35,17 @@
 
             this.Publish.save = ()=>{
                 this.article.is_published = true;
-                this.status = "Draft";
+                this.status = "Unpublish";
                 this.save();
             }
-            this.Draft.save = ()=>{
+            this.Unpublish.save = ()=>{
                 this.article.is_published = false;
                 this.status = "Publish";
                 this.save();
             }
             Dispatcher.add('save', this);
             Dispatcher.add('Publish', this.Publish);
-            Dispatcher.add('Draft', this.Draft);
+            Dispatcher.add('Unpublish', this.Unpublish);
         },
         methods: {
             save() {
@@ -80,7 +80,7 @@
                     this.article = response;
 
                     if(this.article.is_published){
-                        this.status="Draft";
+                        this.status="Unpublish";
                     } else {
                         this.status="Publish"
                     }
