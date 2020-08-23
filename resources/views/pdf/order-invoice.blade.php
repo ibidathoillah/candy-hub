@@ -149,7 +149,7 @@
 
             <table cellpadding="0" cellspacing="0" width="80%" class="lines">
                 <thead class="lines-heading">
-                    <tr width="80%">
+                    <tr width="94%">
                         <th width="28%">
                             Produk
                         </th>
