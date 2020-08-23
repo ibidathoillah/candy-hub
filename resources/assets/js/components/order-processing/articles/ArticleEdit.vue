@@ -79,16 +79,15 @@
                     this.article = response;
 
                     if(this.article.is_published){
-                    CandyEvent.$emit('title-changed', {
-                        title: this.article.title,
-                        status: "Draft"
-                    });
+                        this.status="Draft";
                     } else {
+                        this.status="Publish"
+                    }
+
                     CandyEvent.$emit('title-changed', {
                         title: this.article.title,
-                        status: "Publish"
+                        status: this.status
                     });
-                    }
 
                     var tags = this.article.tags.split(",");
                     var tags_data = [];
