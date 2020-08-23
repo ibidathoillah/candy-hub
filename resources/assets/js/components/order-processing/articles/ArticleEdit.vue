@@ -36,11 +36,19 @@
             this.Publish.save = ()=>{
                 this.article.is_published = true;
                 this.status = "Unpublish";
+                CandyEvent.$emit('title-changed', {
+                        title: this.article.title,
+                        status: this.status
+                    });
                 this.save();
             }
             this.Unpublish.save = ()=>{
                 this.article.is_published = false;
                 this.status = "Publish";
+                CandyEvent.$emit('title-changed', {
+                        title: this.article.title,
+                        status: this.status
+                });
                 this.save();
             }
             Dispatcher.add('save', this);

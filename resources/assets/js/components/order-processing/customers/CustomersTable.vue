@@ -57,10 +57,13 @@
                 <a href="#all-customers" aria-controls="all-customers" role="tab" data-toggle="tab">
                     Semua Pelanggan
                 </a>
-                <a href="#all-subscribers" aria-controls="all-subscribers" role="tab" data-toggle="tab">
+            </li>
+            <li role="presentation" class="active">
+               <a href="#all-subscribers" aria-controls="all-subscribers" role="tab" data-toggle="tab">
                     Semua Subscribers
                 </a>
             </li>
+
         </ul>
         <!-- Tab panes -->
         <div class="tab-content section block">
