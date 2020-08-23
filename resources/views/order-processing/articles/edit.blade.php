@@ -11,7 +11,7 @@
 
 @section('header_actions')
     <candy-button style="display: inline-block;" override="save">Simpan</candy-button>
-    <candy-button style="display: inline-block;" override="{{$status}}">{{status}}</candy-button>
+    <candy-button style="display: inline-block;" override="{{status}}">{{status}}</candy-button>
 @stop
 
 
