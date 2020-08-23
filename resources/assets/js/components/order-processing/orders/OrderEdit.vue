@@ -332,7 +332,7 @@
                                         <tr>
                                             <th>SKU</th>
                                             <th>Produk</th>
-                                            <th>Variant</th>
+                                            <th>Varian</th>
                                             <th>QTY</th>
                                             <th>Harga</th>
                                             <th>Total Pengiriman</th>

@@ -423,7 +423,7 @@
                 <!-- <table class="table association-table variants-table">
                     <thead>
                     <tr>
-                        <th width="20%">Variant</th>
+                        <th width="20%">Varian</th>
                         <th width="20%">Harga</th>
                         <th width="40%">SKU</th>
                         <th width="10%">Inventory</th>

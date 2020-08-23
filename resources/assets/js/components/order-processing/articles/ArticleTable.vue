@@ -61,7 +61,7 @@
                             <td @click="goTo(row.id)">
                                 {{ row.title }}
                             </td>
-                            <td @click="goTo(row.category)">
+                            <td @click="goTo(row.id)">
                                 {{ row.title }}
                             </td>
                             <td @click="goTo(row.id)">
@@ -74,7 +74,7 @@
                                 <a href="#">{{ row.tags.toString() }}</a>
                             </td>
                             <td @click="goTo(row.id)">
-                                {{ row.is_published ? "Published": "Draft" }}
+                                <i>{{ row.is_published ? "Published": "Draft" }}</i>
                             </td>
                             <td @click="goTo(row.id)">
                                 {{ row.content ? row.content.substring(0,200) + "..."  : ""  }}

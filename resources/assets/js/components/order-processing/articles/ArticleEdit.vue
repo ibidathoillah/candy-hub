@@ -154,7 +154,7 @@
             <div class="panel">
                 <div class="panel-body">
                     <div class="form-group">
-                        <label>Title</label>
+                        <label>Judul</label>
                         <input type="text" class="form-control" v-model="article.title">
                     </div>
                     <candy-media
@@ -165,9 +165,13 @@
                         <label>Slug</label>
                         <input type="text" class="form-control" v-model="article.slug">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>Gambar</label>
                         <input type="text" class="form-control" v-model="article.image">
+                    </div> -->
+                    <div class="form-group">
+                        <label>Kategori</label>
+                        <input type="text" class="form-control" v-model="article.category">
                     </div>
                     <div class="form-group">
                         <label>Tipe</label>
@@ -175,7 +179,7 @@
                     </div>
                     <hr>
                     <div class="form-group">
-                        <label>Content</label>
+                        <label>Konten</label>
                         <candy-textarea :id="'default-content'"
                                         :richtext="true"
                                         v-model="article.body">
