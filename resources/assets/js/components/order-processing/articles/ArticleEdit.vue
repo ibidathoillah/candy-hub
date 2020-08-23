@@ -157,10 +157,6 @@
                         <label>Judul</label>
                         <input type="text" class="form-control" v-model="article.title">
                     </div>
-                    <candy-media
-                            assetable="articles"
-                            :parent="article">
-                    </candy-media>
                     <div class="form-group">
                         <label>Slug</label>
                         <input type="text" class="form-control" v-model="article.slug">
@@ -184,7 +180,14 @@
                                         :richtext="true"
                                         v-model="article.body">
                         </candy-textarea>
-                    </div> 
+                    </div>
+                                        <span style="border-top: 1px solid #8080806e">
+                    <candy-media
+                            assetable="articles"
+                            :parent="article">
+                    </candy-media>
+                    </span>
+                    <br> 
                                     <div class="form-group">
                         <label>Tag</label>
                         <candy-taggable v-model="article.tags">
