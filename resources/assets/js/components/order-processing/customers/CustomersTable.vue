@@ -54,14 +54,17 @@
         <!-- Search tabs -->
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active">
-                <a href="#all-orders" aria-controls="all-orders" role="tab" data-toggle="tab">
+                <a href="#all-customers" aria-controls="all-customers" role="tab" data-toggle="tab">
                     Semua Pelanggan
+                </a>
+                <a href="#all-subscribers" aria-controls="all-subscribers" role="tab" data-toggle="tab">
+                    Semua Subscribers
                 </a>
             </li>
         </ul>
         <!-- Tab panes -->
         <div class="tab-content section block">
-            <div role="tabpanel" class="tab-pane active" id="all-collections">
+            <div role="tabpanel" class="tab-pane active" id="all-customers">
 
                 <!-- Search Form -->
                 <form>
@@ -123,6 +126,9 @@
                     <candy-table-paginate :total="pagination.total_pages" :current="pagination.current_page" @change="changePage"></candy-table-paginate>
                 </div>
             </div>
+             <div role="tabpanel" class="tab-pane active" id="all-subscribers">
+                 lala po
+             </div>
 
         </div>
     </div>
