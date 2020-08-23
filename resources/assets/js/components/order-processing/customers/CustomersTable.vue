@@ -4,6 +4,8 @@
             return {
                 loaded: false,
                 customers: [],
+                rows:[],
+                pagination2: {},
                 keywords: null,
                 params: {
                     per_page: 50,
@@ -16,6 +18,7 @@
 
         mounted() {
             this.loadCustomers();
+            this.loadCustomers2();
         },
         methods: {
             loadCustomers() {
@@ -26,6 +29,14 @@
                         this.loaded = true;
                     });
             },
+            loadCustomers2() {
+                apiRequest.send('get', '/subscribe', [], this.params)
+                    .then(response => {
+                        this.rows = response;
+                        this.pagination = response;
+                        this.loaded = true;
+                    });
+            },
             details(customer) {
                 return customer.details.data;
             },
@@ -33,6 +44,11 @@
                 this.loaded = false;
                 this.params.page = page;
                 this.loadCustomers();
+            },
+            changePage2(page) {
+                this.loaded = false;
+                this.params.page = page;
+                this.loadCustomers2();
             },
             loadCustomer: function (id) {
                 location.href = route('hub.customers.edit', id);
@@ -130,7 +146,37 @@
                 </div>
             </div>
              <div role="tabpanel" class="tab-pane" id="all-subscribers">
-                 lala po
+                <table class="table table-striped collection-table">
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Aktivasi</th>
+                        </tr>
+                    </thead>
+                    <tbody v-if="loaded">
+                        <tr class="clickable" v-for="row in rows">
+                            <td >
+                                {{ row.email }}
+                            </td>
+                            <td >
+                                {{ row.isActive }}
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="text-center" v-else>
+                        <tr>
+                            <td colspan="25" style="padding:40px;">
+                                <div class="loading">
+                                    <span><fa icon="spinner" size="3x" spin /></span> <strong>Memuat</strong>
+                                </div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="text-center">
+                    <candy-table-paginate :pagination="pagination2" @change="changePage2"></candy-table-paginate>
+                </div>
              </div>
 
         </div>
