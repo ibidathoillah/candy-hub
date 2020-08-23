@@ -58,9 +58,9 @@
                     Semua Pelanggan
                 </a>
             </li>
-            <li role="presentation" class="active">
+            <li role="presentation">
                <a href="#all-subscribers" aria-controls="all-subscribers" role="tab" data-toggle="tab">
-                    Semua Subscribers
+                    Subscribers
                 </a>
             </li>
 
