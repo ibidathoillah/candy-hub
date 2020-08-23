@@ -175,7 +175,7 @@
                         <div class="form-group" >
                             <div class="input-group input-group-full"><span class="input-group-addon">Nama</span>  <input type="text" class="form-control" placeholder="Nama" v-model="set.name"></div>
                             <div class="input-group input-group-full"><span class="input-group-addon">Link</span>  <input type="text" class="form-control" placeholder="Link" v-model="set.url"></div>
-                           <div class="input-group input-group-full"><span style="zoom:0.1" class="input-group-addon"><candy-media-upload parent="currentSub"></candy-media-upload></span>  <input type="text" class="form-control" placeholder="Gambar" v-model="set.image_url" style="width:40%"><input type="text" class="form-control" placeholder="Alt" v-model="set.image_alt" style="width:30%"><input type="text" class="form-control" placeholder="Title" v-model="set.image_title" style="width:30%"></div>
+                           <div class="input-group input-group-full"><span style="zoom:0.1" class="input-group-addon"><candy-media-upload parent="set"></candy-media-upload></span>  <input type="text" class="form-control" placeholder="Gambar" v-model="set.image_url" style="width:40%"><input type="text" class="form-control" placeholder="Alt" v-model="set.image_alt" style="width:30%"><input type="text" class="form-control" placeholder="Title" v-model="set.image_title" style="width:30%"></div>
                             <a @click="desc($event)">+ Tambah Deskripsi</a>
                              <div v-show="set.value"><candy-textarea
                                         :placeholder="'Isi'" 
@@ -191,7 +191,7 @@
                             <h4>Sub Pengaturan - {{set2.name}}</h4>
                             <div class="input-group input-group-full"><span class="input-group-addon">Nama</span>  <input type="text" class="form-control" placeholder="Nama" v-model="set2.name"></div>
                             <div class="input-group input-group-full"><span class="input-group-addon">Link</span>  <input type="text" class="form-control" placeholder="Link" v-model="set2.url"></div>
-                           <div class="input-group input-group-full"><span style="zoom:0.1" class="input-group-addon"><candy-media-upload parent="currentSub"></candy-media-upload></span><input type="text" class="form-control" placeholder="Gambar" v-model="set2.image_url" style="width:40%"><input type="text" class="form-control" placeholder="Alt" v-model="set2.image_alt" style="width:30%"><input type="text" class="form-control" placeholder="Title" v-model="set2.image_title" style="width:30%"></div>
+                           <div class="input-group input-group-full"><span style="zoom:0.1" class="input-group-addon"><candy-media-upload parent="set2"></candy-media-upload></span><input type="text" class="form-control" placeholder="Gambar" v-model="set2.image_url" style="width:40%"><input type="text" class="form-control" placeholder="Alt" v-model="set2.image_alt" style="width:30%"><input type="text" class="form-control" placeholder="Title" v-model="set2.image_title" style="width:30%"></div>
                             
                             <a @click="desc($event)">+ Tambah Deskripsi</a>
                              <div v-show="set2.value"><candy-textarea
