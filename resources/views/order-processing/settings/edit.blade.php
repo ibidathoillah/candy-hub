@@ -10,8 +10,6 @@
 @endsection
 
 @section('header_actions')
-    <candy-button style="display: inline-block;" override="save-settings">Simpan Pengaturan</candy-button>
-
 @stop
 
 

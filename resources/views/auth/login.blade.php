@@ -72,11 +72,11 @@
               <div class="col-xs-12 col-md-6">
                 <div class="checkbox">
                   <input id="rememberMe" type="checkbox">
-                  <label for="rememberMe"><span class="check"></span> <span class="faux-label">Remember Me</span></label>
+                  <label for="rememberMe"><span class="check"></span> <span class="faux-label">Ingat Saya</span></label>
                 </div>
               </div>
               <div class="col-xs-12 col-md-6 text-right">
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary">Masuk</button>
               </div>
             </div>
           </form>
