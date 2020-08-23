@@ -56,6 +56,7 @@
             Dispatcher.add('Unpublish', this.Unpublish);
         },
         methods: {
+           
             save() {
                 var tags = [];
                 var temp = this.article;
