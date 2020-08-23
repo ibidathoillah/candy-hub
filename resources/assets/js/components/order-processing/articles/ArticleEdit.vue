@@ -31,7 +31,7 @@
             });
 
             Dispatcher.add('save-articles', this);
-            Dispatcher.add('publish-articles', this);
+            // Dispatcher.add('publish-articles', this);
 
             this.loadCountries();
         },
