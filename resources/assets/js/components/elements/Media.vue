@@ -38,7 +38,7 @@
         },
         mounted() {
             this.parent.assets.data.forEach(asset => {
-                if (asset.tags.data) {
+                if (assets.tags && asset.tags.data) {
                     asset.tags = asset.tags.data;
                     delete asset.tags.data;
                 } else {
