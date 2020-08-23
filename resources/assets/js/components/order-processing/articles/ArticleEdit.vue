@@ -6,6 +6,7 @@
     export default {
         data() {
             return {
+                status: 'Publish',
                 title: '',
                 loaded: false,
                 countries: [],
@@ -31,12 +32,19 @@
                 this.load(this.id);
             });
 
-            this.publish.save = ()=>{
+            this.Publish.save = ()=>{
                 this.article.is_published = true;
+                this.status = "Draft";
+                this.save();
+            }
+            this.Draft.save = ()=>{
+                this.article.is_published = false;
+                this.status = "Publish";
                 this.save();
             }
             Dispatcher.add('save', this);
-            Dispatcher.add('publish', this.publish);
+            Dispatcher.add('Publish', this.Publish);
+            Dispatcher.add('Draft', this.Draft);
         },
         methods: {
             save() {
@@ -65,12 +73,19 @@
              * @param  {String} id
              */
             load(id) {
+
+                if(this.article.is_published){
+                    this.status="Draft";
+                } else {
+                    this.status="Publish"
+                }
+
                 apiRequest.send('get', '/articles/' + id, {})
                 .then(response => {
                     this.article = response;
                     var tags = this.article.tags.split(",");
                     var tags_data = [];
-
+                    
                     for(let i=0;i<tags.length;i++){
                         if(tags[i]!="")
                         tags_data.push({ name : tags[i] })
