@@ -74,7 +74,7 @@
                                 <a href="#">{{ row.tags.toString() }}</a>
                             </td>
                             <td @click="goTo(row.id)">
-                                {{ row.is_published }}
+                                {{ row.is_published ? "Published": "Draft" }}
                             </td>
                             <td @click="goTo(row.id)">
                                 {{ row.content ? row.content.substring(0,200) + "..."  : ""  }}
