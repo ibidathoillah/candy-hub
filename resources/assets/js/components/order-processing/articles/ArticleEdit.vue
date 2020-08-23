@@ -161,6 +161,14 @@
                         <label>Slug</label>
                         <input type="text" class="form-control" v-model="article.slug">
                     </div>
+                    <div class="form-group">
+                        <label>Gambar</label>
+                        <input type="text" class="form-control" v-model="article.image">
+                    </div>
+                    <div class="form-group">
+                        <label>Tipe</label>
+                        <input type="text" class="form-control" v-model="article.type">
+                    </div>
                     <hr>
                     <div class="form-group">
                         <label>Content</label>
