@@ -66,6 +66,8 @@
 
                 if(tags.length>0){
                     temp.tags = tags.toString();
+                }else {
+                    temp.tags = "";
                 }
                 
                 delete temp.assets;
