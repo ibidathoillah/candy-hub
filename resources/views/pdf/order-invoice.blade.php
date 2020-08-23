@@ -149,29 +149,29 @@
 
             <table cellpadding="0" cellspacing="0" width="100%" class="lines">
                 <thead class="lines-heading">
-                    <tr width="100%">
-                        <th width="18%">
+                    <tr width="80%">
+                        <th width="28%">
                             Produk
                         </th>
-                        <th width="10%">
+                        <th width="15%">
                             SKU
                         </th>
-                        <th width="3%">
+                        <th width="10%">
                             Qty
                         </th>
-                        <th width="13%">
+                        <th width="15%">
                             Harga Per Unit
                         </th>
-                        <th width="10%">
+                        <th width="15%">
                             Diskon
                         </th>
-                        <th width="5%">
+                        <th width="15%">
                             Rate Pajak
                         </th>
-                        <th width="8%">
+                        <th width="15%">
                             Pajak
                         </th>
-                        <th width="8%">
+                        <th width="12%">
                             Baris Total
                         </th>
                     </tr>
