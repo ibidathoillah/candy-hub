@@ -1,7 +1,7 @@
 <template>
     <div>
         <button type="button" class="btn btn-default btn-full" @click="show = true">
-            <i class="fa fa-floppy-o fa-first" aria-hidden="true"></i> Export Products
+            <i class="fa fa-floppy-o fa-first" aria-hidden="true"></i> Export Produk
         </button>
         <candy-modal title="Export" v-show="show" size="modal-md" @closed="close">
             <div slot="body">
