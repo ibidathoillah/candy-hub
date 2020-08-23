@@ -59,9 +59,6 @@
                     });
                 });
             },
-            save() {
-                this.save();
-            },
             /**
              * Loads the product by its encoded ID
              * @param  {String} id
