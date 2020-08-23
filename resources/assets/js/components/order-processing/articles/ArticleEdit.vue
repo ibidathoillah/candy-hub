@@ -48,6 +48,7 @@
                 }
 
                 temp.tags = tags.toString();
+                delete temp.assets;
                 apiRequest.send('PUT', '/articles/' + temp.id, temp).then(response => {
                     CandyEvent.$emit('notification', {
                         level: 'success'
@@ -114,11 +115,15 @@
                     </div> -->
                     <div class="form-group">
                         <label>Kategori</label>
-                        <input type="text" class="form-control" v-model="article.category">
+                        <select class="form-control" v-model="article.category">
+                        <option value="news">Berita</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Tipe</label>
-                        <input type="text" class="form-control" v-model="article.type">
+                        <select class="form-control" v-model="article.type">
+                        <option value="article">Artikel</option>
+                        </select>
                     </div>
                     <hr>
                     <div class="form-group">
