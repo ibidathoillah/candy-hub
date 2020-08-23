@@ -324,13 +324,13 @@
                         <date-range-picker @update="filterDate" @clear="clearDates" :from="params.from" :to="params.to"></date-range-picker>
                     </div>
                     <div class="col-md-2">
-                        <candy-select null-label="All shipping zones" :options="shippingZones" v-if="shippingZones.length" v-model="zone"></candy-select>
+                        <candy-select null-label="Semua Lokasi" :options="shippingZones" v-if="shippingZones.length" v-model="zone"></candy-select>
                     </div>
                     <div class="col-md-2">
-                        <candy-select null-label="All order statuses" :options="statusSelect" v-if="statusSelect.length" v-model="filter"></candy-select>
+                        <candy-select null-label="Semua Order Status" :options="statusSelect" v-if="statusSelect.length" v-model="filter"></candy-select>
                     </div>
                     <div class="col-md-2">
-                        <candy-select null-label="All order types" :options="typeSelect" v-if="typeSelect.length" v-model="type"></candy-select>
+                        <candy-select null-label="Semua Tipe Order" :options="typeSelect" v-if="typeSelect.length" v-model="type"></candy-select>
                     </div>
                 </div>
                 <!-- Bulk Actions -->

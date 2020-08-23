@@ -166,7 +166,7 @@
                     this.transactions = response.data.transactions.data;
 
                     CandyEvent.$emit('title-changed', {
-                        prefix: 'Order for ',
+                        prefix: 'Nomor Order ',
                         title: this.order.display_id
                     });
 
