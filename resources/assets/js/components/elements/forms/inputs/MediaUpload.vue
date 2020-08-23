@@ -57,11 +57,12 @@
             },
             uploadSuccess(file, response) {
                 this.$refs.mediaDropzone.removeFile(file);
-                this.$emit('input', {
+                this.$emit('input', response.path);
+                CandyEvent.$emit('input', {
                     response : response,
                     parent: this.parent,
                     file: file
-                });
+                })
                 this.url = response.thumbnail_url;
             },
             uploadError(file, response) {
