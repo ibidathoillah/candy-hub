@@ -157,6 +157,10 @@
                         <label>Title</label>
                         <input type="text" class="form-control" v-model="article.title">
                     </div>
+                    <candy-media
+                            assetable="articles"
+                            :parent="article">
+                    </candy-media>
                     <div class="form-group">
                         <label>Slug</label>
                         <input type="text" class="form-control" v-model="article.slug">
@@ -169,10 +173,6 @@
                         <label>Tipe</label>
                         <input type="text" class="form-control" v-model="article.type">
                     </div>
-                    <candy-media
-                            assetable="articles"
-                            :parent="article">
-                    </candy-media>
                     <hr>
                     <div class="form-group">
                         <label>Content</label>

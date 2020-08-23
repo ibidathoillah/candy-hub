@@ -82,7 +82,7 @@
           </form>
           <hr>
           <div class="text-center">
-            <a href="{{ route('password.request') }}" title="Forgotten your password?">Forgot your password?</a>
+            <a href="{{ route('password.request') }}" title="Forgotten your password?">Lupa password anda?</a>
           </div>
         </div>
       </div>
