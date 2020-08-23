@@ -55,7 +55,7 @@
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active">
                 <a href="#all-orders" aria-controls="all-orders" role="tab" data-toggle="tab">
-                    All Customers
+                    Semua Pelanggan
                 </a>
             </li>
         </ul>

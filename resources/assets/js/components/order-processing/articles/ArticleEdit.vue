@@ -13,7 +13,8 @@
                 selected: [],
                 article: {},
                 keywords: '',
-                publish:{}
+                Publish:{},
+                Draft:{}
             }
         },
         props: {
