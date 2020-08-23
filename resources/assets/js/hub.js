@@ -210,7 +210,8 @@ const app = new Vue({
     store,
     i18n,
     data: {
-      title: ''
+      title: '',
+      status: ''
     },
     mounted() {
       CandyEvent.$on('title-changed', event => {
@@ -221,6 +222,10 @@ const app = new Vue({
         }
         if (event.prefix) {
           this.title = event.prefix + ' ' + this.title;
+        }
+
+        if(event.status){
+          this.status = event.status;
         }
       });
     }

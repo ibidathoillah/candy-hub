@@ -79,9 +79,15 @@
                     this.article = response;
 
                     if(this.article.is_published){
-                        this.status="Draft";
+                    CandyEvent.$emit('title-changed', {
+                        title: this.article.title,
+                        status: "Draft"
+                    });
                     } else {
-                        this.status="Publish"
+                    CandyEvent.$emit('title-changed', {
+                        title: this.article.title,
+                        status: "Publish"
+                    });
                     }
 
                     var tags = this.article.tags.split(",");
