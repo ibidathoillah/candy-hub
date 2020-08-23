@@ -33,7 +33,7 @@
             loadCustomers2() {
                 apiRequest.send('get', '/subscribe')
                     .then(response => {
-                        this.rows = response;
+                        this.rows = response.data;
                         this.pagination2 = response;
                         this.loaded2 = true;
                     });
@@ -160,7 +160,7 @@
                                 {{ row.email }}
                             </td>
                             <td >
-                                {{ row.isActive }}
+                                {{ row.isActive ? "Teraktivasi" : "Menunggu Persetujuan" }}
                             </td>
                         </tr>
                     </tbody>
