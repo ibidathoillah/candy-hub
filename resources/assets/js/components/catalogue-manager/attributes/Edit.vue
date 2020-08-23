@@ -93,8 +93,8 @@
                                                         <candy-select :options="languages" v-model="translationLanguage" v-if="languages.length"></candy-select>
                                                     </div>
                                                 </div>
-                                                <button v-if="!translating" class="btn btn-default" @click="translating = true">Translate</button>
-                                                <button v-if="translating" class="btn btn-default" @click="translating = false">Hide Translation</button>
+                                                <button v-if="!translating" class="btn btn-default" @click="translating = true">Terjemahkan</button>
+                                                <button v-if="translating" class="btn btn-default" @click="translating = false">Tutup Penerjemah</button>
                                             </div>
 
                                         </div>

@@ -101,7 +101,7 @@
                     <span class="text-danger" v-if="request.getError('stock')" v-text="request.getError('stock')"></span>
                 </div>
                 <div class="form-group">
-                    <label for="redirectURL">Enter the slug product.</label>
+                    <label for="redirectURL">Masukkan slug dari pruduk.</label>
                     <input type="text" id="redirectURL" class="form-control" v-model="product.url">
                     <span class="text-info" v-if="product.url">URL anda akan disanitasi menjadi: <code>{{ productUrl }}</code></span>
                     <span class="text-danger" v-if="request.getError('url')" v-text="request.getError('url')"></span>

@@ -345,7 +345,7 @@
                                     <tfoot>
                                         <tr>
                                             <td colspan="6"></td>
-                                            <td colspan="2" align="right"><strong>Sub total (Excl Pajak)</strong></td>
+                                            <td colspan="2" align="right"><strong>Sub total (Tanpa Pajak)</strong></td>
                                             <td v-html="currencySymbol(order.sub_total)"></td>
                                         </tr>
                                         <template v-if="shipping.length">
@@ -370,7 +370,7 @@
                                         <template v-else>
                                             <tr>
                                                 <td colspan="7"></td>
-                                                <td colspan="2" align="right"><strong>Biaya Pengiriman (Excl Pajak)</strong></td>
+                                                <td colspan="2" align="right"><strong>Biaya Pengiriman (Tanpa Pajak)</strong></td>
                                                 <td v-html="currencySymbol(order.delivery_total)"></td>
                                             </tr>
                                         </template>

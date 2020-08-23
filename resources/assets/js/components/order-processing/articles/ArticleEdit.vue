@@ -169,6 +169,10 @@
                         <label>Tipe</label>
                         <input type="text" class="form-control" v-model="article.type">
                     </div>
+                    <candy-media
+                            assetable="articles"
+                            :parent="article">
+                    </candy-media>
                     <hr>
                     <div class="form-group">
                         <label>Content</label>
