@@ -13,6 +13,10 @@
                     page: 1,
                     includes: 'groups,details'
                 },
+                params2: {
+                    per_page: 50,
+                    page: 1,
+                },
                 pagination: {}
             }
         },
@@ -23,7 +27,7 @@
         },
         methods: {
             loadCustomers() {
-                apiRequest.send('get', '/customers', [], this.params)
+                apiRequest.send('get', '/customers', [], this.params2)
                     .then(response => {
                         this.customers = response.data;
                         this.pagination = response.meta.pagination;
@@ -31,7 +35,7 @@
                     });
             },
             loadCustomers2() {
-                apiRequest.send('get', '/subscribe')
+                apiRequest.send('get', '/subscribe', this.params2)
                     .then(response => {
                         this.rows = response.data;
                         this.pagination2 = response;
@@ -48,7 +52,7 @@
             },
             changePage2(page) {
                 this.loaded2 = false;
-                this.params.page = page;
+                this.params2.page = page;
                 this.loadCustomers2();
             },
             loadCustomer: function (id) {
