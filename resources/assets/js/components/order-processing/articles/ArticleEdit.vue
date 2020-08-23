@@ -11,7 +11,8 @@
                 countries: [],
                 selected: [],
                 article: {},
-                keywords: ''
+                keywords: '',
+                publish:{}
             }
         },
         props: {
@@ -30,18 +31,14 @@
                 this.load(this.id);
             });
 
-            Dispatcher.add('save-articles', this);
-            // Dispatcher.add('publish-articles', this);
-
-            this.loadCountries();
+            this.publish.save = ()=>{
+                this.article.is_published = true;
+                this.save();
+            }
+            Dispatcher.add('save', this);
+            Dispatcher.add('publish', this.publish);
         },
         methods: {
-            loadCountries() {
-                apiRequest.send('GET', '/countries').then(response => {
-                    this.countries = response.data;
-                    this.countryCache = response.data;
-                });
-            },
             save() {
                 var tags = [];
                 var temp = this.article;
@@ -63,59 +60,7 @@
                 });
             },
             save() {
-                this.article.is_published = true;
                 this.save();
-            },
-            getFlag: function(locale) {
-                if (locale == 'en') {
-                    locale = 'gb';
-                }
-                return 'flag-icon-' + locale.toLowerCase();
-            },
-            selectAll(region) {
-                _.each(region.countries.data, country => {
-                    if (!_.includes(this.selected, country.id)) {
-                        this.selected.push(country.id);
-                    }
-                });
-            },
-            selectedCount(region) {
-                var count = 0;
-                _.each(region.countries.data, country => {
-                    if (_.includes(this.selected, country.id)) {
-                        count++;
-                    }
-                });
-                return count;
-            },
-            deselect(region) {
-                var indexes = [],
-                    selected = [];
-
-                var ids = _.map(region.countries.data, item => {
-                    return item.id;
-                });
-
-                this.selected = _.filter(this.selected, item => {
-                    return !ids.includes(item);
-                });
-            },
-            isSelected(id) {
-                return this.selected.includes(id);
-            },
-            getCache() {
-                return JSON.parse(JSON.stringify(this.countryCache));
-            },
-            search() {
-                this.countries = this.getCache();
-                if (this.keywords) {
-                    this.countries = this.countries.filter(region => {
-                        region.countries.data = _.filter(region.countries.data, country => {
-                            return !(country.name.en.indexOf(this.keywords) == -1);
-                        });
-                        return region.countries.data.length;
-                    });
-                }
             },
             /**
              * Loads the product by its encoded ID
