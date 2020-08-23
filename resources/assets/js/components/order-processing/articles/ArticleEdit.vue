@@ -60,11 +60,14 @@
                 var tags = [];
                 var temp = this.article;
                 for(let i=0;i<temp.tags.length;i++){
-                    if(temp.tags[i].name!="")
+                    if(temp.tags[i].name && temp.tags[i].name!="")
                     tags.push(temp.tags[i].name)
                 }
 
-                temp.tags = tags.toString();
+                if(tags.length>0){
+                    temp.tags = tags.toString();
+                }
+                
                 delete temp.assets;
                 apiRequest.send('PUT', '/articles/' + temp.id, temp).then(response => {
                     CandyEvent.$emit('notification', {

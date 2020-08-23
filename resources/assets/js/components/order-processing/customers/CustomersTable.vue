@@ -53,7 +53,7 @@
 
         <!-- Search tabs -->
         <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active">
+            <li role="tabpanel" class="active">
                 <a href="#all-customers" aria-controls="all-customers" role="tab" data-toggle="tab">
                     Semua Pelanggan
                 </a>
@@ -129,7 +129,7 @@
                     <candy-table-paginate :total="pagination.total_pages" :current="pagination.current_page" @change="changePage"></candy-table-paginate>
                 </div>
             </div>
-             <div role="tabpanel" class="tab-pane active" id="all-subscribers">
+             <div role="presentation" class="tab-pane" id="all-subscribers">
                  lala po
              </div>
 
