@@ -147,6 +147,8 @@
                 if (typeof this.getters[col] === "function") {
                     return this.getters[col](order, this.currencies);
                 }
+                if(col=="type") col="meta.treasury_payment_name";
+                
                 return _.get(order, col);
             },
             heading(col) {
@@ -292,7 +294,7 @@
         <ul class="nav nav-tabs order-status-tabs" role="tablist">
             <li role="presentation" :class="{'active' : !filter}">
                 <a href="#all-orders" aria-controls="all-orders" role="tab" data-toggle="tab" @click="filter = null">
-                    All Orders
+                    Semua Pemesanan
                 </a>
             </li>
             <li role="presentation" v-for="(tab, handle) in favourites" :key="handle" :style="{

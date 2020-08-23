@@ -5,7 +5,7 @@ return [
     'attribute-groups' => 'Grup Atribut',
     'product-families' => 'Brands',
     'products'         => 'Produk',
-    'orders'           => 'Pesanan',
+    'orders'           => 'Pemesanan',
     'shipping_methods' => 'Metode Pengiriman',
     'shipping_zones'   => 'Zona Pengiriman',
     'collections'      => 'Occasion',

@@ -141,7 +141,7 @@
                                         },
                                         scaleLabel: {
                                             display: true,
-                                            labelString: '# Total Pesanan'
+                                            labelString: '# Total Pemesanan'
                                         }
                                     },
                                     {

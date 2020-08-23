@@ -3,15 +3,15 @@
     "table": {
       "heading": {
         "status": "Status",
-        "name" : "Name",
+        "name" : "Nama",
         "order_total": "Order Total",
-        "account_no": "Account Number",
+        "account_no": "No. Akun",
         "contact_email": "Email",
-        "type": "Type",
-        "account": "Account",
-        "delivery_total": "Delivery Total",
-        "zone": "Zone",
-        "date": "Date",
+        "type": "Tipe Pembayaran",
+        "account": "Akun",
+        "delivery_total": "Biaya Pengiriman",
+        "zone": "Zona",
+        "date": "Tanggal",
         "reference": "Reference",
         "new_returning": "New / Returning",
         "first_order": "First Order"
