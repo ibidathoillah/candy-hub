@@ -31,6 +31,7 @@
             });
 
             Dispatcher.add('save-articles', this);
+            Dispatcher.add('publish-articles', this);
 
             this.loadCountries();
         },
@@ -60,6 +61,10 @@
                         message: response.message
                     });
                 });
+            },
+            save() {
+                this.article.is_published = true;
+                this.save();
             },
             getFlag: function(locale) {
                 if (locale == 'en') {
@@ -188,7 +193,7 @@
                     </candy-media>
                     </span>
                     <br> 
-                                    <div class="form-group">
+                    <div class="form-group">
                         <label>Tag</label>
                         <candy-taggable v-model="article.tags">
                         </candy-taggable>
