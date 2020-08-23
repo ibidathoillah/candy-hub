@@ -74,15 +74,16 @@
              */
             load(id) {
 
-                if(this.article.is_published){
-                    this.status="Draft";
-                } else {
-                    this.status="Publish"
-                }
-
                 apiRequest.send('get', '/articles/' + id, {})
                 .then(response => {
                     this.article = response;
+
+                    if(this.article.is_published){
+                        this.status="Draft";
+                    } else {
+                        this.status="Publish"
+                    }
+
                     var tags = this.article.tags.split(",");
                     var tags_data = [];
                     
