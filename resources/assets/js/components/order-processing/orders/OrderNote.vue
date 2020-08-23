@@ -27,10 +27,10 @@
             <template slot="footer">
                 <button type="button" class="btn btn-primary" :disabled="saving" @click="save">
                     <template v-if="!saving">
-                        Save note
+                        Simpan note
                     </template>
                     <template v-else>
-                        <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> Saving
+                        <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> Menyimpan
                     </template>
                 </button>
             </template>
