@@ -150,13 +150,13 @@
             <table cellpadding="0" cellspacing="0" width="100%" class="lines">
                 <thead class="lines-heading">
                     <tr width="100%">
-                        <th width="20%">
+                        <th width="18%">
                             Produk
                         </th>
                         <th width="10%">
                             SKU
                         </th>
-                        <th width="10%">
+                        <th width="3%">
                             Qty
                         </th>
                         <th width="13%">
@@ -165,13 +165,13 @@
                         <th width="10%">
                             Diskon
                         </th>
-                        <th width="10%">
+                        <th width="5%">
                             Rate Pajak
                         </th>
-                        <th width="12%">
+                        <th width="8%">
                             Pajak
                         </th>
-                        <th width="12%">
+                        <th width="8%">
                             Baris Total
                         </th>
                     </tr>
