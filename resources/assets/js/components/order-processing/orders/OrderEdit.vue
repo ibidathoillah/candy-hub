@@ -247,7 +247,7 @@
                                     <span ref="customerRef">{{ order.customer_reference ? order.customer_reference : '-' }}</span> <candy-clipboard-copy :text="order.customer_reference" v-if="order.customer_reference"/>
                                 </div>
                                 <div class="col-md-2">
-                                    <strong>Date Created</strong><br>
+                                    <strong>Tanggal Dibuat</strong><br>
                                     {{ order.created_at|formatDate }}
                                 </div>
                                 <div class="col-md-2" v-if="order.placed_at">
@@ -453,7 +453,7 @@
                                 </div>
                             </div>
                             <article v-if="order.notes">
-                                <h3>Order Notes</h3>
+                                <h3>Catatan</h3>
                                 <p>{{ order.notes }}</p>
                             </article>
 

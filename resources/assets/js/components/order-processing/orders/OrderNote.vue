@@ -4,10 +4,10 @@
         <candy-modal title="Tambah order note" v-show="show" size="modal" @closed="reset">
             <div slot="body" class="text-left">
                 <div class="form-group">
-                    <label>Visibility</label>
+                    <label>Tampilkan</label>
                     <select class="form-control" v-model="isPublic">
-                        <option :value="true">Public</option>
-                        <option :value="false">Private</option>
+                        <option :value="true">Secara Publik</option>
+                        <option :value="false">Secara Private</option>
                     </select>
 
                 </div>
@@ -17,10 +17,10 @@
                 </div>
 
                 <div class="alert alert-info" v-if="isPublic">
-                    This will be viewable by the customer
+                    Akan tampil kepada pelanggan
                 </div>
                 <div class="alert alert-info" v-else>
-                    This will be only be visible in the Hub
+                    Hanya dalam dashboard
                 </div>
 
             </div>

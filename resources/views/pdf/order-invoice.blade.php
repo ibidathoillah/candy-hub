@@ -72,7 +72,7 @@
                         <table width="100%">
                             <tr>
                                 <td class="title" align="left" width="50%">
-                                    <img src="{{ config('getcandy.invoicing.logo', config('app.name')) }}" width="100px">
+                                    <img src="http://intense-oasis-34709.herokuapp.com/candy-hub/images/logo/treasury.png" width="100px">
                                     <h3>Order Invoice</h3>
                                 </td>
                                 <td align="right" width="50%">
@@ -150,25 +150,25 @@
             <table cellpadding="0" cellspacing="0" width="100%" class="lines">
                 <thead class="lines-heading">
                     <tr width="100%">
-                        <th width="28%">
+                        <th width="20%">
                             Produk
                         </th>
-                        <th width="15%">
+                        <th width="10%">
                             SKU
                         </th>
                         <th width="10%">
                             Qty
                         </th>
-                        <th width="15%">
+                        <th width="13%">
                             Harga Per Unit
                         </th>
-                        <th width="15%">
+                        <th width="10%">
                             Diskon
                         </th>
-                        <th width="15%">
+                        <th width="10%">
                             Rate Pajak
                         </th>
-                        <th width="15%">
+                        <th width="12%">
                             Pajak
                         </th>
                         <th width="12%">
