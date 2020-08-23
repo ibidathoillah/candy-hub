@@ -3,6 +3,7 @@
         data() {
             return {
                 loaded: false,
+                loaded2: false,
                 customers: [],
                 rows:[],
                 pagination2: {},
@@ -30,11 +31,11 @@
                     });
             },
             loadCustomers2() {
-                apiRequest.send('get', '/subscribe', [], this.params)
+                apiRequest.send('get', '/subscribe')
                     .then(response => {
                         this.rows = response;
-                        this.pagination = response;
-                        this.loaded = true;
+                        this.pagination2 = response;
+                        this.loaded2 = true;
                     });
             },
             details(customer) {
@@ -46,7 +47,7 @@
                 this.loadCustomers();
             },
             changePage2(page) {
-                this.loaded = false;
+                this.loaded2 = false;
                 this.params.page = page;
                 this.loadCustomers2();
             },
