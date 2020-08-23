@@ -52,13 +52,13 @@
             </div>
             <div class="row">
               <div class="col-xs-12 col-md-12 text-right">
-                <button type="submit" class="btn btn-primary">Send Reset Email</button>
+                <button type="submit" class="btn btn-primary">Kirim Reset Email</button>
               </div>
             </div>
           </form>
           <hr>
           <div class="text-center">
-            Know your password? <a href="{{ route('hub.login') }}" title="Kunjungi Login page">Kunjungi Login page</a>
+            Sudah Ingat Password? <a href="{{ route('hub.login') }}" title="Kunjungi Login page">Kunjungi Login page</a>
           </div>
         </div>
       </div>
