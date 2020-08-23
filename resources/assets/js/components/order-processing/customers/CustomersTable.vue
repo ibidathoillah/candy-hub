@@ -154,7 +154,7 @@
                             <th>Aktivasi</th>
                         </tr>
                     </thead>
-                    <tbody v-if="loaded">
+                    <tbody v-if="loaded2">
                         <tr class="clickable" v-for="row in rows">
                             <td >
                                 {{ row.email }}
