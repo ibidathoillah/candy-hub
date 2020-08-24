@@ -93,4 +93,8 @@ class LoginController extends Controller
         $request->session()->put('token_expires_at', $tokenExpiry);
         CandyClient::setToken($token);
     }
+
+    protected function loggedOut(Request $request) {
+        return redirect()->route('hub.login')->with('unauth', 'You have been logged out');
+    }
 }
