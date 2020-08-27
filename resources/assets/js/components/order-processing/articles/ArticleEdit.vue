@@ -166,7 +166,7 @@
                         <label>Konten</label>
                         <candy-textarea :id="'default-content'"
                                         :richtext="true"
-                                        v-model="article.body">
+                                        v-model="article.content">
                         </candy-textarea>
                     </div>
                                         <span style="border-top: 1px solid #8080806e">
