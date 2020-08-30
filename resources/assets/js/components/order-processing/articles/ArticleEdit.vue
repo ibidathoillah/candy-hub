@@ -12,6 +12,8 @@
                 countries: [],
                 selected: [],
                 article: {},
+                categories: [],
+                types: [],
                 keywords: '',
                 Publish:{},
                 Unpublish:{}
@@ -89,6 +91,16 @@
              */
             load(id) {
 
+                apiRequest.send('get', '/article-categories', {})
+                 .then(response => {
+                     this.categories= response;
+                 });
+
+                 apiRequest.send('get', '/article-types', {})
+                 .then(response => {
+                     this.types= response;
+                 });
+
                 apiRequest.send('get', '/articles/' + id, {})
                 .then(response => {
                     this.article = response;
@@ -151,14 +163,14 @@
                     </div> -->
                     <div class="form-group">
                         <label>Kategori</label>
-                        <select class="form-control" v-model="article.category">
-                        <option value="news">Berita</option>
+                        <select class="form-control" v-model="article.category.slug">
+                        <option v-for="option in categories" v-bind:value="option.slug">{{option.name}}</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Tipe</label>
-                        <select class="form-control" v-model="article.type">
-                        <option value="article">Artikel</option>
+                        <select class="form-control" v-model="article.type.slug">
+                            <option v-for="option in types" v-bind:value="option.slug">{{option.name}}</option>
                         </select>
                     </div>
                     <hr>
