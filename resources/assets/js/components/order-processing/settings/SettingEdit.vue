@@ -83,6 +83,14 @@
                      this.save(a);
                  }
             },
+            up(a,b){
+                     var sub_settings = a.sub_settings.filter(x => x.name==b.name);
+                     console.log(sub_settings)
+            },
+            down(a,b){
+                     var sub_settings = a.sub_settings.filter(x => x.name==b.name);
+                     console.log(sub_settings)
+            },
             desc(e) {
                 var cur = $(e.target);
                 var next = $(cur.next()[0]);
@@ -203,7 +211,7 @@
                                         :richtext="true"
                                         v-model="set2.value">
                             </candy-textarea></div>
-                                <button class="btn btn-warning" style="float:right" @click="del2(set,set2)">Hapus</button>
+                                <button class="btn btn-primary" style="float:right" @click="up(set,set2)"><i class="fa fa-arrow-up"></i></button><button class="btn btn-primary" style="float:right" @click="down(set,set2)"><i class="fa fa-arrow-down"></i></button><button class="btn btn-warning" style="float:right" @click="del2(set,set2)">Hapus</button>
                                 <hr/>
                             </div>
                             </div>
