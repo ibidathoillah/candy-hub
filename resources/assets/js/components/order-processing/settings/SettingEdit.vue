@@ -232,7 +232,7 @@
                             </div>
                             </div>
                         </div>
-                        <button @click="save(set)"  class="btn btn-primary">Simpan</button> <button class="btn btn-danger"  @click="del(set)">Hapus</button>
+                        <button @click="save(set)"  class="btn btn-success">Simpan</button> <button class="btn btn-danger"  @click="del(set)">Hapus</button>
                     </div>
                     <!-- <div class="form-group">
                         <label>Judul</label>
