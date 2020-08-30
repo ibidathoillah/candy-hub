@@ -113,6 +113,10 @@
                 
             },
             save(data) {
+                for(let x in this.settings[0].sub_settings){
+                    this.settings[0].sub_settings[x]["order"] = x;
+                }
+
                 this.request.send('put', '/sites-settings/' + data.name, data)
                 .then(response => {
                     CandyEvent.$emit('notification', {
