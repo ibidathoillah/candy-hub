@@ -98,6 +98,7 @@
                          this.settings[0].sub_settings[nextIndex] = sub_settings;
                          this.settings[0].sub_settings[index] = temp;
                      }
+                     console.log(this.settings)
             },
             down(a,b,index){
                     var sub_settings = null;
@@ -114,6 +115,7 @@
                          this.settings[0].sub_settings[nextIndex] = sub_settings;
                          this.settings[0].sub_settings[index] = temp;
                      }
+                     console.log(this.settings)
             },
             desc(e) {
                 var cur = $(e.target);
