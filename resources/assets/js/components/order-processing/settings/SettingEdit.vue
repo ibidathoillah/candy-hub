@@ -94,10 +94,10 @@
                 return arr; // for testing
             },
             up(a,b,index){
-                this.settings[0].sub_settings = this.array_move(this.settings[0].sub_settings,index,index+1)
+                this.settings[0].sub_settings = this.array_move(this.settings[0].sub_settings,index,index--)
             },
             down(a,b,index){
-                this.settings[0].sub_settings =  this.array_move(this.settings[0].sub_settings,index,index-1)
+                this.settings[0].sub_settings =  this.array_move(this.settings[0].sub_settings,index,index++)
             },
             desc(e) {
                 var cur = $(e.target);
