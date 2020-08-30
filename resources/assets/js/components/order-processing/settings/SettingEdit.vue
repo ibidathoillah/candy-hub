@@ -98,7 +98,10 @@
                          this.settings[0].sub_settings[nextIndex] = sub_settings;
                          this.settings[0].sub_settings[index] = temp;
                      }
-                     console.log(this.settings)
+
+                    this.settings[0].sub_settings.push({});
+                    this.settings[0].sub_settings.pop();
+                    
             },
             down(a,b,index){
                     var sub_settings = null;
@@ -115,7 +118,9 @@
                          this.settings[0].sub_settings[nextIndex] = sub_settings;
                          this.settings[0].sub_settings[index] = temp;
                      }
-                     console.log(this.settings)
+                     
+                    this.settings[0].sub_settings.push({});
+                    this.settings[0].sub_settings.pop();
             },
             desc(e) {
                 var cur = $(e.target);
