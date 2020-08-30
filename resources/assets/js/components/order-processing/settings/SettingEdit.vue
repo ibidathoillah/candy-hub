@@ -205,7 +205,7 @@
                                         </template>
                                     </candy-modal>
                     <!-- <h4>{{ JSON.stringify(settings) }}</h4> -->
-                    <div v-for="(set,i) in settings">
+                    <div v-for="set in settings">
                          <!-- <h3>Pengaturan {{set.name}}</h3> -->
                         <div class="form-group" >
                             <div class="input-group input-group-full"><span class="input-group-addon" style="width:100px">Nama</span>  <input type="text" class="form-control" placeholder="Nama" v-model="set.name"></div>
@@ -221,7 +221,7 @@
 
                             <div style="padding: 20px;padding-top:5px;zoom: 0.7;">
                             <button class="btn btn-success" @click="showSub = true;currentSet=set">Tambah Detail</button>
-                            <div style="margin-bottom:5px" v-if="set.sub_settings" v-for="set2 in set.sub_settings">
+                            <div style="margin-bottom:5px" v-if="set.sub_settings" v-for="(set2,i) in set.sub_settings">
                             <hr/>
                             <h4>Sub Pengaturan - {{set2.name}}</h4>
                             <div class="input-group input-group-full"><span class="input-group-addon" style="width:100px">Nama</span>  <input type="text" class="form-control" placeholder="Nama" v-model="set2.name"></div>
