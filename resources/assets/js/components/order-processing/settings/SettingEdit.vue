@@ -84,12 +84,26 @@
                  }
             },
             up(a,b){
-                     var sub_settings = a.sub_settings.filter(x => x.name==b.name);
-                     console.log(sub_settings)
+                     var sub_settings = a.sub_settings.find(x => x.name==b.name);
+                     var index = a.sub_settings.indexOf(sub_settings);
+                     var nextIndex = index++;
+                     if(nextIndex<a.sub_settings.length){
+                         var temp = a.sub_settings[nextIndex];
+                         a.sub_settings[nextIndex] = sub_settings;
+                         a.sub_settings[index] = temp;
+                         
+                     }
             },
             down(a,b){
-                     var sub_settings = a.sub_settings.filter(x => x.name==b.name);
-                     console.log(sub_settings)
+                     var sub_settings = a.sub_settings.find(x => x.name==b.name);
+                     var index = a.sub_settings.indexOf(sub_settings);
+                     var nextIndex = --index;
+                     if(nextIndex>0){
+                         var temp = a.sub_settings[nextIndex];
+                         a.sub_settings[nextIndex] = sub_settings;
+                         a.sub_settings[index] = temp;
+                         
+                     }
             },
             desc(e) {
                 var cur = $(e.target);
@@ -211,7 +225,9 @@
                                         :richtext="true"
                                         v-model="set2.value">
                             </candy-textarea></div>
-                                <button class="btn btn-primary" style="float:right" @click="up(set,set2)"><i class="fa fa-arrow-up"></i></button><button class="btn btn-primary" style="float:right" @click="down(set,set2)"><i class="fa fa-arrow-down"></i></button><button class="btn btn-warning" style="float:right" @click="del2(set,set2)">Hapus</button>
+                            <button class="btn btn-warning" style="float:right" @click="del2(set,set2)">Hapus</button>
+                                <button class="btn btn-primary" style="float:right" @click="down(set,set2)"><i class="fa fa-arrow-down"></i></button>
+                                                 <button class="btn btn-primary" style="float:right" @click="up(set,set2)"><i class="fa fa-arrow-up"></i></button>               
                                 <hr/>
                             </div>
                             </div>
