@@ -83,26 +83,34 @@
                      this.save(a);
                  }
             },
-            up(a,b){
-                     var sub_settings = a.sub_settings.find(x => x.name==b.name);
-                     var index = a.sub_settings.indexOf(sub_settings);
+            up(a,b,index){
+                     if(!index){
+                        var sub_settings = this.settings[0].sub_settings.find(x => x.name==b.name);
+                        index = this.settings[0].sub_settings.indexOf(sub_settings)
+                     }
+                     else{
+                        sub_settings = this.settings[0].sub_settings[i];
+                     }
                      var nextIndex = index++;
-                     if(nextIndex<a.sub_settings.length){
-                         var temp = a.sub_settings[nextIndex];
-                         a.sub_settings[nextIndex] = sub_settings;
-                         a.sub_settings[index] = temp;
-                         
+                     if(nextIndex<this.settings[0].sub_settings.length){
+                         var temp = this.settings[0].sub_settings[nextIndex];
+                         this.settings[0].sub_settings[nextIndex] = sub_settings;
+                         this.settings[0].sub_settings[index] = temp;
                      }
             },
-            down(a,b){
-                     var sub_settings = a.sub_settings.find(x => x.name==b.name);
-                     var index = a.sub_settings.indexOf(sub_settings);
-                     var nextIndex = --index;
-                     if(nextIndex>0){
-                         var temp = a.sub_settings[nextIndex];
-                         a.sub_settings[nextIndex] = sub_settings;
-                         a.sub_settings[index] = temp;
-                         
+            down(a,b,index){
+                     if(!index){
+                        var sub_settings = this.settings[0].sub_settings.find(x => x.name==b.name);
+                        index = this.settings[0].sub_settings.indexOf(sub_settings)
+                     }
+                     else{
+                        sub_settings = this.settings[0].sub_settings[i];
+                     }
+                     var nextIndex =index--;
+                     if(nextIndex>=0){
+                         var temp = this.settings[0].sub_settings[nextIndex];
+                         this.settings[0].sub_settings[nextIndex] = sub_settings;
+                         this.settings[0].sub_settings[index] = temp;
                      }
             },
             desc(e) {
@@ -195,7 +203,7 @@
                                         </template>
                                     </candy-modal>
                     <!-- <h4>{{ JSON.stringify(settings) }}</h4> -->
-                    <div v-for="set in settings">
+                    <div v-for="(set,i) in settings">
                          <!-- <h3>Pengaturan {{set.name}}</h3> -->
                         <div class="form-group" >
                             <div class="input-group input-group-full"><span class="input-group-addon" style="width:100px">Nama</span>  <input type="text" class="form-control" placeholder="Nama" v-model="set.name"></div>
@@ -226,8 +234,8 @@
                                         v-model="set2.value">
                             </candy-textarea></div>
                             <button class="btn btn-warning" style="float:right" @click="del2(set,set2)">Hapus</button>
-                                <button class="btn btn-primary" style="float:right" @click="down(set,set2)"><i class="fa fa-arrow-down"></i></button>
-                                                 <button class="btn btn-primary" style="float:right" @click="up(set,set2)"><i class="fa fa-arrow-up"></i></button>               
+                                <button class="btn btn-primary" style="float:right" @click="down(set,set2,i)"><i class="fa fa-arrow-down"></i></button>
+                                                 <button class="btn btn-primary" style="float:right" @click="up(set,set2,i)"><i class="fa fa-arrow-up"></i></button>               
                                 <hr/>
                             </div>
                             </div>
