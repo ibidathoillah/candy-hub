@@ -74,6 +74,9 @@
                 }
                 
                 delete temp.assets;
+                delete temp.user;
+                temp.category=temp.category.slug;
+                temp.type=temp.category.type;
                 apiRequest.send('PUT', '/articles/' + temp.id, temp).then(response => {
                     CandyEvent.$emit('notification', {
                         level: 'success'
