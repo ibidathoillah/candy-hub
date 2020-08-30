@@ -83,44 +83,21 @@
                      this.save(a);
                  }
             },
+           array_move(arr, old_index, new_index) {
+                if (new_index >= arr.length) {
+                    var k = new_index - arr.length + 1;
+                    while (k--) {
+                        arr.push(undefined);
+                    }
+                }
+                arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+                return arr; // for testing
+            },
             up(a,b,index){
-                     var sub_settings = null;
-                     if(!index){
-                        sub_settings = this.settings[0].sub_settings.find(x => x.name==b.name);
-                        index = this.settings[0].sub_settings.indexOf(sub_settings)
-                     }
-                     else{
-                        sub_settings = this.settings[0].sub_settings[index];
-                     }
-                     var nextIndex = index++;
-                     if(nextIndex<this.settings[0].sub_settings.length){
-                         var temp = this.settings[0].sub_settings[nextIndex];
-                         this.settings[0].sub_settings[nextIndex] = sub_settings;
-                         this.settings[0].sub_settings[index] = temp;
-                     }
-
-                    this.settings[0].sub_settings.push({});
-                    this.settings[0].sub_settings.pop();
-                    
+                this.array_move(this.settings[0].sub_settings,index,index+1)
             },
             down(a,b,index){
-                    var sub_settings = null;
-                     if(!index){
-                        sub_settings = this.settings[0].sub_settings.find(x => x.name==b.name);
-                        index = this.settings[0].sub_settings.indexOf(sub_settings)
-                     }
-                     else{
-                        sub_settings = this.settings[0].sub_settings[index];
-                     }
-                     var nextIndex =index--;
-                     if(nextIndex>=0){
-                         var temp = this.settings[0].sub_settings[nextIndex];
-                         this.settings[0].sub_settings[nextIndex] = sub_settings;
-                         this.settings[0].sub_settings[index] = temp;
-                     }
-                     
-                    this.settings[0].sub_settings.push({});
-                    this.settings[0].sub_settings.pop();
+                 this.array_move(this.settings[0].sub_settings,index,index-1)
             },
             desc(e) {
                 var cur = $(e.target);
