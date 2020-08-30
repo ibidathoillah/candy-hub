@@ -84,8 +84,9 @@
                  }
             },
             up(a,b,index){
+                     var sub_settings = null;
                      if(!index){
-                        var sub_settings = this.settings[0].sub_settings.find(x => x.name==b.name);
+                        sub_settings = this.settings[0].sub_settings.find(x => x.name==b.name);
                         index = this.settings[0].sub_settings.indexOf(sub_settings)
                      }
                      else{
@@ -99,8 +100,9 @@
                      }
             },
             down(a,b,index){
+                    var sub_settings = null;
                      if(!index){
-                        var sub_settings = this.settings[0].sub_settings.find(x => x.name==b.name);
+                        sub_settings = this.settings[0].sub_settings.find(x => x.name==b.name);
                         index = this.settings[0].sub_settings.indexOf(sub_settings)
                      }
                      else{
