@@ -90,7 +90,7 @@
                         index = this.settings[0].sub_settings.indexOf(sub_settings)
                      }
                      else{
-                        sub_settings = this.settings[0].sub_settings[i];
+                        sub_settings = this.settings[0].sub_settings[index];
                      }
                      var nextIndex = index++;
                      if(nextIndex<this.settings[0].sub_settings.length){
@@ -107,7 +107,7 @@
                         index = this.settings[0].sub_settings.indexOf(sub_settings)
                      }
                      else{
-                        sub_settings = this.settings[0].sub_settings[i];
+                        sub_settings = this.settings[0].sub_settings[index];
                      }
                      var nextIndex =index--;
                      if(nextIndex>=0){
