@@ -145,10 +145,10 @@
                     <candy-tab name="URLS">
                         <candy-tabs nested="true">
                             <candy-tab name="Locale URLS" handle="locale-urls" :selected="true">
-                                <candy-urls :languages="languages" :routes="routes" :model="collection" endpoint="collections"></candy-urls>
+                                <candy-urls :languages="languages" :routes="routes" :model="collection" endpoint="occasions"></candy-urls>
                             </candy-tab>
                             <candy-tab name="Redirects" handle="redirects">
-                                <candy-redirects :model="collection" endpoint="collections" :routes="routes"></candy-redirects>
+                                <candy-redirects :model="collection" endpoint="occasions" :routes="routes"></candy-redirects>
                             </candy-tab>
                         </candy-tabs>
                     </candy-tab>

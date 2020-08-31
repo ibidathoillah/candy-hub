@@ -12,7 +12,7 @@ class SideMenu extends Menu
     {
         $this->navItems = [
             new NavItem('hub::titles.products', route('hub.products.index'), 'products'),
-            new NavItem('hub::titles.collections', route('hub.collections.index'), 'collections'),
+            new NavItem('hub::titles.collections', route('hub.collections.index'), 'occasions'),
             new NavItem('hub::titles.categories', route('hub.categories.index'), 'categories'),
             new NavBreak(),
             new NavItem('hub::titles.attributes', route('hub.attributes.index'), 'attributes'),
