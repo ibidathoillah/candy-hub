@@ -19,7 +19,7 @@
         },
         methods: {
             load() {
-                apiRequest.send('get', '/articles', {}, this.params)
+                apiRequest.send('get', '/articles?draft=1', {}, this.params)
                     .then(response => {
                         this.rows = response.data;
                         this.pagination = response;
