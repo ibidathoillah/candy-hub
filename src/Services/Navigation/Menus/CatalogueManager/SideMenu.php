@@ -17,7 +17,7 @@ class SideMenu extends Menu
             new NavBreak(),
             new NavItem('hub::titles.attributes', route('hub.attributes.index'), 'attributes'),
             new NavItem('hub::titles.attribute-groups', route('hub.attribute-groups.index'), 'attribute-groups'),
-            new NavItem('hub::titles.product-families', route('hub.product-families.index'), 'product-families'),
+            new NavItem('hub::titles.product-families', route('hub.product-families.index'), 'brands'),
             // new NavItem('Media', route('hub.index')),
             // new NavItem('Attributes', route('hub.index')),
             // new NavItem('Aliases', route('hub.index')),
