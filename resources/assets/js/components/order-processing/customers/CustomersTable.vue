@@ -27,7 +27,7 @@
         },
         methods: {
             loadCustomers() {
-                apiRequest.send('get', '/customers', [], this.params2)
+                apiRequest.send('get', '/customers', [], this.params)
                     .then(response => {
                         this.customers = response.data;
                         this.pagination = response.meta.pagination;
