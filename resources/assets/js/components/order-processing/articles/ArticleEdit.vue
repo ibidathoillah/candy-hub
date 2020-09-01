@@ -76,7 +76,7 @@
                 delete temp.assets;
                 delete temp.user;
                 temp.category=temp.category.slug;
-                temp.type=temp.category.type;
+                temp.type=temp.type.slug;
                 apiRequest.send('PUT', '/articles/' + temp.id, temp).then(response => {
                     CandyEvent.$emit('notification', {
                         level: 'success'
@@ -107,6 +107,18 @@
                 apiRequest.send('get', '/articles/' + id, {})
                 .then(response => {
                     this.article = response;
+
+                    if(!this.article.category){
+                        this.article.category = {
+                            slug : null
+                        }
+                    }
+
+                     if(!this.article.type){
+                        this.article.type = {
+                            slug : null
+                        }
+                    }
 
                     if(this.article.is_published){
                         this.status="Unpublish";
