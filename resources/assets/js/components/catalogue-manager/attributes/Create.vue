@@ -79,6 +79,7 @@
                 <div class="form-group">
                     <label>Tipe</label>
                     <select class="form-control" v-model="attribute.type">
+                        <option value="hidden">Hidden</option>
                         <option value="text">Text</option>
                         <option value="select">Pilihan</option>
                         <option value="richtext">Text Lengkap</option>
