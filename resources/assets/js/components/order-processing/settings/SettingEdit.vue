@@ -197,7 +197,7 @@
                          <!-- <h3>Pengaturan {{set.name}}</h3> -->
                         <div class="form-group" >
                             <div class="input-group input-group-full" v-if="set.name!='hidden'"><span class="input-group-addon" style="width:100px">Nama</span>  <input type="text" class="form-control" placeholder="Nama" v-model="set.name"></div>
-                            <div class="input-group input-group-full" v-if="set.url!='hidden'">><span class="input-group-addon" style="width:100px">Link</span>  <input type="text" class="form-control" placeholder="Link" v-model="set.url"></div>
+                            <div class="input-group input-group-full" v-if="set.url!='hidden'"><span class="input-group-addon" style="width:100px">Link</span>  <input type="text" class="form-control" placeholder="Link" v-model="set.url"></div>
                            <div class="input-group input-group-full" v-if="set.image_url!='hidden'"><span style="zoom:0.1" class="input-group-addon"><candy-media-upload :parent="set" :initial="set.image_url"></candy-media-upload></span>  <input type="text" class="form-control" placeholder="Gambar" v-model="set.image_url" style="width:40%"><input type="text" class="form-control" placeholder="Alt" v-model="set.image_alt" style="width:30%"><input type="text" class="form-control" placeholder="Judul" v-model="set.image_title" style="width:30%"></div>
                             <a @click="desc($event)" v-if="set.value!='hidden'">+ Tambah Deskripsi</a>
                              <div v-show="set.value" v-if="set.value!='hidden'"><candy-textarea
