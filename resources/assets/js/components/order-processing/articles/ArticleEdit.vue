@@ -59,16 +59,20 @@
         },
         methods: {
             deleteArticle(){
-                apiRequest.send('DELETE', '/articles/' + this.article.id, {}).then(response => {
-                    CandyEvent.$emit('notification', {
-                        level: 'success'
+
+                if(window.confirm("Hapus artikel "+this.article.title+" ?")){
+
+                    apiRequest.send('DELETE', '/articles/' + this.article.id, {}).then(response => {
+                        CandyEvent.$emit('notification', {
+                            level: 'success'
+                        });
+                    }).catch(response => {
+                        CandyEvent.$emit('notification', {
+                            level: 'error',
+                            message: response.message
+                        });
                     });
-                }).catch(response => {
-                    CandyEvent.$emit('notification', {
-                        level: 'error',
-                        message: response.message
-                    });
-                });
+                }
             },
             save() {
                 var tags = [];
