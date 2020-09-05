@@ -221,8 +221,7 @@
                     </div> 
                      <div class="row">
                             <div class="col-md-12">
-                                <button class="btn btn-danger" @click="deleteArticle"
-                                    v-if="variants.length > 1"><i class="fa fa-trash"></i> Hapus Artikel
+                                <button class="btn btn-danger" @click="deleteArticle"><i class="fa fa-trash"></i> Hapus Artikel
                                 </button>
                             </div>
                     </div>
