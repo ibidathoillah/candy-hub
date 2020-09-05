@@ -58,10 +58,21 @@
             Dispatcher.add('Unpublish', this.Unpublish);
         },
         methods: {
-           
+            deleteArticle(){
+                apiRequest.send('DELETE', '/articles/' + this.article.id, {}).then(response => {
+                    CandyEvent.$emit('notification', {
+                        level: 'success'
+                    });
+                }).catch(response => {
+                    CandyEvent.$emit('notification', {
+                        level: 'error',
+                        message: response.message
+                    });
+                });
+            },
             save() {
                 var tags = [];
-                var temp = this.article;
+                var temp = {...this.article};
                 for(let i=0;i<temp.tags.length;i++){
                     if(temp.tags[i].name && temp.tags[i].name!="")
                     tags.push(temp.tags[i].name)
@@ -208,6 +219,13 @@
                         <candy-taggable v-model="article.tags">
                         </candy-taggable>
                     </div> 
+                     <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn btn-danger" @click="deleteArticle"
+                                    v-if="variants.length > 1"><i class="fa fa-trash"></i> Hapus Artikel
+                                </button>
+                            </div>
+                    </div>
                 </div>
             </div>
         </template>
