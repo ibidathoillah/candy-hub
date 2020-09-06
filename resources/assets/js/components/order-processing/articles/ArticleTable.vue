@@ -111,7 +111,7 @@
                 </table>
 
                 <div class="text-center">
-                    <candy-table-paginate :pagination="pagination" @change="changePage"></candy-table-paginate>
+                    <candy-table-paginate :current="pagination.current_page" :total="pagination.total" @change="changePage"></candy-table-paginate>
                 </div>
             </div>
 
