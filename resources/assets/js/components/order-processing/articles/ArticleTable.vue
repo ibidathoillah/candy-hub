@@ -76,7 +76,7 @@
         <!-- Tab panes -->
         <div class="tab-content section block">
             
-          <form>
+          <form v-if="highlight">
                     <div class="row">
                         <div class="form-group col-md-12">
                             <div class="input-group input-group-full">
