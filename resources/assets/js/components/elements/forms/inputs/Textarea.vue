@@ -37,8 +37,7 @@
         data() {
             return {
                 config: {
-                    tagsToRemove: ['script', 'link', 'xml'],
-                    btns: [['formatting'], ['bold', 'italic'], ['link'], ['unorderedList', 'orderedList'], ['removeformat'], ['viewHTML']]
+                    tagsToRemove: ['script', 'link', 'xml']
                 }
             }
         },
