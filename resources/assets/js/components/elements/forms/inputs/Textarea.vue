@@ -31,13 +31,30 @@
     import trumbowyg from 'vue-trumbowyg';
     // Import editor css
     import 'trumbowyg/dist/ui/trumbowyg.css';
+    import 'trumbowyg/dist/plugins/colors/ui/trumbowyg.colors.min.css';
     import 'trumbowyg/dist/plugins/cleanpaste/trumbowyg.cleanpaste.js';
+    import 'trumbowyg/dist/plugins/colors/trumbowyg.colors.min.js'
 
     export default {
         data() {
             return {
                 config: {
-                    tagsToRemove: ['script', 'link', 'xml']
+                    tagsToRemove: ['script', 'link', 'xml'],
+                     btns: [
+        ['viewHTML'],
+        ['undo', 'redo'], // Only supported in Blink browsers
+        ['formatting'],
+        ['strong', 'em', 'del'],
+        ['superscript', 'subscript'],
+        ['link'],
+        ['insertImage'],
+        ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+        ['unorderedList', 'orderedList'],
+        ['horizontalRule'],
+        ['removeformat'],
+        ['fullscreen'],
+        ['foreColor', 'backColor']
+    ]
                 }
             }
         },
