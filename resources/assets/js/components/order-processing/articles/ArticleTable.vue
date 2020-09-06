@@ -8,7 +8,8 @@
                     per_page: 50,
                     current_page: 1,
                 },
-                pagination: {}
+                pagination: {},
+                keywords: "",
             }
         },
         mounted() {
@@ -18,6 +19,7 @@
             });
         },
         methods: {
+            search() {},
             load() {
                 apiRequest.send('get', '/articles?draft=1', {}, this.params)
                     .then(response => {
