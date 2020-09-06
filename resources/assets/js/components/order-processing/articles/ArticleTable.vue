@@ -43,6 +43,19 @@
 
         <!-- Tab panes -->
         <div class="tab-content section block">
+           <form>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <div class="input-group input-group-full">
+                                <span class="input-group-addon">
+                                  <i class="fa fa-search" aria-hidden="true"></i>
+                                </span>
+                                <label class="sr-only" for="search">Cari</label>
+                                <input type="text" class="form-control" id="search" placeholder="Search" @keyup="search" v-model="keywords">
+                            </div>
+                        </div>
+                    </div>
+                </form>
             <div role="tabpanel" class="tab-pane active" id="all-article">
                 <table class="table table-striped collection-table">
                     <thead>
