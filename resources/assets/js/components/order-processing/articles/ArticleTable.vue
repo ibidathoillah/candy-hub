@@ -53,7 +53,7 @@
                 location.href = route('hub.article.edit', id);
             },
             pin(row){
-                    this.request.send('post', '/articles/' + row.id+'/highlight', {})
+                    apiRequest.send('post', '/articles/' + row.id+'/highlight', {})
                     .then(response => {
                         CandyEvent.$emit('notification', {
                             level: 'success'
@@ -82,7 +82,9 @@
                         <div class="form-group col-md-12">
                             <div class="input-group input-group-full">
                                 <span class="input-group-addon">
-                                  <i class="fa fa-star" aria-hidden="true"></i>
+                                  <i style="
+    color: #ffb200;
+"  class="fa fa-star" aria-hidden="true"></i>
                                 </span>
                                 <label class="sr-only" for="star">Highlight</label>
                                 <input type="text" class="form-control" placeholder="Highlight" v-model="highlight.title" disabled>
