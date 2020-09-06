@@ -6,7 +6,7 @@
                 rows: [],
                 params: {
                     per_page: 10,
-                    current_page: 1,
+                    page: 1,
                     keywords: null,
                     draft:1
                 },
@@ -33,7 +33,7 @@
             },
             changePage(page) {
                 this.loaded = false;
-                this.params.current_page = page;
+                this.params.page = page;
                 this.load();
             },
             goTo: function (id) {
@@ -111,7 +111,7 @@
                 </table>
 
                 <div class="text-center">
-                    <candy-table-paginate :current="pagination.current_page" :total="pagination.total" @change="changePage"></candy-table-paginate>
+                    <candy-table-paginate :current="pagination.page" :total="pagination.total" @change="changePage"></candy-table-paginate>
                 </div>
             </div>
 
