@@ -11,6 +11,7 @@
                     draft:1
                 },
                 pagination: {},
+                keywords: ""
             }
         },
         mounted() {
@@ -20,9 +21,13 @@
             });
         },
         methods: {
-            search() {
-                this.load()
-            },
+            search: _.debounce(function (){
+                    this.loaded = false;
+                    this.params['keywords'] = this.keywords;
+                    this.params['page'] = 1;
+                    this.load();
+                }, 500
+            ),
             load() {
                 apiRequest.send('get', '/articles', {}, this.params)
                     .then(response => {
