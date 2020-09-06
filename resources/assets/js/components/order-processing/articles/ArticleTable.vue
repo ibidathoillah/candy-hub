@@ -21,6 +21,21 @@
                 this.load();
             });
         },
+        pin(row){
+                this.request.send('post', '/articles/' + row.id+'/highlight', {})
+                .then(response => {
+                    CandyEvent.$emit('notification', {
+                        level: 'success'
+                    });
+                    this.loadHighlight();
+                    row.highlight=true;
+                }).catch(response => {
+                    CandyEvent.$emit('notification', {
+                        level: 'error',
+                        message: 'Something went wrong!'
+                    });
+                });
+        },
         methods: {
             search: _.debounce(function (){
                     this.loaded = false;
@@ -91,6 +106,7 @@
                 <table class="table table-striped collection-table">
                     <thead>
                         <tr>
+                            <th style="width: 40px;">Pin</th>
                             <th style="width: 300px;">Title</th>
                             <th style="width: 100px;">Kategori</th>
                             <th style="width: 100px;">Slug</th>
@@ -102,6 +118,11 @@
                     </thead>
                     <tbody v-if="loaded">
                         <tr class="clickable" v-for="row in rows">
+                             <td @click="pin(row)">
+                                <i v-if="!row.is_highlight" class="fa fa-star" aria-hidden="true"></i> <i  v-if="row.is_highlight" style="
+    color: #ffb200;
+" class="fa fa-star" aria-hidden="true"></i>
+                            </td>
                             <td @click="goTo(row.id)">
                                 {{ row.title }}
                             </td>

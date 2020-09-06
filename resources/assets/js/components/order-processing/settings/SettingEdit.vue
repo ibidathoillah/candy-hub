@@ -112,19 +112,6 @@
                 }
                 
             },
-            pin(data){
-                this.request.send('post', '/articles/' + data.id+'/highlight', {})
-                .then(response => {
-                    CandyEvent.$emit('notification', {
-                        level: 'success'
-                    });
-                }).catch(response => {
-                    CandyEvent.$emit('notification', {
-                        level: 'error',
-                        message: 'Ada field yang belum diisi'
-                    });
-                });
-            },
             save(data) {
                 for(let x in this.settings[0].sub_settings){
                     this.settings[0].sub_settings[x]["order"] = x;
@@ -243,7 +230,7 @@
                             </div>
                             </div>
                         </div>
-                         <button @click="save(set)"  class="btn btn-success">Simpan</button> <button @click="pin(set)"  class="btn btn-success">Pin Artikel</button>  <button class="btn btn-danger"  @click="del(set)">Hapus</button> 
+                         <button @click="save(set)"  class="btn btn-success">Simpan</button> <button class="btn btn-danger"  @click="del(set)">Hapus</button> 
                     </div>
                     <!-- <div class="form-group">
                         <label>Judul</label>
