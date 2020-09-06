@@ -61,7 +61,7 @@
                                   <i class="fa fa-search" aria-hidden="true"></i>
                                 </span>
                                 <label class="sr-only" for="search">Cari</label>
-                                <input type="text" class="form-control" id="search" placeholder="Search" @keyup="search" v-model="params.keywords">
+                                <input type="text" class="form-control" id="search" placeholder="Search" @keyup="search" v-model="keywords">
                             </div>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                 </table>
 
                 <div class="text-center">
-                    <candy-table-paginate :current="pagination.page" :total="pagination.total" @change="changePage"></candy-table-paginate>
+                    <candy-table-paginate :current="params.page" :total="pagination.total" @change="changePage"></candy-table-paginate>
                 </div>
             </div>
 
