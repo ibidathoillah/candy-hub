@@ -21,21 +21,6 @@
                 this.load();
             });
         },
-        pin(row){
-                this.request.send('post', '/articles/' + row.id+'/highlight', {})
-                .then(response => {
-                    CandyEvent.$emit('notification', {
-                        level: 'success'
-                    });
-                    this.loadHighlight();
-                    row.highlight=true;
-                }).catch(response => {
-                    CandyEvent.$emit('notification', {
-                        level: 'error',
-                        message: 'Something went wrong!'
-                    });
-                });
-        },
         methods: {
             search: _.debounce(function (){
                     this.loaded = false;
@@ -66,6 +51,21 @@
             goTo: function (id) {
                 location.href = route('hub.article.edit', id);
             },
+            pin(row){
+                    this.request.send('post', '/articles/' + row.id+'/highlight', {})
+                    .then(response => {
+                        CandyEvent.$emit('notification', {
+                            level: 'success'
+                        });
+                        this.loadHighlight();
+                        row.highlight=true;
+                    }).catch(response => {
+                        CandyEvent.$emit('notification', {
+                            level: 'error',
+                            message: 'Something went wrong!'
+                        });
+                    });
+            }
         }
     }
 </script>
