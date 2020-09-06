@@ -11,7 +11,8 @@
                     draft:1
                 },
                 pagination: {},
-                keywords: ""
+                keywords: "",
+                highlight:null
             }
         },
         mounted() {
@@ -28,6 +29,12 @@
                     this.load();
                 }, 500
             ),
+            loadHighlight(){
+                apiRequest.send('get', '/article/highlight', {}, {})
+                    .then(response => {
+                        this.highlight = response;
+                    });
+            },
             load() {
                 apiRequest.send('get', '/articles', {}, this.params)
                     .then(response => {
@@ -53,6 +60,20 @@
 
         <!-- Tab panes -->
         <div class="tab-content section block">
+            
+          <form>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <div class="input-group input-group-full">
+                                <span class="input-group-addon">
+                                  <i class="fa fa-star" aria-hidden="true"></i>
+                                </span>
+                                <label class="sr-only" for="star">Highlight</label>
+                                <input type="text" class="form-control" placeholder="Highlight" v-model="highlight.title" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </form>
            <form>
                     <div class="row">
                         <div class="form-group col-md-12">
@@ -116,7 +137,7 @@
                 </table>
 
                 <div class="text-center">
-                    <candy-table-paginate :current="params.page" :total="pagination.total" @change="changePage"></candy-table-paginate>
+                    <candy-table-paginate :current="params.page" :total="pagination.last_page" @change="changePage"></candy-table-paginate>
                 </div>
             </div>
 
