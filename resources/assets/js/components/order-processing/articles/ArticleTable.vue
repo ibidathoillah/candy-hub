@@ -17,6 +17,7 @@
         },
         mounted() {
             this.load();
+            this.loadHighlight();
             CandyEvent.$on('article-added', product => {
                 this.load();
             });
@@ -106,7 +107,7 @@
                 <table class="table table-striped collection-table">
                     <thead>
                         <tr>
-                            <th style="width: 40px;">Pin</th>
+                            <th style="width: 40px;"> <i class="fa fa-thumbtack" aria-hidden="true"></i></th>
                             <th style="width: 300px;">Title</th>
                             <th style="width: 100px;">Kategori</th>
                             <th style="width: 100px;">Slug</th>
