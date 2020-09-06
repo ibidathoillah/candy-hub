@@ -5,11 +5,12 @@
                 loaded: false,
                 rows: [],
                 params: {
-                    per_page: 50,
+                    per_page: 10,
                     current_page: 1,
+                    keywords: null,
+                    draft:1
                 },
                 pagination: {},
-                keywords: "",
             }
         },
         mounted() {
@@ -19,9 +20,11 @@
             });
         },
         methods: {
-            search() {},
+            search() {
+                this.load()
+            },
             load() {
-                apiRequest.send('get', '/articles?draft=1', {}, this.params)
+                apiRequest.send('get', '/articles', {}, this.params)
                     .then(response => {
                         this.rows = response.data;
                         this.pagination = response;
@@ -53,7 +56,7 @@
                                   <i class="fa fa-search" aria-hidden="true"></i>
                                 </span>
                                 <label class="sr-only" for="search">Cari</label>
-                                <input type="text" class="form-control" id="search" placeholder="Search" @keyup="search" v-model="keywords">
+                                <input type="text" class="form-control" id="search" placeholder="Search" @keyup="search" v-model="this.params.keywords">
                             </div>
                         </div>
                     </div>
