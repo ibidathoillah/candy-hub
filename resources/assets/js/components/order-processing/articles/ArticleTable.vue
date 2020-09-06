@@ -56,7 +56,7 @@
                                   <i class="fa fa-search" aria-hidden="true"></i>
                                 </span>
                                 <label class="sr-only" for="search">Cari</label>
-                                <input type="text" class="form-control" id="search" placeholder="Search" @keyup="search" v-model="this.params.keywords">
+                                <input type="text" class="form-control" id="search" placeholder="Search" @keyup="search" v-model="params.keywords">
                             </div>
                         </div>
                     </div>
