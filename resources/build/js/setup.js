@@ -60,20 +60,20 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1316);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1318);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 1316:
+/***/ 1318:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(1317);
+module.exports = __webpack_require__(1319);
 
 
 /***/ }),
 
-/***/ 1317:
+/***/ 1319:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -83,13 +83,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 var ApiRequest = __webpack_require__(66);
 
-window._ = __webpack_require__(1318);
+window._ = __webpack_require__(1320);
 window.apiRequest = new ApiRequest();
 window.CandyHub = __WEBPACK_IMPORTED_MODULE_0__candyhub__["default"];
 
 /***/ }),
 
-/***/ 1318:
+/***/ 1320:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
