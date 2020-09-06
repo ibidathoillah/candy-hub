@@ -59,7 +59,10 @@
                             level: 'success'
                         });
                         this.loadHighlight();
-                        row.highlight=true;
+                        for(let x in this.rows){
+                            this.rows[x].is_highlight=false;
+                        }
+                        row.is_highlight=true;
                     }).catch(response => {
                         CandyEvent.$emit('notification', {
                             level: 'error',
