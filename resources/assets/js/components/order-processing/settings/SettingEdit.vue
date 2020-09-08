@@ -112,6 +112,18 @@
                 }
                 
             },
+            open(e,set){
+                var cur = $(e.target);
+                var prev = $(cur.prev()[0]);
+                if(prev.attr("style")=='zoom: 0.1;'){
+                     prev.attr("style","zoom: 1;");
+                     cur.text("Tutup")
+                }else {
+                     prev.attr("style","zoom: 0.1;");
+                     cur.text("Lihat")
+                }
+               
+            },
             save(data) {
                 for(let x in this.settings[0].sub_settings){
                     this.settings[0].sub_settings[x]["order"] = x;
@@ -198,7 +210,7 @@
                         <div class="form-group" >
                             <div class="input-group input-group-full" v-if="set.name!='hidden'"><span class="input-group-addon" style="width:100px">Nama</span>  <input type="text" class="form-control" placeholder="Nama" v-model="set.name" disabled></div>
                             <div class="input-group input-group-full" v-if="set.url!='hidden'"><span class="input-group-addon" style="width:100px">Link</span>  <input type="text" class="form-control" placeholder="Link" v-model="set.url"></div>
-                           <div class="input-group input-group-full" v-if="set.image_url!='hidden'"><span style="zoom:0.1" class="input-group-addon"><candy-media-upload :parent="set" :initial="set.image_url"></candy-media-upload></span>  <input type="text" class="form-control" placeholder="Gambar" v-model="set.image_url" style="width:40%"><input type="text" class="form-control" placeholder="Alt" v-model="set.image_alt" style="width:30%"><input type="text" class="form-control" placeholder="Judul" v-model="set.image_title" style="width:30%"></div>
+                           <div class="input-group input-group-full" v-if="set.image_url!='hidden'"><span style="zoom: 0.1;" class="input-group-addon"><candy-media-upload :parent="set" :initial="set.image_url"></candy-media-upload></span> <button @click="open($event,set2)" class="btn btn-success">Lihat</button> <input type="text" class="form-control" placeholder="Gambar" v-model="set.image_url" style="width:40%"><input type="text" class="form-control" placeholder="Alt" v-model="set.image_alt" style="width:30%"><input type="text" class="form-control" placeholder="Judul" v-model="set.image_title" style="width:30%"></div>
                             <a @click="desc($event)" v-if="set.value!='hidden'">+ Tambah Deskripsi</a>
                              <div v-show="set.value" v-if="set.value!='hidden'"><candy-textarea
                                         :placeholder="'Isi'" 
@@ -214,8 +226,13 @@
                             <h4>Sub Pengaturan - {{set2.name}}</h4>
                             <div class="input-group input-group-full" v-if="set2.name!='hidden'"><span class="input-group-addon" style="width:100px">Nama</span>  <input type="text" class="form-control" placeholder="Nama" v-model="set2.name"></div>
                             <div class="input-group input-group-full" v-if="set2.url!='hidden'"><span class="input-group-addon" style="width:100px">Link</span>  <input type="text" class="form-control" placeholder="Link" v-model="set2.url"></div>
-                           <div class="input-group input-group-full" v-if="set2.image_url!='hidden'"><span style="zoom:0.1" class="input-group-addon"><candy-media-upload :parent="set2"  :initial="set2.image_url"></candy-media-upload></span><input type="text" class="form-control" placeholder="Gambar" v-model="set2.image_url" style="width:40%"><input type="text" class="form-control" placeholder="Alt" v-model="set2.image_alt" style="width:30%"><input type="text" class="form-control" placeholder="Judul" v-model="set2.image_title" style="width:30%"></div>
-                            
+                           <div class="input-group input-group-full" v-if="set2.image_url!='hidden'"><span style="zoom: 0.1;" class="input-group-addon"><candy-media-upload :parent="set2"  :initial="set2.image_url"></candy-media-upload></span>
+                           <button @click="open($event,set2)" class="btn btn-success">Lihat</button>
+                           <input type="text" class="form-control" placeholder="Gambar" v-model="set2.image_url" style="width:40%"><input type="text" class="form-control" placeholder="Alt" v-model="set2.image_alt" style="width:30%"><input type="text" class="form-control" placeholder="Judul" v-model="set2.image_title" style="width:30%"></div>
+                            <p v-if="set.name=='Halaman Depan - Carousel 1' && i==0">Ukuran gambar 318 x 232</p>
+                            <p v-if="set.name=='Halaman Depan - Carousel 1' && i==0">Ukuran gambar 546 x 488</p>
+                            <p v-if="set.name=='Halaman Depan - Carousel 1' && i==0">Ukuran gambar 204 x 408</p>
+                            <p v-if="set.name=='Halaman Depan - Carousel 1' && i==0">Ukuran gambar 318 x 232</p>
                             <a @click="desc($event)" v-if="set2.value!='hidden'">+ Tambah Deskripsi</a>
                              <div v-show="set2.value" v-if="set2.value!='hidden'"><candy-textarea
                                         :placeholder="'Isi'" 
