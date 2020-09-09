@@ -117,9 +117,11 @@
                 var prev = $(cur.prev()[0]);
                 if(prev.attr("style")=='zoom: 0.1;'){
                      prev.attr("style","zoom: 1;");
+                     prev.removeClass("input-group-addon");
                      cur.text("Tutup")
                 }else {
                      prev.attr("style","zoom: 0.1;");
+                     prev.addClass("input-group-addon");
                      cur.text("Lihat")
                 }
                
