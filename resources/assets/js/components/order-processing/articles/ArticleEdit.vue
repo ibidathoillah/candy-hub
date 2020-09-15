@@ -71,12 +71,50 @@
                     });
             },
             addCategory(slug){
-                if(slug=="addNew")
-                window.prompt("Masukkan nama kategori");
+                if(slug=="addNew"){
+                    
+                    let name = window.prompt("Masukkan nama kategori");
+
+                    apiRequest.send('POST', '/article-categories', {
+                        name : name,
+                        slug : name
+                    }).then(response => {
+                        CandyEvent.$emit('notification', {
+                            level: 'success'
+                        });
+                    }).catch(response => {
+                        CandyEvent.$emit('notification', {
+                            level: 'error',
+                            message: response.message
+                        });
+                    });
+                }else {
+
+                }
+                
             },
             addType(slug){
-                 if(slug=="addNew")
-                window.prompt("Masukkan nama tipe");
+                if(slug=="addNew"){
+                    
+                    let name = window.prompt("Masukkan nama kategori");
+
+                    apiRequest.send('POST', '/article-types', {
+                        name : name,
+                        slug : name
+                    }).then(response => {
+                        CandyEvent.$emit('notification', {
+                            level: 'success'
+                        });
+                    }).catch(response => {
+                        CandyEvent.$emit('notification', {
+                            level: 'error',
+                            message: response.message
+                        });
+                    });
+                }else {
+
+                }
+                
 
             },
             deleteArticle(){
