@@ -70,10 +70,12 @@
                         });
                     });
             },
-            addCategory(){
+            addCategory(slug){
+                if(slug=="addNew")
                 window.prompt("Masukkan nama kategori");
             },
-            addType(){
+            addType(slug){
+                 if(slug=="addNew")
                 window.prompt("Masukkan nama tipe");
 
             },
@@ -212,16 +214,16 @@
                     </div> -->
                     <div class="form-group">
                         <label>Kategori</label>
-                        <select class="form-control" v-model="article.category.slug">
+                        <select class="form-control" v-model="article.category.slug" @change="addCategory(article.category.slug)" >
                         <option v-for="option in categories" v-bind:value="option.slug">{{option.name}}</option>
-                        <option @click="addCategory">Tambah Baru</option>
+                        <option value="addNew">Tambah Baru</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Tipe</label>
-                        <select class="form-control" v-model="article.type.slug">
+                        <select class="form-control" v-model="article.type.slug" @change="addType(article.type.slug)">
                             <option v-for="option in types" v-bind:value="option.slug">{{option.name}}</option>
-                             <option @click="addType">Tambah Baru</option>
+                             <option value="addNew">Tambah Baru</option>
                         </select>
                     </div>
                     <hr>
@@ -250,6 +252,7 @@
                                 </button>
                             </div>
                     </div>
+                    <br/>
                      <div class="row">
                             <div class="col-md-12">
                                 <button class="btn btn-danger" @click="deleteArticle"><i class="fa fa-trash"></i> Hapus Artikel
