@@ -58,6 +58,13 @@
             Dispatcher.add('Unpublish', this.Unpublish);
         },
         methods: {
+            addCategory(){
+                window.prompt("Masukkan nama kategori");
+            },
+            addType(){
+                window.prompt("Masukkan nama tipe");
+
+            },
             deleteArticle(){
 
                 if(window.confirm("Hapus artikel "+this.article.title+" ?")){
@@ -195,12 +202,14 @@
                         <label>Kategori</label>
                         <select class="form-control" v-model="article.category.slug">
                         <option v-for="option in categories" v-bind:value="option.slug">{{option.name}}</option>
+                        <option @click="addCategory">Tambah Baru</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Tipe</label>
                         <select class="form-control" v-model="article.type.slug">
                             <option v-for="option in types" v-bind:value="option.slug">{{option.name}}</option>
+                             <option @click="addType">Tambah Baru</option>
                         </select>
                     </div>
                     <hr>
@@ -223,6 +232,12 @@
                         <candy-taggable v-model="article.tags">
                         </candy-taggable>
                     </div> 
+                    <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn btn-danger" @click="deleteArticle"><i class="fa fa-disc"></i> Broadcast
+                                </button>
+                            </div>
+                    </div>
                      <div class="row">
                             <div class="col-md-12">
                                 <button class="btn btn-danger" @click="deleteArticle"><i class="fa fa-trash"></i> Hapus Artikel
