@@ -58,6 +58,18 @@
             Dispatcher.add('Unpublish', this.Unpublish);
         },
         methods: {
+            broadcast(){
+                    apiRequest.send('POST', '/articles/' + this.article.id +'/broadcast', {}).then(response => {
+                        CandyEvent.$emit('notification', {
+                            level: 'success'
+                        });
+                    }).catch(response => {
+                        CandyEvent.$emit('notification', {
+                            level: 'error',
+                            message: response.message
+                        });
+                    });
+            },
             addCategory(){
                 window.prompt("Masukkan nama kategori");
             },
@@ -234,7 +246,7 @@
                     </div> 
                     <div class="row">
                             <div class="col-md-12">
-                                <button class="btn btn-danger" @click="deleteArticle"><i class="fa fa-disc"></i> Broadcast
+                                <button class="btn btn-primary" @click="broadcast"><i class="fa fa-check"></i> Broadcast
                                 </button>
                             </div>
                     </div>
