@@ -91,6 +91,14 @@
                 }else {
 
                 }
+
+
+                apiRequest.send('get', '/article-categories', {})
+                 .then(response => {
+                     this.categories= response;
+                 });
+
+
                 
             },
             addType(slug){
@@ -114,6 +122,12 @@
                 }else {
 
                 }
+
+
+                 apiRequest.send('get', '/article-types', {})
+                 .then(response => {
+                     this.types= response;
+                 });
                 
 
             },
