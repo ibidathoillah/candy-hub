@@ -59,9 +59,11 @@
         },
         methods: {
             broadcast(){
+                if(window.confirm("Apakah anda yakin ini membroadcast "+this.article.title +"?")){
                     apiRequest.send('POST', '/articles/' + this.article.id +'/broadcast', {}).then(response => {
                         CandyEvent.$emit('notification', {
-                            level: 'success'
+                            level: 'success',
+                            message: "Broadcast berhasil dikirim"
                         });
                     }).catch(response => {
                         CandyEvent.$emit('notification', {
@@ -69,6 +71,7 @@
                             message: response.message
                         });
                     });
+                }
             },
             addCategory(slug){
                 if(slug=="addNew"){

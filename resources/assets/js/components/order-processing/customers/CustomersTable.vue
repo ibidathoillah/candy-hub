@@ -26,6 +26,12 @@
             this.loadCustomers2();
         },
         methods: {
+            del(row){
+                apiRequest.send('get', '/subscribe/'+ row.id, {})
+                    .then(response => {
+                        this.loadCustomers2();
+                    });
+            },
             loadCustomers() {
                 apiRequest.send('get', '/customers', [], this.params)
                     .then(response => {
@@ -156,6 +162,7 @@
                         <tr>
                             <th>Email</th>
                             <th>Aktivasi</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody v-if="loaded2">
@@ -165,6 +172,9 @@
                             </td>
                             <td >
                                 {{ row.isActive ? "Teraktivasi" : "Menunggu Persetujuan" }}
+                            </td>
+                            <td >
+                                <button @click="del(row)" class="btn btn-primary">Hapus</button>
                             </td>
                         </tr>
                     </tbody>
