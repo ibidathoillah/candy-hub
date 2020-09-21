@@ -166,6 +166,7 @@
                 
                 delete temp.assets;
                 delete temp.user;
+                delete temp.others;
                 temp.category=temp.category.slug;
                 temp.type=temp.type.slug;
                 apiRequest.send('PUT', '/articles/' + temp.id, temp).then(response => {
