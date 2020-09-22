@@ -30,6 +30,9 @@
                 apiRequest.send('delete', '/subscribe/'+ row.id, {})
                     .then(response => {
                         this.loadCustomers2();
+                        CandyEvent.$emit('notification', {
+                            level: 'success'
+                        });
                     });
             },
             loadCustomers() {
@@ -41,7 +44,7 @@
                     });
             },
             loadCustomers2() {
-                apiRequest.send('get', '/subscribe', this.params2)
+                apiRequest.send('get', '/subscribe',[], this.params2)
                     .then(response => {
                         this.rows = response.data;
                         this.pagination2 = response;
