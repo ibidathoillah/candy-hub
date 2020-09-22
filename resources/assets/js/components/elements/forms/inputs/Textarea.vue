@@ -75,6 +75,8 @@
                 {name: 'Arial', family: 'Arial, Helvetica, sans-serif'},
                 {name: 'Open Sans', family: '\'Open Sans\', sans-serif'},
                 {name: "Modern Era Bold", family: "Modern Era Bold"},
+                {name: "Modern Era Medium", family: "Modern Era Medium"},
+                {name: "Modern Era Regular", family: "Modern Era Regular"},
             ]
         }
     }
