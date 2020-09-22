@@ -27,7 +27,7 @@
         },
         methods: {
             del(row){
-                apiRequest.send('get', '/subscribe/'+ row.id, {})
+                apiRequest.send('delete', '/subscribe/'+ row.id, {})
                     .then(response => {
                         this.loadCustomers2();
                     });
@@ -190,7 +190,7 @@
                 </table>
 
                 <div class="text-center">
-                    <candy-table-paginate :pagination="pagination2" @change="changePage2"></candy-table-paginate>
+                    <candy-table-paginate :current="params2.page" :total="pagination2.last_page" @change="changePage2"></candy-table-paginate>
                 </div>
              </div>
 
