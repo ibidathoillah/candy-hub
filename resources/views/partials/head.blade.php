@@ -18,6 +18,25 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+
+    @font-face {
+    font-family: 'Modern Era Medium';
+    src: url('/fonts/vendor/bootstrap-sass/bootstrap/Modern\ Era\ Medium.ttf') format('truetype');
+    }
+
+    @font-face {
+    font-family: 'Modern Era Regular';
+    src: url('/fonts/vendor/bootstrap-sass/bootstrap/Modern\ Era\ Regular.ttf') format('truetype');
+    }
+
+
+    @font-face {
+    font-family: 'Modern Era Bold';
+    src: url('/fonts/vendor/bootstrap-sass/bootstrap/Modern\ Era\ Bold.ttf') format('truetype');
+    }
+    
+    </style>
 
     <script>
     window.Laravel = {
