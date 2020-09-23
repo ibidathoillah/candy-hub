@@ -27,13 +27,15 @@
         },
         methods: {
             del(row){
-                apiRequest.send('delete', '/subscribe/'+ row.id, {})
+                if(window.confirm("apakah kamu yakin ingin menghapus record ini?")){
+                    apiRequest.send('delete', '/subscribe/'+ row.id, {})
                     .then(response => {
                         this.loadCustomers2();
                         CandyEvent.$emit('notification', {
                             level: 'success'
                         });
                     });
+                }
             },
             loadCustomers() {
                 apiRequest.send('get', '/customers', [], this.params)
