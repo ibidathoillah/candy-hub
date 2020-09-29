@@ -74,8 +74,21 @@
             fontList: [
                 {name: 'Arial', family: 'Arial, Helvetica, sans-serif'},
                 {name: 'Open Sans', family: '\'Open Sans\', sans-serif'},
+                {name: "Modern Era Black Italic", family: "Modern Era Black Italic"},
+                {name: "Modern Era Black", family: "Modern Era Black"},
+                {name: "Modern Era Bold Italic", family: "Modern Era Bold Italic"},
                 {name: "Modern Era Bold", family: "Modern Era Bold"},
+                {name: "Modern Era ExtraBold Italic", family: "Modern Era ExtraBold Italic"},
+                {name: "Modern Era ExtraBold", family: "Modern Era ExtraBold"},
+                {name: "Modern Era Light Italic", family: "Modern Era Light Italic"},
+                {name: "Modern Era Italic", family: "Modern Era Italic"},
+                {name: "Modern Era Light", family: "Modern Era Light"},
+                {name: "Modern Era Medium Italic", family: "Modern Era Medium Italic"},
                 {name: "Modern Era Medium", family: "Modern Era Medium"},
+                {name: "Modern Era Mono Bold", family: "Modern Era Mono Bold"},
+                {name: "Modern Era Mono ExtraBold", family: "Modern Era Mono ExtraBold"},
+                {name: "Modern Era Mono Medium", family: "Modern Era Mono Medium"},
+                {name: "Modern Era Mono Regular", family: "Modern Era Mono Regular"},
                 {name: "Modern Era Regular", family: "Modern Era Regular"},
             ]
         }
