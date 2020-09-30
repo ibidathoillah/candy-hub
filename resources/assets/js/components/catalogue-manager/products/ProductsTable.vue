@@ -3,11 +3,12 @@
         <search-table includes="channels,customer_groups,family,variants,assets.transforms" type="product" export="products">
             <template slot="cols">
                 <th width="5%"></th>
+                <th width="8%">SKU</th>
                 <th width="25%">Product</th>
                 <th width="10%">Stock</th>
                 <th width="15%">Saluran</th>
-                <th width="19%">Grup Pelanggan</th>
-                <th width="19%">Purchasable</th>
+                <th width="15%">Grup Pelanggan</th>
+                <th width="15%">Purchasable</th>
             </template>
             <template slot-scope="products">
                 <tr :key="product.id" v-for="(product, index) in products.default">
@@ -19,6 +20,11 @@
                     <td>
                         <a :href="route('hub.products.edit', product.id)">
                             {{ product|attribute('name') }}
+                        </a>
+                    </td>
+                    <td>
+                        <a v-if="product.variants.data.length == 1"  :href="route('hub.products.edit', product.id)">
+                            {{ product.variants.data[0].sku }}
                         </a>
                     </td>
                     <td>
