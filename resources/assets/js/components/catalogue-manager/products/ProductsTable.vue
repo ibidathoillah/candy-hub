@@ -17,16 +17,17 @@
                             <candy-thumbnail-loader :item="product"></candy-thumbnail-loader>
                         </a>
                     </td>
+                                        <td>
+                        <a v-if="product.variants.data.length == 1"  :href="route('hub.products.edit', product.id)">
+                            {{ product.variants.data[0].sku }}
+                        </a>
+                    </td>
                     <td>
                         <a :href="route('hub.products.edit', product.id)">
                             {{ product|attribute('name') }}
                         </a>
                     </td>
-                    <td>
-                        <a v-if="product.variants.data.length == 1"  :href="route('hub.products.edit', product.id)">
-                            {{ product.variants.data[0].sku }}
-                        </a>
-                    </td>
+
                     <td>
                         <template v-if="editing == product && product.variants.data.length == 1 && !this.editModal">
                             <input v-focus @keyup.enter="quickSave" class="form-control" v-model="product.variants.data[0].inventory" @blur="quickSave">
