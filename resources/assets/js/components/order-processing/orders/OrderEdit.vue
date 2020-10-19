@@ -263,10 +263,10 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <strong style="margin-bottom:5px;display:block;">Info Pembayaran</strong>
-                                    Metode Pembayaran: {{ order.meta.payment_data.payment.name}}<br/>
-                                    Trans ID : {{ order.meta.payment_data.trans_id }}<br/>
-                                    Status : {{ order.meta.payment_data.status}}<br/>
-                                    <img v-src="order.meta.payment_data.payment.photo" width="100px"/>
+                                    {{ order.meta.payment_data.payment.name}}<br/>
+                                    {{ order.meta.payment_data.trans_id }}<br/>
+                                    {{ order.meta.payment_data.status}}<br/>
+                                    <img v-bind:src="order.meta.payment_data.payment.photo" width="100px"/><br/>
                                     {{ order.billing_details.firstname }} {{ order.billing_details.lastname }}<br>
                                     {{ order.billing_details.address }}<br>
                                     {{ order.billing_details.address_two }}<br v-if="order.billing_details.address_two">
