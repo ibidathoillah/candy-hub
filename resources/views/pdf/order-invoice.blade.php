@@ -72,7 +72,7 @@
                         <table width="100%">
                             <tr>
                                 <td class="title" align="left" width="50%">
-                                    <img src="http://intense-oasis-34709.herokuapp.com/candy-hub/images/logo/treasury.png" width="100px">
+                                    <img src="{{env('APP_URL')}}/candy-hub/images/logo/treasury.png" width="100px">
                                     <h3>Order Invoice</h3>
                                 </td>
                                 <td align="right" width="50%">
@@ -92,6 +92,10 @@
                             <tr>
                                 <td align="left" width="33%">
                                     <h3>Pembayaran</h3>
+                                    Metode Pembayaran: {{ $order->meta->payment_data->payment->name}}<br/>
+                                    Trans ID : {{ $order->meta->payment_data->trans_id}}<br/>
+                                    Status : {{ $order->meta->payment_data->status}}<br/>
+                                    <img src="{{$order->meta->payment_data->payment->photo}}" width="100px"/>
                                     {{ $order->billing_firstname }} {{ @$order->billing_lastname }}<br>
                                     {{ $order->billing_address }}
                                     @if ($order->billing_address_two)
@@ -104,7 +108,7 @@
                                     {{ $order->billing_county }}<br>
                                     {{ $order->billing_state }}<br>
                                     {{ $order->billing_zip }}<br>
-                                    {{ $order->billing_country }}
+                                    {{ $order->billing_country }}<br>
                                     @if($order->vat_no)
                                         <p>Pajak No.: {{ $order->vat_no }}</p>
                                     @endif
