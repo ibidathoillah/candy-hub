@@ -147,10 +147,10 @@
                 </tr>
             </table>
 
-            <table cellpadding="0" cellspacing="0" width="94%" class="lines">
+            <table cellpadding="0" cellspacing="0" width="90%" class="lines">
                 <thead class="lines-heading">
                     <tr width="94%">
-                        <th width="28%">
+                        <th width="18%">
                             Produk
                         </th>
                         <th width="15%">
@@ -159,16 +159,16 @@
                         <th width="10%">
                             Qty
                         </th>
-                        <th width="15%">
+                        <th width="12%">
                             Harga Per Unit
                         </th>
                         <th width="15%">
                             Diskon
                         </th>
-                        <th width="15%">
+                        <th width="12%">
                             Rate Pajak
                         </th>
-                        <th width="15%">
+                        <th width="12%">
                             Pajak
                         </th>
                         <th width="12%">
