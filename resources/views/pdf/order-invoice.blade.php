@@ -92,10 +92,10 @@
                             <tr>
                                 <td align="left" width="33%">
                                     <h3>Pembayaran</h3>
-                                    Metode Pembayaran: {{ $order->meta->payment_data->payment->name}}<br/>
-                                    Trans ID : {{ $order->meta->payment_data->trans_id}}<br/>
-                                    Status : {{ $order->meta->payment_data->status}}<br/>
-                                    <img src="{{$order->meta->payment_data->payment->photo}}" width="100px"/>
+                                    Metode Pembayaran: {{ $all->meta->payment_data->payment->name}}<br/>
+                                    Trans ID : {{ $all->meta->payment_data->trans_id}}<br/>
+                                    Status : {{ $all->meta->payment_data->status}}<br/>
+                                    <img src="{{$all->meta->payment_data->payment->photo}}" width="100px"/>
                                     {{ $order->billing_firstname }} {{ @$order->billing_lastname }}<br>
                                     {{ $order->billing_address }}
                                     @if ($order->billing_address_two)
