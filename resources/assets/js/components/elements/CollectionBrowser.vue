@@ -25,6 +25,7 @@
                     <tbody class="list">
                     <tr v-for="collection in collections" :key="collection.id">
                         <td width="10%">
+                            {{collection.name}}
                         <!-- <img :src="productThumbnail(product)" :alt="product|attribute('name')" class="img-sm"> -->
                         </td>
                         <td class="name" width="40%">{{ collection|attribute('name') }}</td>
@@ -96,6 +97,7 @@
 
             apiRequest.send('GET', '/collections').then(response => {
                 this.collections = response.data;
+                console.log(this.collections)
             });
         },
         computed: {

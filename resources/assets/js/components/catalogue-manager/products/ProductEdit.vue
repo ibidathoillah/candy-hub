@@ -208,7 +208,7 @@
                             <candy-tab name="Categories" handle="categories" :selected="true" :badge="getCategoryCount()">
                                 <candy-categories :product="product"></candy-categories>
                             </candy-tab>
-                            <candy-tab name="Collections" handle="collections">
+                            <candy-tab name="Occasions" handle="collections">
                                 <candy-product-collections :product-id="product.id" :existing="product.collections.data"></candy-product-collections>
                             </candy-tab>
                             <candy-tab name="Products" handle="products" :badge="getAssociationCount()" dispatch="product-associations">

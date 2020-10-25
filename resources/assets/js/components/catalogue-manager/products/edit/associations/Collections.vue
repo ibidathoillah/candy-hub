@@ -137,7 +137,7 @@
                 <tfoot v-if="collections && !collections.length">
                     <tr>
                       <td colspan="4">
-                        <span class="text-muted">No collections found</span>
+                        <span class="text-muted">No occasion found</span>
                       </td>
                     </tr>
                 </tfoot>
