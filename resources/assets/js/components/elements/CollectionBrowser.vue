@@ -28,7 +28,7 @@
                          
                         <!-- <img :src="productThumbnail(product)" :alt="product|attribute('name')" class="img-sm"> -->
                         </td>
-                        <td class="name" width="40%">   {{collection.name}} </td>
+                        <td class="name" width="40%">{{ collection|attribute('name') }}{{collection.name}}</td>
                         <td align="right">
                             <button @click="attach(collection)" class="btn btn-sm btn-action btn-success" v-if="!alreadyLinked(collection)">
                                 <fa icon="plus"></fa>

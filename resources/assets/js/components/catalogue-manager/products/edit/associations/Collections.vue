@@ -122,7 +122,7 @@
                             <img src="/candy-hub/images/placeholder/no-image.svg" :alt="collection|attribute('name')">
                         </td>
                         <td>
-                            {{ collection.name }}
+                            {{ collection.name }}{{ collection|attribute('name') }}
                         </td>
                         <td>
                             <!-- {{ getRoute(collection) }} -->
