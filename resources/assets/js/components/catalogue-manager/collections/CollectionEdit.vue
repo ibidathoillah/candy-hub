@@ -22,7 +22,7 @@
         },
         created() {
             this.loadLanguages();
-            this.loadCollection(this.id);
+          
         },
         mounted() {
             CandyEvent.$on('collection-updated', event => {
@@ -82,6 +82,7 @@
                             content: '<span class=\'flag-icon flag-icon-' + lang.iso + '\'></span> ' + lang.name
                         });
                     });
+                    this.loadCollection(this.id);
                 });
             },
             /**
