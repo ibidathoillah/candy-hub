@@ -79,15 +79,15 @@
             <candy-tab name="Pricing & Variants" handle="pricing-variants" :selected="true" dispatch="product-variants">
                 <candy-variants :product="product" :languages="languages"></candy-variants>
             </candy-tab>
-            <candy-tab name="Optional Extras" handle="extras">
+            <!-- <candy-tab name="Optional Extras" handle="extras">
                 Coming soon
-            </candy-tab>
-            <candy-tab name="Channels" handle="channels" dispatch="product-availability" save="saveChannels">
+            </candy-tab> -->
+            <!-- <candy-tab name="Channels" handle="channels" dispatch="product-availability" save="saveChannels">
                 <candy-channel-association :channels="product.channels.data"></candy-channel-association>
-            </candy-tab>
-            <candy-tab name="Customer Groups" handle="customer-groups" dispatch="product-availability" save="saveCustomerGroups">
+            </candy-tab> -->
+            <!-- <candy-tab name="Customer Groups" handle="customer-groups" dispatch="product-availability" save="saveCustomerGroups">
                 <candy-customer-groups :groups="customerGroups"></candy-customer-groups>
-            </candy-tab>
+            </candy-tab> -->
         </candy-tabs>
     </div>
 </template>

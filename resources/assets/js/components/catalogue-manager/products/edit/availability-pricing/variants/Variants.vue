@@ -472,12 +472,12 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12 col-md-12">
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="groupPricing">
                                         <input id="groupPricing" type="checkbox" v-model="hasGroupPricing">
                                         <span class="faux-label"> Harga Grup Pelanggan Perorangan</span>
                                     </label>
-                                </div>
+                                </div> -->
                                     <template v-if="hasGroupPricing">
                                         <variant-group-pricing v-model="current.customer_pricing.data" :price="current.unit_price" :groups="customerGroups" v-if="customerGroups.length"></variant-group-pricing>
                                     </template>
@@ -498,7 +498,7 @@
                             </div>
                         </div>
 
-                        <h4>Tingkatan Harga</h4>
+                        <!-- <h4>Tingkatan Harga</h4>
                         <hr>
                         <div class="row" v-for="(tier, index) in priceTiers" v-if="customerGroupSelect.length">
                             <div class="col-md-3">
@@ -531,7 +531,7 @@
                             <button class="btn btn-primary" @click="addPriceTier">
                                 <fa icon="plus"></fa> Tambah Tingkatan
                             </button>
-                        </div>
+                        </div> -->
 
                         <h4>Inventory</h4>
                         <hr>

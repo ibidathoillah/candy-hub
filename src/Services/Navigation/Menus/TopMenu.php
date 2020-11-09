@@ -19,7 +19,7 @@ class TopMenu extends Menu
         $orderProcessingItems = [
             new NavItem('hub::titles.orders', route('hub.orders.index'), 'orders'),
             new NavItem('hub::titles.customers', route('hub.customers.index'), 'customers'),
-            new NavItem('hub::titles.shipping', route('hub.shipping.index'), 'shipping'),
+            // new NavItem('hub::titles.shipping', route('hub.shipping.index'), 'shipping'),
         ];
 
         $marketingItems = [
