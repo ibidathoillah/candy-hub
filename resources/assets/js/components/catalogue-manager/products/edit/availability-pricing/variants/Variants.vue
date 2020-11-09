@@ -312,7 +312,7 @@
             backorderOptions() {
                 return [
                     {label: 'Hanya Saat Stock Ada', value: 'in-stock'},
-                    {label: 'Bisa Beli Preorder Saat Stock Yang Akan Datang Ada', value: 'expected'},
+                    //{label: 'Bisa Beli Preorder Saat Stock Yang Akan Datang Ada', value: 'expected'},
                     {label: 'Selalu dapat dibeli', value: 'always'}
                 ];
             }
@@ -549,12 +549,12 @@
                                 </div>
                             </div>
 
-                            <div class="col-xs-12 col-md-2">
+                            <!-- <div class="col-xs-12 col-md-2">
                                 <div class="form-group">
                                     <label>Stock Akan Datang</label>
                                     <input type="number" class="form-control" v-model="current.incoming">
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="col-md-4">
                                 <div class="form-group">
