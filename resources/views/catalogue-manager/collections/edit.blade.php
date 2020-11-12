@@ -14,7 +14,7 @@
 @section('header_actions')
     <candy-delete
       element="collection"
-      endpoint="/occasions/{{ $id }}"
+      endpoint="/collections/{{ $id }}"
       id="{{ $id }}"
       redirect="/{{ config('getcandy.hub_prefix', 'hub') }}/catalogue-manager/occasions"
       style="display: inline-block;"
