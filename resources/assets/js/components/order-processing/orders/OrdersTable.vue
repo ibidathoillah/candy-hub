@@ -147,7 +147,6 @@
                 if (typeof this.getters[col] === "function") {
                     return this.getters[col](order, this.currencies);
                 }
-                if(col=="type") col="meta.payment_cashtag";
                 
                 return _.get(order, col);
             },
@@ -364,8 +363,8 @@
                                             </div>
                                         </th>
                                         <th></th>
-                                        <th width="10%" v-html="$t('orders.table.heading.status')"></th>
-                                        <th width="10%" v-html="$t('orders.table.heading.reference')"></th>
+                                        <th v-html="$t('orders.table.heading.status')"></th>
+                                        <th v-html="$t('orders.table.heading.reference')"></th>
                                         <th v-for="col in columns" v-html="heading(col)" :key="col"></th>
                                         <th></th>
                                     </tr>
