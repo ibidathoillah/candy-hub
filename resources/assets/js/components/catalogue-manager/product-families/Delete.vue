@@ -85,7 +85,7 @@
                     CandyEvent.$emit('notification', {
                         level: 'success'
                     });
-                    window.location = '/hub/catalogue-manager/product-families';
+                    window.location = '/hub/catalogue-manager/brands';
                 }).catch(response => {
                     CandyEvent.$emit('notification', {
                         level: 'error',
