@@ -137,6 +137,7 @@
                 return !this.orders.length ? false : this.orders.length == this.selected.length;
             },
             columns() {
+                console.log(this.config.table_columns);
                 return _.map(this.config.table_columns, col => {
                     return col;
                 })
