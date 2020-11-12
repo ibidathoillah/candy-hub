@@ -151,7 +151,7 @@
                 </tr>
             </table>
 
-            <table cellpadding="0" cellspacing="0" width="600px" class="lines">
+            <table cellpadding="0" cellspacing="0" width="680px" class="lines">
                 <thead class="lines-heading">
                     <tr width="100%">
                         <th width="18%">
