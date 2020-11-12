@@ -216,7 +216,7 @@
                 </table>
 
                 <div class="text-center">
-                    <candy-table-paginate :pagination="pagination" @change="changePage"></candy-table-paginate>
+                    <candy-table-paginate :current="params.current_page" :total="pagination.last_page" @change="changePage"></candy-table-paginate>
                 </div>
             </div>
         </div>
