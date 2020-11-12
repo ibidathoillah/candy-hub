@@ -348,7 +348,7 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <td colspan="6"></td>
+                                            <td colspan="7"></td>
                                             <td colspan="2" align="right"><strong>Sub total (Tanpa Pajak)</strong></td>
                                             <td v-html="currencySymbol(order.sub_total)"></td>
                                         </tr>
@@ -413,7 +413,7 @@
                                         <tr v-for="line in productLines" :key="line.id">
                                             <td>
                                                 <template v-if="line.sku">
-                                                <a :href="productLink(line.sku)" target="_blank" :title="'View' + line.product">
+                                                <a :href="productLink(line.sku)" target="_blank" :title="'View' + line.description">
                                                 {{ line.sku }}
                                                 </a>
                                                 </template>

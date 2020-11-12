@@ -151,9 +151,9 @@
                 </tr>
             </table>
 
-            <table cellpadding="0" cellspacing="0" width="89%" class="lines">
+            <table cellpadding="0" cellspacing="0" width="800px" class="lines">
                 <thead class="lines-heading">
-                    <tr width="90%">
+                    <tr width="100%">
                         <th width="18%">
                             Produk
                         </th>
