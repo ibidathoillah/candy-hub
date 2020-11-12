@@ -64,7 +64,7 @@
             },
             changePage(page) {
                 this.loaded = false;
-                this.params.current_page = page;
+                this.params.page = page;
                 this.loadCollections();
             },
             loadCollection: function (id) {
@@ -216,7 +216,7 @@
                 </table>
 
                 <div class="text-center">
-                    <candy-table-paginate :current="params.current_page" :total="pagination.last_page" @change="changePage"></candy-table-paginate>
+                    <candy-table-paginate :current="params.page" :total="pagination.last_page" @change="changePage"></candy-table-paginate>
                 </div>
             </div>
         </div>
