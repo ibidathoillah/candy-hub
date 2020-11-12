@@ -49,7 +49,7 @@
                 apiRequest.loadCollections(this.params)
                     .then(response => {
                         this.collections = response.data;
-                        this.pagination = response.meta.pagination;
+                        this.pagination = response.meta;
                         this.loaded = true;
                     });
             },
