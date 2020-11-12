@@ -147,7 +147,7 @@
                 if (typeof this.getters[col] === "function") {
                     return this.getters[col](order, this.currencies);
                 }
-                
+                console.log(col,order)
                 return _.get(order, col);
             },
             heading(col) {
@@ -322,9 +322,9 @@
                     <div class="col-md-3">
                         <date-range-picker @update="filterDate" @clear="clearDates" :from="params.from" :to="params.to"></date-range-picker>
                     </div>
-                    <div class="col-md-2">
+                    <!-- <div class="col-md-2">
                         <candy-select null-label="Semua Lokasi" :options="shippingZones" v-if="shippingZones.length" v-model="zone"></candy-select>
-                    </div>
+                    </div> -->
                     <div class="col-md-2">
                         <candy-select null-label="Semua Order Status" :options="statusSelect" v-if="statusSelect.length" v-model="filter"></candy-select>
                     </div>
