@@ -147,7 +147,7 @@
                 if (typeof this.getters[col] === "function") {
                     return this.getters[col](order, this.currencies);
                 }
-                if(col=="type") col="meta.treasury_payment_name";
+                if(col=="type") col="meta.payment_cashtag";
                 
                 return _.get(order, col);
             },
@@ -386,7 +386,7 @@
                                             <span class="order-status" :style="getStyles(order.status)">{{ status(order.status) }}</span>
                                         </td>
                                         <td>
-                                            <a :href="getOrderUrl(order.id)" title="View order" v-if="order.reference">{{ order.reference }}</a>
+                                            <a :href="getOrderUrl(order.id)" title="View order" v-if="order.display_id">{{ order.display_id }}</a>
                                             <span v-else>-</span>
                                         </td>
                                         <td v-for="col in columns" v-html="getColumn(col, order)"></td>
