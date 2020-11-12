@@ -364,7 +364,7 @@
                                         </th>
                                         <th></th>
                                         <th v-html="$t('orders.table.heading.status')"></th>
-                                        <th v-html="$t('orders.table.heading.reference')"></th>
+                                        <th>Order ID</th>
                                         <th v-for="col in columns" v-html="heading(col)" :key="col"></th>
                                         <th></th>
                                     </tr>
